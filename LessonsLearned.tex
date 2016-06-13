@@ -1,0 +1,165 @@
+\section{Volvo Cars and the need of having an architecture framework}\label{sec:lessonsLearned}
+
+In a previous paper we made a study within Volvo Cars to identify, from the architecture point of view, the challenges that OEMs are facing in the last years~\cite{WICSA2015}.
+
+%Our findings are that 
+%%for large and complex systems two different types of architectures, with
+%%different abstraction levels, are used. A high-level architecture guiding and
+%%diving the work between the construction or development groups is designed. Each of these groups creates 
+%%a detailed communication matrix or working architecture\footnote{In the remaining of the paper we simply refer to this type of architecture as working architecture.} 
+%%%Moreover, a detailed
+%%%architecture is required 
+%%to define strict interfaces and how the system implementation should be exactly realized. 
+%%%The working architecture is monolithic since it is ``blamed" on the bandwidth, i.e. optimization of
+%%%the communication.
+%%%\jonn{it is quite central that this working arch is monolithic. Imagine a more
+%%%internet-like architecture, it would have cased very different challenges. The
+%%%monolithic architecture today is "blamed" on the bandwidth, i.e. optimization of
+%%%the communication. Worth mentioning here??}
+%often, %the %se working architectures are developed in parallel by 
+%various groups within the same company 
+%%within the organizations, often having 
+%have different opinions on the meaning
+%of architecture and how it shall be done. Example of topics in which we identified discrepancies are: 
+%%. One must also note that, in general these groups are formed by domain experts, responsible for developing the mechatronic functions, not the optimized communication matrix or system architecture. In general we can identify the following topics of conflict:
+%(i) %what is 
+%selecting the optimal solution for the %system (or function) 
+%architecture; %?
+%(ii) %which 
+%selecting the platform %should 
+%to be defined to facilitate development in the long run; %?
+%(iii) %what should be 
+%identifying the priority of the construction groups in order to deliver in time. %?
+%%\jonn{The last one is unclear} \patrizio{To reduce the lenght of the introduction this part from ``One must also note that..." might be moved to another section.}
+
+We identified that there is not always an obvious connection between  
+architecture (or top-level design) and  design, especially during later development. 
+The architecture is only communicated as large documents
+%, or models, 
+that are supposed to be read by stakeholders. However, this not always corresponds to the reality. Maintenance of the
+architecture, while the design evolves, is demanding and not
+always performed in all parts. 
+This shows a discrepancy between the planned architecture defined according to a V-Model process, and the architecture that is actually emerging from the system development. 
+
+%\subsubsection{Towards agile architecting}\label{sec:agileArch}
+%
+%The role of the high-level architecture, if asking the architects themselves, is
+%to serve as a set of guidelines and to identify the boundaries for the detailed
+%design. In reality, this architecture is often, if not ignored, at least not in
+%the mind of the engineers doing the low-level architecture on a daily basis. It
+%emerged that low-level architects seldom, if ever, read the documentation
+%produced by the high-level architects. Now, this does not mean that the work of
+%the high-level architects is without value. However, having the high-level
+%architects in a group of their own, separated from the other groups creates
+%tensions between the different groups and a power struggle. 
+%
+%This shows a discrepancy between the planned architecture defined according to a V-Model process, and the architecture that is actually emerging from the system development. From the study it stems out in fact that the team responsible for the architecture, called high-level architecture above, tends to get isolated from the rest of the development organization, with few communications. This creates tensions within the organizations, as well as suboptimal design of the communication matrix and limited usage of the high-level architecture in the development teams. This clearly shows that in order to adapt to the current pace of software development and rapidly growing software systems new ways of working are required, both on technical and on an organizational level.
+%
+%What emerges here has been observed also in other domains. Specifically, this recalls the tension between waterfall and agile approaches. On one side waterfall approaches consider architecting as a phase of development that is somehow instructing the other phases. On the other side, agile development processes consider that ``The best architectures, requirements, and designs emerge from self-organizing teams.", as stated in the \#11 in the agile manifesto\footnote{Agile Alliance, Manifesto for Agile Software Development, June 2001 \url{http://agilemanifesto.org/}}.
+%
+%Building on that, Philippe Kruchten discusses the concept of ``agile architecture" that evokes two different interpretations (by quoting the text from the blog)\footnote{\url{http://philippe.kruchten.com/2013/12/11/agile-architecture/}}:
+%
+%\begin{itemize}
+%\item a system or software architecture that is versatile, easy to evolve, to modify, flexible in a way, while still resilient to changes
+%\item an agile way to define an architecture, using an iterative lifecycle, allowing the architectural design to tactically evolve gradually, as the problem and the constraints are better understood
+%\end{itemize}
+%
+%These two interpretations are related but different; in fact as discussed by Kruchten, we may have a non-agile development process leading to a flexible and adaptable architecture, and on the other side, an agile process may lead to a rather rigid and inflexible architecture. The best would be an agile process, leading to a flexible architecture. 
+
+%\subsubsection{Identifying the architects and their role}\label{sec:architects}
+%
+%In the same blog\footnote{\url{http://philippe.kruchten.com/2014/10/08/three-tures-architecture-infrastructure-and-team-structure/}} Kruchten points out also a conjecture that comes out at the XP 2014 workshop: architects typically work on three distinct but interdependent structures, which are:
+%
+%\begin{itemize}
+%\item The architecture of the system under design, development, or refinement;
+%\item The structure of the organization, including also partners, subcontractors, and others;
+%\item The production infrastructure used to develop and deploy the system.
+%\end{itemize}
+%
+%When these structures are not kept aligned over time, different kinds of ``debts" may show up: {\bf technical debt} when the architecture is lagging, {\bf social debt} when the structure of the organization is missing. 
+%
+%The alignment between the architecture and the production infrastructure is getting increasing interest with the concept of DevOps~\cite{Bass2015}, which puts the focus on combining the development organization with the operations organization, and on having the tools in place to ensure continuous delivery or deployment, even in the context of very large mission-critical systems, such as, Netflix, Amazon, and Facebook. Our paradigm is focusing on the evolution within the organization in contrast to the toolchain from the development organization to the customers, which is the main focus of DevOps.
+%
+%
+%\subsubsection{Organizational aspects}\label{sec:communication}
+
+On the organizational side, we found a need to improve the communication between
+different groups, for instance by making teams more cross-functional. 
+%Today
+%there are several levels between architects and implementers and at some of
+%these steps the connection is not very tight. This leads implementers to think
+%that the high-level architects are sitting in their cloud above, without having
+%any connection to the reality. On the other hand the high-level architects feel
+%a frustration because they are not aware of everything that is happening; as a
+%consequence, a big part of their work is to just keep up with what is happening
+%in the construction groups. 
+Espousing the terminology
+in~\cite{IEEESoftwarePatrizio}, system architects should be also
+``Extrovert'' architects (conceptually related to the external focus
+of~\cite{Kruchten2008}), i.e. devoted to communicating the architectural
+decisions and knowledge to the other stakeholders. 
+
+%The different organizations have different competencies, attitude,
+%characteristics. %However, new problems emerge. In fact, we can confirm that we
+%%found many 
+%We idneitifed some known architecture antipatterns, like %. We found 
+%the {\em Goldplating}
+%antipattern~\cite{Kruchten2008} since system architects seem to be not
+%really engaged with developers. They are doing a good technical job, however,
+%their output is not really aligned with the needs of the developers and in the
+%end they are often ignored. Another antipattern that we found is the {\em Ivory
+%tower}~\cite{Kruchten2008}: the %high-level 
+%architecture team looks isolated
+%sitting on a separate floor from the development groups and do not engage with the
+%developers and the other stakeholders on a daily basis. This creates tensions in
+%the organization. 
+
+It emerges the need to explore both organizational and technical
+possibilities for tighter cooperation between architecture levels, and to
+measure effects such improvements would have. 
+%On the technical side, one partial solution might be % idea is
+%to define a framework able to automatically generate high-level views from the
+%low-level architecture. The challenge here is to support multiple views, each
+%devoted to showing only what is relevant for respective stakeholders. Moreover,
+%both high-level and low-level architects need ways to perform early validation
+%of their solution and to sketch and try different visions of how the future
+%systems should look like, to understand the effect of design decisions affect
+%the architecture. 
+%However, this solution cannot solve the architecting problem since this solution only focus to create a ``different view" for something that already exist. Other s
+Solutions are needed to support agile architecting~\cite{shahrokni2016organic} %\footnote{\url{http://philippe.kruchten.com/2013/12/11/agile-architecture/}}  
+as well as to enable stakeholders different from the architects, such as developers, to improve the architecture, such as fixing wrong assumptions or making decision deliberately postponed.
+
+%\subsubsection{Subcontractors and Architecture}\label{sec:subcontractors}
+
+Another interesting finding is that the architecture is not clearly considering the highly complex supplier-network that characterizes automotive engineering. 
+%a high-level architect did not feel that
+%there was a difference between using in-house developers and subcontractors.
+%This might be due to the fact that the architects are more distant from the
+%product. In the case of the people working with working architecture, this is
+%not the case as we also found in our work~\cite{burden_comparing_2014}. They
+%find it very frustrating to wait for part of the system to be integrated.  
+%\patrizio{Eric, please add a description of the findings} Subcontractors and Architecture - Mozhan RE \cite{Soltani2015,Soltani2015a}
+%	\begin{itemize}
+%	\item How the architecture can better support the work with suppliers? \eric{Sure, but we had an RE Workshop paper, so it is clear that it will be from the requirements viewpoint}
+%	\item How much information should be shared with suppliers (transparency)? \eric{I believe this is more like an outlook and needs to be researched in 2.4 and 2-2.4}
+%	\end{itemize}
+%
+%\eric{Putting some content here, but of course it is not really about architecture.}
+%Automotive engineering is characterised by a highly complex supplier-network.
+%As a first step, we have investigated the impact of this complexity from the perspective of the requirements viewpoint based on a qualitative case study with an AUTOSAR Tier-2 supplier, a Tier-1 supplier and an OEM \cite{Soltani2015,Soltani2015a}\footnote{A video presentation of this work can be found at \href{https://oerich.wordpress.com/2015/08/14/how-does-the-autosar-ecosystem-impact-requirement-engineering/}{https://oerich.wordpress.com/2015/08/14/how-does-the-autosar-ecosystem-impact-requirement-engineering/}}.
+%Through seven semi-structured interviews, we found that a clear, 
+In a previous study~\cite{Soltani2015} %,Soltani2015a} 
+we found that a holistic strategy for aligning work across the value-chain is currently missing. 
+Specifically, mixing commodity and differentiating components lead to sub-optimal situations, resulting in duplicated work.  
+We argue that automotive architecture needs to assume a holistic perspective with respect to the whole value-chain and optimize the architecture for facilitating beneficial subcontractor interaction. This calls for a proper management of the automotive ecosystem%~\cite{knauss2014towards}. %
+, which is characterized by relying heavily on complex supplier networks, 
+and strong dependence on hardware and software development~\cite{knauss2014towards}.
+%\begin{itemize}
+%\item \textit{Commodity Components} require clearly defined technical and organizational interfaces. 
+%The goal is to develop them as efficiently as possible, thus reducing coordination overhead. 
+%Ideally, of-the-shelf commodity components can be integrated with minimal adjustment. 
+%\item \textit{Differentiating Components} should be developed as independent from the commodity components as possible, probably in-house. 
+%\item \textit{Innovative Components} naturally require coordination and iterative work between a number of partners. 
+%To effectively develop innovative behaviour, could communication channels need to be established. 
+%\end{itemize}
+
