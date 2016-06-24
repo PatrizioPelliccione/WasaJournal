@@ -1,6 +1,105 @@
 \section{Volvo Cars and the need of having an architecture framework}\label{sec:lessonsLearned}
 
-In a previous paper we made a study within Volvo Cars to identify, from the architecture point of view, the challenges that OEMs are facing in the last years~\cite{WICSA2015}.
+In a previous paper we made a study within Volvo Cars to identify, from the architecture point of view, the challenges that OEMs are facing in the last years~\cite{WICSA2015}. 
+To better understand some of the
+organizational issues with having different parts of the organization responsible for different parts or layers in the architecture, we decided to conduct nine in depth interviews with
+focus on the roles of architects and how organizational factors affect them.
+These interviews have been carried out at Volvo Car Group (VCG) and Volvo Group Truck Technology
+(VGTT), extending the knowledge about these specific companies, hence providing a detailed understanding of two independent but nevertheless similar automotive companies. %, information which is compared with the third, non-automotive, company. 
+%The goal of this work was to build on previous results published in the
+%literature {\bf Fix proper citations. [7], [6]}, to investigate the dual and
+%complementary roles of software architects within the automotive domain.
+
+
+We identified that there is not always an obvious connection between  
+architecture (or top-level design) and  design; it seems also that this connection vanishes during time, once development requires changes on the system design. % and once time passes and , especially during later development. 
+The architecture is communicated as large documents,
+%, or models, 
+which are supposed to be read by stakeholders. However, this not always corresponds to the reality. The companies work also in cross functional teams and other type of communications are also used to communicate the architecture. More analysis is needed to understand the root of the problem. 
+Moreover, maintenance of the
+architecture, while the design evolves, is demanding and not
+always performed in all parts. 
+This shows a discrepancy between the planned architecture defined according to a V-Model process, and the architecture that is actually emerging from the system development. 
+
+On the organizational side, we found a need to improve the communication between
+different groups, by finding a good balance between verbal and document based communication. 
+%.%for instance by making teams more cross-functional. 
+Espousing the terminology
+in~\cite{IEEESoftwarePatrizio}, system architects should be also
+``Extrovert'' architects (conceptually related to the external focus
+of~\cite{Kruchten2008}), i.e. devoted to communicating the architectural
+decisions and knowledge to the other stakeholders. 
+
+Often, the %se working architectures are developed in parallel by 
+different groups 
+%within the organizations, often having 
+have very different views on the meaning
+of architecture and how it shall be done. One must also note that, in general these groups are formed by domain experts, responsible for developing the mechatronic functions, not the optimized communication matrix or system architecture. In general we can identify the following types of conflict:
+(i) %what is 
+selecting the optimal solution for the %system (or function) 
+architecture; %?
+(ii) %which 
+selecting the platform %should 
+to be defined to facilitate development in the long run; %?
+(iii) %what should be 
+identifying the priority of the construction groups in order to deliver in time. %?
+%\jonn{The last one is unclear} \patrizio{To reduce the lenght of the introduction this part from ``One must also note that..." might be moved to another section.}
+
+%There is also not always an obvious connection between the high-level
+%architecture and the working architectures, especially during later development. 
+%The working architectures are
+%directly used by the construction groups. Since these architectures are forced to be consistent with the implemented system, they will inevitably diverge from the original design when the project evolves.
+%%They will inevitably diverge from the original design when the project evolves, as it is forced to be consistent with the implemented system. 
+%Contrariwise, the high-level architecture 
+%%only exists as 
+%is only communicated as large documents
+%%, or models, 
+%that are supposed to be read by stakeholders. Maintenance of the high-level
+%architecture, while the working architectures evolve, is demanding and not
+%always performed in all parts; consequently, it is difficult to determine the
+%quality of the high-level architecture description at any time.
+
+%In this sense we can say that the high-level
+%architecture has a descriptive nature, i.e., it aims at describing network design decisions and the main structures in the system architecture. The working architecture, on the other hand, is prescriptive, i.e., it defines interfaces, sets of rules, and recommendations, to follow during the implementation of the specific functionalities. 
+
+It emerges the need to explore both organizational and technical
+possibilities for tighter cooperation between architecture and design, and to
+measure effects such improvements would have. 
+%On the technical side, one partial solution might be % idea is
+%to define a framework able to automatically generate high-level views from the
+%low-level architecture. The challenge here is to support multiple views, each
+%devoted to showing only what is relevant for respective stakeholders. Moreover,
+%both high-level and low-level architects need ways to perform early validation
+%of their solution and to sketch and try different visions of how the future
+%systems should look like, to understand the effect of design decisions affect
+%the architecture. 
+%However, this solution cannot solve the architecting problem since this solution only focus to create a ``different view" for something that already exist. Other s
+
+
+We identified that the architecture has a temporal aspect, that means: at any given point in time the system
+has only one architecture, however, the architecture will change over time.
+We call as {\em prescriptive architecture} the architecture that captures
+the design decisions made prior to the system's construction. This architecture is the as-conceived or as-intended architecture.
+We can call as {\em descriptive architecture} the architecture that describes how the system has been built. This architecture describes the as-implemented or as-realized architecture. We observed that there is often a discrepancy between the as-intended and the as-implemented architecture. This causes what is called {\em architecture degradation}. The degradation might shows up in two different ways: (i) {\em architectural drift} when the descriptive architecture includes changes that are not included in, encompassed by, or implied by the
+prescriptive architecture, but which do not violate any of the prescriptive architecture's
+design decisions; (ii) {\em architectural erosion} is the introduction of
+architectural design decisions into a system's descriptive architecture that violate its prescriptive
+architecture.
+ 
+When looking at the causes of architecture degradation, we can summarize the various reasons in the following three items: 
+
+\begin{enumerate} 
+\item During the development some important directives of the as-intended architecture have been violated due to time constraints, mistakes, misunderstanding, etc. 
+\item Some of the architectural choices of the as-intended architecture were based on assumptions (might be implicit) that then were identified as imprecise or wrong, 
+\item Some of the architectural choices of the as-intended architecture were made under uncertainty and during development these choices were judged as suboptimal.
+\end{enumerate}
+
+The first item might be solved by improving communication as mentioned before or by finding ways to guarantee the preservation of the  important directives of the as-intended architecture that should not be violated for any reason.
+
+The second and third items call for a ``{\em just-in-time architecture}" or agile architecting~\cite{shahrokni2016organic}  as well as to enable stakeholders different from the architects, such as developers, to improve the architecture, such as fixing wrong assumptions or making decision deliberately postponed.
+
+
+
 
 %Our findings are that 
 %%for large and complex systems two different types of architectures, with
@@ -32,14 +131,14 @@ In a previous paper we made a study within Volvo Cars to identify, from the arch
 %identifying the priority of the construction groups in order to deliver in time. %?
 %%\jonn{The last one is unclear} \patrizio{To reduce the lenght of the introduction this part from ``One must also note that..." might be moved to another section.}
 
-We identified that there is not always an obvious connection between  
-architecture (or top-level design) and  design, especially during later development. 
-The architecture is only communicated as large documents
-%, or models, 
-that are supposed to be read by stakeholders. However, this not always corresponds to the reality. Maintenance of the
-architecture, while the design evolves, is demanding and not
-always performed in all parts. 
-This shows a discrepancy between the planned architecture defined according to a V-Model process, and the architecture that is actually emerging from the system development. 
+%We identified that there is not always an obvious connection between  
+%architecture (or top-level design) and  design, especially during later development. 
+%The architecture is only communicated as large documents
+%%, or models, 
+%that are supposed to be read by stakeholders. However, this not always corresponds to the reality. Maintenance of the
+%architecture, while the design evolves, is demanding and not
+%always performed in all parts. 
+%This shows a discrepancy between the planned architecture defined according to a V-Model process, and the architecture that is actually emerging from the system development. 
 
 %\subsubsection{Towards agile architecting}\label{sec:agileArch}
 %
@@ -81,23 +180,23 @@ This shows a discrepancy between the planned architecture defined according to a
 %The alignment between the architecture and the production infrastructure is getting increasing interest with the concept of DevOps~\cite{Bass2015}, which puts the focus on combining the development organization with the operations organization, and on having the tools in place to ensure continuous delivery or deployment, even in the context of very large mission-critical systems, such as, Netflix, Amazon, and Facebook. Our paradigm is focusing on the evolution within the organization in contrast to the toolchain from the development organization to the customers, which is the main focus of DevOps.
 %
 %
-%\subsubsection{Organizational aspects}\label{sec:communication}
-
-On the organizational side, we found a need to improve the communication between
-different groups, for instance by making teams more cross-functional. 
-%Today
-%there are several levels between architects and implementers and at some of
-%these steps the connection is not very tight. This leads implementers to think
-%that the high-level architects are sitting in their cloud above, without having
-%any connection to the reality. On the other hand the high-level architects feel
-%a frustration because they are not aware of everything that is happening; as a
-%consequence, a big part of their work is to just keep up with what is happening
-%in the construction groups. 
-Espousing the terminology
-in~\cite{IEEESoftwarePatrizio}, system architects should be also
-``Extrovert'' architects (conceptually related to the external focus
-of~\cite{Kruchten2008}), i.e. devoted to communicating the architectural
-decisions and knowledge to the other stakeholders. 
+%%\subsubsection{Organizational aspects}\label{sec:communication}
+%
+%On the organizational side, we found a need to improve the communication between
+%different groups, for instance by making teams more cross-functional. 
+%%Today
+%%there are several levels between architects and implementers and at some of
+%%these steps the connection is not very tight. This leads implementers to think
+%%that the high-level architects are sitting in their cloud above, without having
+%%any connection to the reality. On the other hand the high-level architects feel
+%%a frustration because they are not aware of everything that is happening; as a
+%%consequence, a big part of their work is to just keep up with what is happening
+%%in the construction groups. 
+%Espousing the terminology
+%in~\cite{IEEESoftwarePatrizio}, system architects should be also
+%``Extrovert'' architects (conceptually related to the external focus
+%of~\cite{Kruchten2008}), i.e. devoted to communicating the architectural
+%decisions and knowledge to the other stakeholders. 
 
 %The different organizations have different competencies, attitude,
 %characteristics. %However, new problems emerge. In fact, we can confirm that we
@@ -113,21 +212,21 @@ decisions and knowledge to the other stakeholders.
 %sitting on a separate floor from the development groups and do not engage with the
 %developers and the other stakeholders on a daily basis. This creates tensions in
 %the organization. 
-
-It emerges the need to explore both organizational and technical
-possibilities for tighter cooperation between architecture levels, and to
-measure effects such improvements would have. 
-%On the technical side, one partial solution might be % idea is
-%to define a framework able to automatically generate high-level views from the
-%low-level architecture. The challenge here is to support multiple views, each
-%devoted to showing only what is relevant for respective stakeholders. Moreover,
-%both high-level and low-level architects need ways to perform early validation
-%of their solution and to sketch and try different visions of how the future
-%systems should look like, to understand the effect of design decisions affect
-%the architecture. 
-%However, this solution cannot solve the architecting problem since this solution only focus to create a ``different view" for something that already exist. Other s
-Solutions are needed to support agile architecting~\cite{shahrokni2016organic} %\footnote{\url{http://philippe.kruchten.com/2013/12/11/agile-architecture/}}  
-as well as to enable stakeholders different from the architects, such as developers, to improve the architecture, such as fixing wrong assumptions or making decision deliberately postponed.
+%
+%It emerges the need to explore both organizational and technical
+%possibilities for tighter cooperation between architecture levels, and to
+%measure effects such improvements would have. 
+%%On the technical side, one partial solution might be % idea is
+%%to define a framework able to automatically generate high-level views from the
+%%low-level architecture. The challenge here is to support multiple views, each
+%%devoted to showing only what is relevant for respective stakeholders. Moreover,
+%%both high-level and low-level architects need ways to perform early validation
+%%of their solution and to sketch and try different visions of how the future
+%%systems should look like, to understand the effect of design decisions affect
+%%the architecture. 
+%%However, this solution cannot solve the architecting problem since this solution only focus to create a ``different view" for something that already exist. Other s
+%Solutions are needed to support agile architecting~\cite{shahrokni2016organic} %\footnote{\url{http://philippe.kruchten.com/2013/12/11/agile-architecture/}}  
+%as well as to enable stakeholders different from the architects, such as developers, to improve the architecture, such as fixing wrong assumptions or making decision deliberately postponed.
 
 %\subsubsection{Subcontractors and Architecture}\label{sec:subcontractors}
 
