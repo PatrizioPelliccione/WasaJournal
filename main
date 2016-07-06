@@ -1,0 +1,338 @@
+%%
+%% Copyright 2007, 2008, 2009 Elsevier Ltd
+%%
+%% This file is part of the 'Elsarticle Bundle'.
+%% ---------------------------------------------
+%%
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%%
+%% The list of all files belonging to the 'Elsarticle Bundle' is
+%% given in the file `manifest.txt'.
+%%
+
+%% Template article for Elsevier's document class `elsarticle'
+%% with numbered style bibliographic references
+%% SP 2008/03/01
+%%
+%%
+%%
+%% $Id: elsarticle-template-num.tex 4 2009-10-24 08:22:58Z rishi $
+%%
+%%
+\documentclass[preprint,12pt,3p]{elsarticle}
+
+%% Use the option review to obtain double line spacing
+%% \documentclass[preprint,review,12pt]{elsarticle}
+
+%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+%% \documentclass[final,1p,times]{elsarticle}
+%% \documentclass[final,1p,times,twocolumn]{elsarticle}
+%% \documentclass[final,3p,times]{elsarticle}
+%% \documentclass[final,3p,times,twocolumn]{elsarticle}
+%% \documentclass[final,5p,times]{elsarticle}
+%% \documentclass[final,5p,times,twocolumn]{elsarticle}
+
+%% if you use PostScript figures in your article
+%% use the graphics package for simple commands
+%% \usepackage{graphics}
+%% or use the graphicx package for more complicated commands
+%% \usepackage{graphicx}
+%% or use the epsfig package if you prefer to use the old commands
+%% \usepackage{epsfig}
+
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+
+\usepackage{amsmath}%
+\usepackage{amsfonts}%
+\usepackage{amssymb}%
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{todonotes}
+\usepackage{url}
+\usepackage{graphics}
+\usepackage{balance}
+\usepackage{hyperref}
+
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers after \end{frontmatter}.
+%% \usepackage{lineno}
+
+%% natbib.sty is loaded by default. However, natbib options can be
+%% provided with \biboptions{...} command. Following options are
+%% valid:
+
+%%   round  -  round parentheses are used (default)
+%%   square -  square brackets are used   [option]
+%%   curly  -  curly braces are used      {option}
+%%   angle  -  angle brackets are used    <option>
+%%   semicolon  -  multiple citations separated by semi-colon
+%%   colon  - same as semicolon, an earlier confusion
+%%   comma  -  separated by comma
+%%   numbers-  selects numerical citations
+%%   super  -  numerical citations as superscripts
+%%   sort   -  sorts multiple citations according to order in ref. list
+%%   sort&compress   -  like sort, but also compresses numerical citations
+%%   compress - compresses without sorting
+%%
+%% \biboptions{comma,round}
+
+% \biboptions{}
+
+% Macros for proof-reading
+\usepackage[normalem]{ulem} % for \sout
+\usepackage{xcolor}
+\newcommand{\ra}{$\rightarrow$}
+\newcommand{\ugh}[1]{\textcolor{red}{\uwave{#1}}} % please rephrase
+\newcommand{\ins}[1]{\textcolor{blue}{\uline{#1}}} % please insert
+\newcommand{\del}[1]{\textcolor{red}{\sout{#1}}} % please delete
+\newcommand{\chg}[2]{\textcolor{red}{\sout{#1}}{\ra}\textcolor{blue}{\uline{#2}}} % please change
+
+% Put edit comments in a really ugly standout display
+\usepackage{ifthen}
+\usepackage{amssymb}
+\newboolean{showcomments}
+\setboolean{showcomments}{true} % toggle to show or hide comments
+\ifthenelse{\boolean{showcomments}}
+  {\newcommand{\nb}[2]{
+    \fcolorbox{gray}{yellow}{\bfseries\sffamily\scriptsize#1}
+    {\sf\small$\blacktriangleright$\textit{#2}$\blacktriangleleft$}
+   }
+   \newcommand{\version}{\emph{\scriptsize$-$working$-$}}
+  }
+  {\newcommand{\nb}[2]{}
+   \newcommand{\version}{}
+  }
+
+
+\newcommand\patrizio[1]{\nb{Patrizio}{#1}}
+\newcommand\eric[1]{\nb{Eric}{#1}}
+\newcommand\rogardt[1]{\nb{Rogardt}{#1}}
+\newcommand\magnus[1]{\nb{Magnus}{#1}}
+\newcommand\pier[1]{\nb{Pier}{#1}}
+
+% \newcommand\ulf[1]{}
+% \newcommand\patrizio[1]{}
+% \newcommand\rogardt[1]{}
+% \newcommand\eric[1]{}
+
+
+
+\newcommand\theme[1]{\emph{\textbf{#1}}}
+\newcommand{\nextitem}{\par\hspace*{\labelsep}\textbullet\hspace*{\labelsep}}
+% Nice tables
+\usepackage{booktabs}
+\usepackage{array}
+\newcolumntype{v}[1]{>{\raggedright \hspace {0pt}}p{#1}}
+\usepackage{colortbl}
+
+
+
+\journal{Embedded Software Design (Journal of System Architecture)}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{Definition of an Automotive Architecture Framework for Volvo Cars\tnoteref{label0}}
+\tnotetext[label0]{This work was partially supported by the NGEA and NGEA step 2 Vinnova projects and by the Wallenberg Autonomous Systems Program (WASP)}
+
+
+
+
+\author[label1]{Patrizio Pelliccione\corref{cor1}}
+\ead{patrizio.pelliccione@gu.se}
+\ead[url]{www.patriziopelliccione.com}
+\author[label1]{Eric Knauss}
+\ead{eric.knauss@gu.se}
+\author[label1]{Rogardt Heldal}
+\ead{heldal@chalmers.se}
+\author[label1]{Magnus \AA gren}
+\ead{magnus.agren@chalmers.se}
+\author[label1]{Piergiuseppe Mallozzi}
+\ead{mallozzi@chalmers.se}
+\author[label2]{Anders Alminger}
+\ead{anders.alminger@volvocars.com}
+\author[label2]{Daniel Borgentun}
+\ead{daniel.borgentun@volvocars.com}
+
+\address[label1]{Chalmers University of Technology $|$ University of Gothenburg, Department of Computer Science and Engineering, Sweden}
+\address[label2]{Volvo Cars, Sweden}
+
+\cortext[cor1]{Patrizio is the corresponding author.}
+
+
+
+\begin{abstract}
+\patrizio{taken from WASA paper. It needs to be actualized}
+During the past
+twenty years vehicles have become more and more robot like, interpreting and
+exploiting input from various sensors to make decisions and finally commit
+actions that were previously made by humans. 
+Such features will require continuous evolution and updates to ensure safety, security, and suitability for  supporting drivers in an ever changing world.
+Modern vehicles can have over 100 Electronic Control Units (ECUs), which are
+small computers, together executing gigabytes of software. ECUs are
+connected to each other through several networks within the car, and in some cases also to the outside world. 
+%\chg{This evolution of the automotive industry %, illustrated by the exponential
+%increase of embedded software, 
+%creates new challenges regarding software
+%architecture development and maintenance.}{
+This need for addressing ever increasing complexity as well as for offering flexibility, support of continuous evolution, and very late changes in user visible features introduces new challenges for developing and maintaining a suitable electronic architecture. %} 
+In this paper we report the current investigation of the Volvo Cars to create an 
+architecture framework tailored to the needs of future vehicles.   
+\end{abstract}
+
+\begin{keyword}
+%% keywords here, in the form: keyword \sep keyword
+example \sep \LaTeX \sep template
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+\end{keyword}
+
+\end{frontmatter}
+
+%%
+%% Start line numbering here if you want
+%%
+% \linenumbers
+
+%% main text
+\section{Introduction}
+\label{sec:intro}
+
+\patrizio{Taken from the WASA paper.}
+%Today's automotive industry is much more than the traditional view of assembled
+%mechanical parts controlled by a human for transportation. During the past
+%twenty years vehicles have become more and more robot like, interpreting and
+%exploiting input from various sensors to make decisions and finally commit
+%actions that were previously made by humans.  
+%Modern vehicles can have over 100 Electronic Control Units (ECUs), which are
+%small computers, together executing gigabytes of software. ECUs are
+%connected to each other through several networks within the car and, in some cases also to the outside world. 
+
+Historically, software was introduced in cars to optimise the
+control of the engines. Since then the growth of software within the car has
+been exponential for each year and today not a single function is performed
+without the involvement of software. 
+According to industry experts, 80\% to 90\% of the innovation within the automotive industry is based on electronics. %\footnote{\url{http://www.etcwroclaw.eu/files/presentations/peter_van_staa.pdf}}. 
+%, 
+%as mentioned for instance by Peter van Staa - Vice-President Engineering of Robert Bosch GmbH at the European Technology Congress in June 2014\footnote{\url{http://www.etcwroclaw.eu/files/presentations/peter_van_staa.pdf}}. 
+A big part of electronics is software.
+
+%Considerable parts of the
+%software is safety-critical, with human life at stake if the system is not performing as
+%expected. Thus, the focus is gradually switching over from human control of the
+%mechanics to software and electronics supporting decision-making and even taking
+%over the control. 
+%The development is similar to the more popularized history of
+%air plane development and the invention of auto pilots and ``fly by wire", with
+%some striking differences. The higher complexity of the environment where the
+%vehicle moves has slowed down the development of automated vehicle control. The
+%most advanced cars have more/comparable software than fighter
+%airplanes\footnote{As said by Alfred Katzenbach, the director of information technology management at Daimler: \url{http://spectrum.ieee.org/transportation/systems/this-car-runs-on-code}}
+%Vehicles are also produced in higher volumes than airplanes, which put harder requirements on the technology cost.
+
+This evolution of the automotive industry %, illustrated by the exponential
+%increase of embedded software, 
+creates new challenges regarding software
+architecture development and maintenance. The increasing amount of people
+involved in the software development projects imposes additional challenges to the
+architecture teams, as the development and design literally cannot be
+controlled, or even understood, in detail by a single group any more. The
+development is inevitably parallelized; this obviously also holds for the large
+amounts of externally developed software, which is integrated as black box
+functionality. The important integration work is done in an iterative manner by
+developers and test teams, focusing on vital systems first and then gradually
+establishing various functionalities. Architects might be not involved in integration, 
+however, the architecture for sure influences the integration.
+
+In this paper we report a current initiative of the Volvo Cars to renovate the
+electrical architecture. 
+The work is part of a Vinnova FFI Swedish project, called Next Generation Electrical Architecture
+ (NGEA)\footnote{\small{\url{http://www.vinnova.se/sv/Resultat/Projekt/Effekta/2009-02186/Next-generation-electrical-architecture/}}},
+which mainly focuses on the following areas: (i) continuous integration and deployment; (ii)
+cars as constituents of a system of systems; (iii) reducing the number of ECUs through an architecture that allows the identification of key functions to be implemented in domain nodes; and (iv) strategies to improve the automotive ecosystem so to enable rapid communication with suppliers and flexible development.
+
+%\begin{itemize}
+%\item Continuous Integration and Deployment ;
+%\item Cars as constituents of a system of systems;
+%\item Reducing the number of ECUs through an architecture that allows the identification of key functions to be implemented in domain nodes; % so to make simpler more standardized and interchangeable other nodes; 
+%\item Strategies to improve the automotive ecosystem so to enable rapid communication with suppliers and flexible development
+%%for enabling the key functions developed locally and thus ensure rapid communication with the partners and flexible development 
+%\end{itemize}
+
+Within the project we are investigating the possibility to create a Volvo Cars Architecture Framework~\cite{42010}. %tailored to the needs of Volvo Cars. In this paper we refer to the conceptual foundations of
+We believe that an architecture framework, together with its multiple viewpoints, is the instrument to manage the increasing complexity of modern vehicles.
+It aims at ensuring that descriptions of vehicle architectures can be compared and related across different vehicle programs,
+development units and organizations, thus increasing flexibility and innovation, while reducing development time and risks.
+
+We build on existing architecture frameworks in the automotive domain, i.e.~\cite{Broy,Yania} and we base our work on the conceptual foundations provided by the ISO/IEC/IEEE~42010:2011 standard~\cite{42010}.   
+%, \textit{Systems and software engineering ---
+%  Architecture description}~\cite{42010} to investigate the essential
+%elements of architecture description and support the architect's
+%architecture description-related activities.
+%ISO/IEC/IEEE~42010 is the joint ISO and IEEE revision of IEEE~Std
+%1471, first published in 2000~\cite{1471}. 
+%The standard is method-neutral: it
+%is intended for use by architects employing various architecting methods. 
+The standard 
+ addresses architecture description, i.e. the practices of recording software, system
+and enterprise architectures so that architectures can be understood,
+documented, analysed and realized. 
+%Architecture descriptions are created by
+%architects and used by architects and other stakeholders throughout
+%all stages of a system's life cycle, from development through
+%operation and maintenance. 
+%In this paper we report about the identification of the main viewpoints we identified so far and in which we are focusing our effort.
+
+The paper is organized as follows. Section~\ref{sec:AAF} gives an 
+ overview of the state of the art on architecture framework in the automotive domain. Section~\ref{sec:lessonsLearned} analyses the state of practice in the context of Volvo Cars and reports some of the lessons learned. Section~\ref{sec:VCGAF} describes the first steps towards the definition of an architecture framework for Volvo Cars.
+Finally the paper concludes in Section~\ref{sec:conclusion} with final remarks and a discussion about future work. 
+
+\input{AAF.tex}
+\input{LessonsLearned.tex}
+\input{VCGAAF.tex}
+\input{discussion.tex}
+
+
+%% References
+%%
+%% Following citation commands can be used in the body text:
+%% Usage of \cite is as follows:
+%%   \cite{key}         ==>>  [#]
+%%   \cite[chap. 2]{key} ==>> [#, chap. 2]
+%%
+
+%% References with bibTeX database:
+
+\bibliographystyle{elsarticle-num}
+% \bibliographystyle{elsarticle-harv}
+% \bibliographystyle{elsarticle-num-names}
+% \bibliographystyle{model1a-num-names}
+% \bibliographystyle{model1b-num-names}
+% \bibliographystyle{model1c-num-names}
+% \bibliographystyle{model1-num-names}
+% \bibliographystyle{model2-names}
+% \bibliographystyle{model3a-num-names}
+% \bibliographystyle{model3-num-names}
+% \bibliographystyle{model4-names}
+% \bibliographystyle{model5-names}
+% \bibliographystyle{model6-num-names}
+
+\bibliography{biblio}
+
+
+\end{document}
+
+%%
+%% End of file `elsarticle-template-num.tex'.
