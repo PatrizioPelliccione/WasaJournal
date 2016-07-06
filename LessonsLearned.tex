@@ -1,15 +1,41 @@
-\section{Volvo Cars and the need of having an architecture framework}\label{sec:lessonsLearned}
+\section{Software development challenges within Volvo Cars}\label{sec:lessonsLearned}
 
 In a previous paper we made a study within Volvo Cars to identify, from the architecture point of view, the challenges that OEMs are facing in the last years~\cite{WICSA2015}. 
 To better understand some of the
 organizational issues with having different parts of the organization responsible for different parts or layers in the architecture, we decided to conduct nine in depth interviews with
 focus on the roles of architects and how organizational factors affect them.
-These interviews have been carried out at Volvo Car Group (VCG) and Volvo Group Truck Technology
+These interviews have been carried out at Volvo Cars  and Volvo Group Truck Technology
 (VGTT), extending the knowledge about these specific companies, hence providing a detailed understanding of two independent but nevertheless similar automotive companies. %, information which is compared with the third, non-automotive, company. 
 %The goal of this work was to build on previous results published in the
 %literature {\bf Fix proper citations. [7], [6]}, to investigate the dual and
 %complementary roles of software architects within the automotive domain.
+In~\cite{WICSA2015} we 
+%We 
+followed a lightweight grounded theory-type approach since we started from a general research question and we involved few people in order to collect more information. Based on the analysis of the first data and on the first emerging ideas from the data, we then refined the research questions, carefully planned the study and accordingly selected the people to be interviewed. 
+In addition to initial workshops in which we collected initial ideas, we used interviews as data generation methods. Specifically, we used semi-structured interviews: we defined a list of themes to be covered and questions we aimed at asking. However, in some interviews we changed the order of questions according to received answers and to the flow of the ``conversation". 
+Each interview was around one hour long, we collected field notes and recorded audio. Each interview begins with introduction, clarification about the purpose of the study, asking permission to record and giving assurances of confidentiality of the information.  
 
+Moreover, in these years of strong collaboration with Volvo Cars and thanks also to the industrial co-authors (the last two authors of this paper) we had the possibility to further improve the knowledge of to collect a set of insights, as described in the following subsections.
+
+%In order to mitigate the threat to validity in this study we followed the guidelines for conducting and reporting case study research in software engineering~\cite{Runeson2009,Wohlin2000}.
+%
+%For what concerns {\em construct validity}, we performed semi-structured interviews by following a questionnaire that has been defined by exploiting knowledge collected through two workshops, as described above. The workshops enabled also to identify and set a proper language to be used during the interviews.
+%In addition to that, interviews have been performed by an industrial PhD working at VCG and then expert of the domain. This permits us to be confident that interviewed architects correctly interpreted the questions, and, in turn, we correctly interpreted their answers. 
+%
+%For what concerns {\em external validity}, having two authors from VCG could be seen as a threat to validity due to the
+%risk of the study becoming heavily focused and influenced from the situation at
+%one company. 
+%%However, having two authors from academia and being aware of
+%%the risk of such a bias, permitted to actively counter it. Moreover, the first author is hired by VCG, but, for the main purpose of making his PhD studies. This puts him in the position of being a perfect observer, without having strong influences and bias from the company.
+%We performed the study in two different companies in order to reduce this bias. Having interviewees from different levels in the organization and verify their
+%claims against each other also work to counter threats to validity. %It is also interesting to mention here that in our study we found confirmations of results of previous studies as discussed in Section~\ref{sec:discussion}. This gives us some flavour of generalizability of the findings of the study.
+%%towards only one company
+%%is also why a second company was brought into the study making it possible to
+%%validate findings between the companies. 
+%
+%Finally, for what concerns {\em reliability}, as mentioned before we performed the interviews by following a well defined questionnaire. This allowed us to collect comparable answers through the different interviews. However, this enables also another researcher to conduct the same study. Moreover, the finding we obtained clearly emerged from the performed interviews: in other words there was no room for interpretation, finding we discussed in the paper are evident in the collected data.
+
+\subsection{Gap between prescriptive and descriptive architecture}\label{sec:gap}
 
 We identified that there is not always an obvious connection between  
 architecture (or top-level design) and  design; it seems also that this connection vanishes during time, once development requires changes on the system design. % and once time passes and , especially during later development. 
@@ -20,61 +46,6 @@ Moreover, maintenance of the
 architecture, while the design evolves, is demanding and not
 always performed in all parts. 
 This shows a discrepancy between the planned architecture defined according to a V-Model process, and the architecture that is actually emerging from the system development. 
-
-On the organizational side, we found a need to improve the communication between
-different groups, by finding a good balance between verbal and document based communication. 
-%.%for instance by making teams more cross-functional. 
-Espousing the terminology
-in~\cite{IEEESoftwarePatrizio}, system architects should be also
-``Extrovert'' architects (conceptually related to the external focus
-of~\cite{Kruchten2008}), i.e. devoted to communicating the architectural
-decisions and knowledge to the other stakeholders. 
-
-Often, the %se working architectures are developed in parallel by 
-different groups 
-%within the organizations, often having 
-have very different views on the meaning
-of architecture and how it shall be done. One must also note that, in general these groups are formed by domain experts, responsible for developing the mechatronic functions, not the optimized communication matrix or system architecture. In general we can identify the following types of conflict:
-(i) %what is 
-selecting the optimal solution for the %system (or function) 
-architecture; %?
-(ii) %which 
-selecting the platform %should 
-to be defined to facilitate development in the long run; %?
-(iii) %what should be 
-identifying the priority of the construction groups in order to deliver in time. %?
-%\jonn{The last one is unclear} \patrizio{To reduce the lenght of the introduction this part from ``One must also note that..." might be moved to another section.}
-
-%There is also not always an obvious connection between the high-level
-%architecture and the working architectures, especially during later development. 
-%The working architectures are
-%directly used by the construction groups. Since these architectures are forced to be consistent with the implemented system, they will inevitably diverge from the original design when the project evolves.
-%%They will inevitably diverge from the original design when the project evolves, as it is forced to be consistent with the implemented system. 
-%Contrariwise, the high-level architecture 
-%%only exists as 
-%is only communicated as large documents
-%%, or models, 
-%that are supposed to be read by stakeholders. Maintenance of the high-level
-%architecture, while the working architectures evolve, is demanding and not
-%always performed in all parts; consequently, it is difficult to determine the
-%quality of the high-level architecture description at any time.
-
-%In this sense we can say that the high-level
-%architecture has a descriptive nature, i.e., it aims at describing network design decisions and the main structures in the system architecture. The working architecture, on the other hand, is prescriptive, i.e., it defines interfaces, sets of rules, and recommendations, to follow during the implementation of the specific functionalities. 
-
-It emerges the need to explore both organizational and technical
-possibilities for tighter cooperation between architecture and design, and to
-measure effects such improvements would have. 
-%On the technical side, one partial solution might be % idea is
-%to define a framework able to automatically generate high-level views from the
-%low-level architecture. The challenge here is to support multiple views, each
-%devoted to showing only what is relevant for respective stakeholders. Moreover,
-%both high-level and low-level architects need ways to perform early validation
-%of their solution and to sketch and try different visions of how the future
-%systems should look like, to understand the effect of design decisions affect
-%the architecture. 
-%However, this solution cannot solve the architecting problem since this solution only focus to create a ``different view" for something that already exist. Other s
-
 
 We identified that the architecture has a temporal aspect, that means: at any given point in time the system
 has only one architecture, however, the architecture will change over time.
@@ -94,9 +65,112 @@ When looking at the causes of architecture degradation, we can summarize the var
 \item Some of the architectural choices of the as-intended architecture were made under uncertainty and during development these choices were judged as suboptimal.
 \end{enumerate}
 
-The first item might be solved by improving communication as mentioned before or by finding ways to guarantee the preservation of the  important directives of the as-intended architecture that should not be violated for any reason.
 
-The second and third items call for a ``{\em just-in-time architecture}" or agile architecting~\cite{shahrokni2016organic}  as well as to enable stakeholders different from the architects, such as developers, to improve the architecture, such as fixing wrong assumptions or making decision deliberately postponed.
+\subsection{Organization and process challenges}
+The first item of the causes of architecture degradation discussed in the section above (Section~\ref{sec:gap}) might be solved by improving communication as mentioned before or by finding ways to guarantee the preservation of the  important directives of the as-intended architecture that should not be violated for any reason.
+
+On the organizational side, we found a need to improve the communication between
+different groups, for instance by making teams more cross-functional. Today
+there are several levels between architects and designers/developers and at some of
+these levels the connection is not very tight. 
+
+On one side this seems to be unavoidable since the company is 
+big and there is the need of structuring the organization in sub-organizations (departments, groups, or teams). 
+However, the risk is that sub-organizations will grow up independently and decoupled from other sub-organizations and this might 
+stimulate a silos thinking.  
+For instance, this might lead designers/developers to think
+that the architects are sitting in their cloud above, without having
+any connection to the reality. Architects might also feel
+a frustration because they are not aware of everything that is happening; as a
+consequence, a big part of their work is to just keep up with what is happening
+in the construction groups. Espousing the terminology
+in~\cite{IEEESoftwarePatrizio,whatindustrywants}, architects should be first of all
+``Extrovert'' architects (conceptually related to the external focus
+of~\cite{Kruchten2008}), i.e. devoted to communicating the architectural
+decisions and knowledge to the other stakeholders. 
+
+The different organizations have different competencies, attitude,
+characteristics. However, new problems emerge. In fact, we can confirm that we
+found many architecture antipatterns. We found the {\em Goldplating}
+antipattern~\cite{Kruchten2008} since architects seem to be not
+really engaged with developers. They are doing a good technical job, however,
+their output is not really aligned with the needs of the developers and in the
+end they are often ignored. Another antipattern that we found is the {\em Ivory
+tower}~\cite{Kruchten2008}: the architecture team looks isolated
+sitting on a separate floor from the development groups and do not engage with the
+developers and the other stakeholders on a daily basis. This creates tensions in
+the organization. 
+
+It emerges the need to explore both organizational and technical
+possibilities for tighter cooperation between architecture levels, and to
+measure effects such improvements would have. On the technical side, one partial solution might be % idea is
+to define a framework able to automatically generate high-level views from the
+design. The challenge here is to support multiple views, each
+devoted to showing only what is relevant for respective stakeholders. Moreover,
+both architects and designers/developers need ways to perform early validation
+of their solution and to sketch and try different visions of how the future
+systems should look like, to understand the effect of design decisions affect
+the architecture. 
+However, this solution cannot solve the architecting problem since this solution only focus to create a ``different view" for something that already exist. Other solutions are needed to solve the support just-in-time %agile 
+architecting as mentioned above, as well as to enable stakeholders different from the architects, such as developers, to improve the architecture when actually needed.
+
+
+%
+%
+%On the organizational side, we found a need to improve the communication between
+%different groups, by finding a good balance between verbal and document based communication. 
+%%.%for instance by making teams more cross-functional. 
+%Espousing the terminology
+%in~\cite{IEEESoftwarePatrizio}, system architects should be also
+%``Extrovert'' architects (conceptually related to the external focus
+%of~\cite{Kruchten2008}), i.e. devoted to communicating the architectural
+%decisions and knowledge to the other stakeholders. 
+%
+%Often, the %se working architectures are developed in parallel by 
+%different groups 
+%%within the organizations, often having 
+%have very different views on the meaning
+%of architecture and how it shall be done. One must also note that, in general these groups are formed by domain experts, responsible for developing the mechatronic functions, not the optimized communication matrix or system architecture. In general we can identify the following types of conflict:
+%(i) %what is 
+%selecting the optimal solution for the %system (or function) 
+%architecture; %?
+%(ii) %which 
+%selecting the platform %should 
+%to be defined to facilitate development in the long run; %?
+%(iii) %what should be 
+%identifying the priority of the construction groups in order to deliver in time. %?
+%%\jonn{The last one is unclear} \patrizio{To reduce the lenght of the introduction this part from ``One must also note that..." might be moved to another section.}
+%
+%%There is also not always an obvious connection between the high-level
+%%architecture and the working architectures, especially during later development. 
+%%The working architectures are
+%%directly used by the construction groups. Since these architectures are forced to be consistent with the implemented system, they will inevitably diverge from the original design when the project evolves.
+%%%They will inevitably diverge from the original design when the project evolves, as it is forced to be consistent with the implemented system. 
+%%Contrariwise, the high-level architecture 
+%%%only exists as 
+%%is only communicated as large documents
+%%%, or models, 
+%%that are supposed to be read by stakeholders. Maintenance of the high-level
+%%architecture, while the working architectures evolve, is demanding and not
+%%always performed in all parts; consequently, it is difficult to determine the
+%%quality of the high-level architecture description at any time.
+%
+%%In this sense we can say that the high-level
+%%architecture has a descriptive nature, i.e., it aims at describing network design decisions and the main structures in the system architecture. The working architecture, on the other hand, is prescriptive, i.e., it defines interfaces, sets of rules, and recommendations, to follow during the implementation of the specific functionalities. 
+%
+%It emerges the need to explore both organizational and technical
+%possibilities for tighter cooperation between architecture and design, and to
+%measure effects such improvements would have. 
+%%On the technical side, one partial solution might be % idea is
+%%to define a framework able to automatically generate high-level views from the
+%%low-level architecture. The challenge here is to support multiple views, each
+%%devoted to showing only what is relevant for respective stakeholders. Moreover,
+%%both high-level and low-level architects need ways to perform early validation
+%%of their solution and to sketch and try different visions of how the future
+%%systems should look like, to understand the effect of design decisions affect
+%%the architecture. 
+%%However, this solution cannot solve the architecting problem since this solution only focus to create a ``different view" for something that already exist. Other s
+
 
 
 
@@ -228,9 +302,45 @@ The second and third items call for a ``{\em just-in-time architecture}" or agil
 %Solutions are needed to support agile architecting~\cite{shahrokni2016organic} %\footnote{\url{http://philippe.kruchten.com/2013/12/11/agile-architecture/}}  
 %as well as to enable stakeholders different from the architects, such as developers, to improve the architecture, such as fixing wrong assumptions or making decision deliberately postponed.
 
-%\subsubsection{Subcontractors and Architecture}\label{sec:subcontractors}
+
+
+\subsection{Towards ``just-in-time architecture"}
+
+The second and third items of the causes of architecture degradation discussed in Section~\ref{sec:gap} 
+call for a ``{\em just-in-time architecture}" or agile architecting~\cite{shahrokni2016organic}  as well as to enable stakeholders different from the architects, such as developers, to improve the architecture, such as fixing wrong assumptions or making decision deliberately postponed.
+
+%
+%Our analysis till now shows a discrepancy between the planned architecture defined according to a V-Model process,
+%and the architecture that is actually emerging from the system development. According to what discussed at the
+%above, this is a clear example of architecture degradation that can take the form of architecture
+%erosion and/or architecture drift. From the study it stems out in fact that the team responsible for the architecture tends
+%to get isolated from the rest of the development organization, with few communications. This creates tensions within
+%the organizations, as well as suboptimal design of the communication matrix and limited usage of the high-level
+%architecture in the development teams. This clearly shows that in order to adapt to the current pace of software
+%development and rapidly growing software systems new ways of working are required, both on technical and on an
+%organizational level.
+%What emerges here has been observed also in other domains. Specifically, this recalls the tension between waterfall
+%and agile approaches. On one side waterfall approaches consider architecting as a phase of development that is
+%somehow instructing the other phases. On the other side, agile development processes consider that ``The best architectures, requirements, and designs emerge from self-organizing teams.'', as stated in the \#11 in the agile manifesto\footnote{Agile Alliance, Manifesto for Agile Software Development, June 2001 \url{http://agilemanifesto.org/}}.
+One hypothesis made from some practitioners is that when developing large and complex systems ``a clear and well defined architecture facilitates and enables
+agility". This hypothesis implies that some upfront specification is needed when building complex products like cars.
+However this hypothesis is not completely true when the product to be realized is not clearly defined and companies
+want to go fast to the market. In these situations, modifiability, support for evolution, etc. are not really main aspects
+to be considered. The hypothesis seems to be true when the product is well defined. Another aspect to be considered
+is that agile calls for refactoring, however refactoring often is not performed since the priority is given to what should
+be realized.
+Further investigation is needed, however the conclusion we can draw at this point is that there is the need of a
+``just-in-time architecture" that enables even stakeholders that are different from the architects, such as developers, to
+improve the architecture, such as fixing wrong assumptions or making decisions deliberately postponed by the
+architects.
+
+
+
+
+\subsection{Towards a Software Ecosystem Perspective}\label{sec:subcontractors}
 
 Another interesting finding is that the architecture is not clearly considering the highly complex supplier-network that characterizes automotive engineering. 
+
 %a high-level architect did not feel that
 %there was a difference between using in-house developers and subcontractors.
 %This might be due to the fact that the architects are more distant from the
@@ -247,12 +357,47 @@ Another interesting finding is that the architecture is not clearly considering 
 %Automotive engineering is characterised by a highly complex supplier-network.
 %As a first step, we have investigated the impact of this complexity from the perspective of the requirements viewpoint based on a qualitative case study with an AUTOSAR Tier-2 supplier, a Tier-1 supplier and an OEM \cite{Soltani2015,Soltani2015a}\footnote{A video presentation of this work can be found at \href{https://oerich.wordpress.com/2015/08/14/how-does-the-autosar-ecosystem-impact-requirement-engineering/}{https://oerich.wordpress.com/2015/08/14/how-does-the-autosar-ecosystem-impact-requirement-engineering/}}.
 %Through seven semi-structured interviews, we found that a clear, 
-In a previous study~\cite{Soltani2015} %,Soltani2015a} 
+In a previous study~\cite{Soltani2015,Soltani2015a} 
 we found that a holistic strategy for aligning work across the value-chain is currently missing. 
 Specifically, mixing commodity and differentiating components lead to sub-optimal situations, resulting in duplicated work.  
-We argue that automotive architecture needs to assume a holistic perspective with respect to the whole value-chain and optimize the architecture for facilitating beneficial subcontractor interaction. This calls for a proper management of the automotive ecosystem%~\cite{knauss2014towards}. %
-, which is characterized by relying heavily on complex supplier networks, 
-and strong dependence on hardware and software development~\cite{knauss2014towards}.
+We argue that automotive architecture needs to assume a holistic perspective with respect to the whole value-chain and optimize the architecture for facilitating beneficial subcontractor interaction. 
+\begin{itemize}
+\item \textit{Commodity Components} require clearly defined technical and organizational interfaces. 
+The goal is to develop them as efficiently as possible, thus reducing coordination overhead. 
+Ideally, of-the-shelf commodity components can be integrated with minimal adjustment. 
+\item \textit{Differentiating Components} should be developed as independent from the commodity components as possible, probably in-house. 
+\item \textit{Innovative Components} naturally require coordination and iterative work between a number of partners. 
+To effectively develop innovative behaviour, could communication channels need to be established. 
+\end{itemize}
+
+%This calls for a proper management of the automotive ecosystem%~\cite{knauss2014towards}. %
+%, which is characterized by relying heavily on complex supplier networks, 
+%and strong dependence on hardware and software development~\cite{knauss2014towards}.
+
+In traditional software engineering, a software product is often the result of an effort of a single independent software vendor, investing into creating a monolithic product \cite{jansen2013defining, wnuk2014evaluating}.
+Modern software engineering strongly relies on components and infrastructure from third-party vendors or open source suppliers \cite{jansen2013defining, wnuk2014evaluating}.
+The emergence of Software Ecosystems (SECOs) is a recent development within the software industry \cite{hanssen2012longitudinal, wnuk2014evaluating}.
+It implies a shift from closed-organizations to open structures where external actors become involved in the development to create competitive value \cite{jansen2013defining, hanssen2012longitudinal}.
+
+Based on the ecosystem classification model \cite{jansen2013defining}, we  understand the automotive value chain as an ecosystem of cross-organizational collaborations among automotive suppliers \cite {knauss2014towards}. 
+In this ecosystem, the Original Equipment Manufacturer (OEM) is in the role of the ecosystem coordinator.
+The ecosystem is privately owned, and participation to it is based on a list of screened actors. 
+
+The automotive ecosystem is characterized by relying heavily on complex supplier networks, and strong dependence on hardware and software development \cite {knauss2014towards}.
+Due to the increasing number of networked components, a level of complexity has been reached which is difficult to handle using traditional development processes \cite{fennel2006achievements}. 
+The automotive industry addresses this problem through a paradigm shift from a hardware-, component-driven to a requirement- and function-driven development process, and a stringent standardization of infrastructure elements. %\eric{Patrizio, does this clash with your earlier reasoning? Please feel free to adjust.}
+One central standardization initiative is the AUTomotive Open System ARchitecture (AUTOSAR) \cite{fennel2006achievements}. 
+The principal aim of the AUTOSAR standard is to master the growing complexity of automotive electronic architectures \cite{furst2009autosar}.
+We refer to the \emph{AUTOSAR ecosystem} as a subset of the \emph{automotive ecosystem}, where different actors participate in value creation (i.e. development of software components) by exchanging products and services based on a technical platform defined by the AUTOSAR standard.
+
+Several challenging areas, including requirements engineering, are reported in the automotive domain \cite{broy2006challenges}.
+OEMs and suppliers need to communicate requirements based on the requirements documents, which are imprecise and incomplete nowadays \cite{broy2006challenges}.
+In this regard, \cite{fricker2010requirements} reports that the requirements value chain is little understood beyond software projects. 
+It is unclear which requirements communication, collaboration, and decision-making principles lead to efficient, value-creating and sustainable alignment of interests between interdependent stakeholders across software projects and products \cite{fricker2010requirements}. 
+This however is important, because the way the interests and expectations of stakeholders of SECOs are communicated is critical for whether they are heard, hence whether the stakeholders are successful in influencing future solutions to meet their needs \cite{fricker2009specification}.
+We note that in the automotive domain, communication, collaboration, and decision-making are cross-organizational challenges related to the requirements viewpoint and requirements engineering.
+
+
 %\begin{itemize}
 %\item \textit{Commodity Components} require clearly defined technical and organizational interfaces. 
 %The goal is to develop them as efficiently as possible, thus reducing coordination overhead. 
@@ -261,4 +406,3 @@ and strong dependence on hardware and software development~\cite{knauss2014towar
 %\item \textit{Innovative Components} naturally require coordination and iterative work between a number of partners. 
 %To effectively develop innovative behaviour, could communication channels need to be established. 
 %\end{itemize}
-
