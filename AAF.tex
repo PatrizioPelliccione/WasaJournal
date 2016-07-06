@@ -12,58 +12,58 @@ or community of stakeholders~\cite{42010}.  More specifically, it is determined 
 cover) those concerns, and (iv) a set of model correspondence rules to impose constraints between
 types of models and then demonstrate that constraints
 are satisfied by the architecture. 
-%Then, an architecture framework establishes a common practice for creating, interpreting, analyzing and using architecture descriptions within a particular domain of application or stakeholder community, developing
-%architecture modelling tools and architecting methods, and establishing processes to facilitate communication, commitments and interoperation across multiple projects and/or organizations~\cite{42010}.
+Then, an architecture framework establishes a common practice for creating, interpreting, analyzing and using architecture descriptions within a particular domain of application or stakeholder community, developing
+architecture modelling tools and architecting methods, and establishing processes to facilitate communication, commitments and interoperation across multiple projects and/or organizations~\cite{42010}.
 
 
-%Uses of architecture frameworks include, but are not limited to~\cite{42010}: 
-%
-%\begin{itemize}
-%\item creating architecture descriptions; 
-%\item developing
-%architecture modelling tools and architecting methods; 
-%\item establishing processes to facilitate communication, commitments and interoperation across multiple projects and/or organizations.
-%\end{itemize}
+Uses of architecture frameworks include, but are not limited to~\cite{42010}: 
+
+\begin{itemize}
+\item creating architecture descriptions; 
+\item developing
+architecture modelling tools and architecting methods; 
+\item establishing processes to facilitate communication, commitments and interoperation across multiple projects and/or organizations.
+\end{itemize}
 
 An architecture framework is a prefabricated knowledge structure, identified by {\em architecture viewpoints}, that
-architects use to organize an architecture description into {\em architecture views}.  The terms architecture view and architecture viewpoint are central to the standard~\cite{42010}. 
-%:
-%``{\em A viewpoint is a way of looking at systems; a view is the result of applying a viewpoint to a particular
-%system-of-interest}". 
+architects use to organize an architecture description into {\em architecture views}.  The terms architecture view and architecture viewpoint are central to the standard~\cite{42010}:
+``{\em A viewpoint is a way of looking at systems; a view is the result of applying a viewpoint to a particular
+system-of-interest}". 
 An {\em architecture viewpoint} encapsulates notations, conventions, methods and techniques to
 be used according to specific 
-%model kinds framing particular
+model kinds framing particular
 concerns and for a particular audience of system stakeholders. 
-%The
-%concerns determine what the model kinds must be able to express: e.g.,
-%functionality, security, reliability, cost, deployment, etc.  %A model
-%%kind determines the notations, conventions, methods and techniques to
-%%be used. 
-%%Viewpoints, defining the contents of each architecture view,
-%%are built up from one or more model kinds and correspondence rules
-%%linking them together to maintain consistency.
-%%Viewpoints, like patterns and styles, are a form of reusable
-%%architectural knowledge for solving certain kinds of architecture
-%%description problems derived from best practices.  
-%Viewpoints
-%originated in the 1970s (in Ross' Structured Analysis) and refined in~\cite{Finkelstein+92}. Architecting methods often define one or
-%more viewpoints, e.g.~\cite{4+1,RozWooBook,ClementsBachmannEtAl03, Eeles-Cripps:2010}.
+The
+concerns determine what the model kinds must be able to express: e.g.,
+functionality, security, reliability, cost, deployment, etc.  
+A model
+kind determines the notations, conventions, methods and techniques to
+be used. 
+Viewpoints, defining the contents of each architecture view,
+are built up from one or more model kinds and correspondence rules
+linking them together to maintain consistency.
+Viewpoints, like patterns and styles, are a form of reusable
+architectural knowledge for solving certain kinds of architecture
+description problems derived from best practices.  
+Viewpoints
+originated in the 1970s (in Ross' Structured Analysis) and refined in~\cite{Finkelstein+92}. Architecting methods often define one or
+more viewpoints, e.g.~\cite{4+1,RozWooBook,ClementsBachmannEtAl03, Eeles-Cripps:2010}.
 
 
 Many existing practices express architectures through collections of
 models, and models are further organized into cohesive groups, called {\em views}. A view can be defined as a ``{\em work product expressing the architecture of a system from the perspective of specific system concerns}"~\cite{42010}.
-%As noted in the standard, the cohesion of a
-%group of models is determined by specific concerns, which are addressed by that group of models. Viewpoints refer to the conventions
-%for expressing an architecture with respect to a set of concerns.
+As noted in the standard, the cohesion of a
+group of models is determined by specific concerns, which are addressed by that group of models. Viewpoints refer to the conventions
+for expressing an architecture with respect to a set of concerns.
 
 For further discussion of the
 content model and architecture frameworks mechanism,
 see~\cite{Emery-Hilliard:2009}. 
-%Recent
-%frameworks include the ISO Reference Model for Open Distributed
-%Processing, GERAM (Generalized Enterprise Reference Architecture
-%and Methodology)~\cite{ISO15704}, DODAF (US Department of Defense Architecture
-%Framework)~\cite{DODAF}, TOGAF~\cite{TOGAF}, and MODAF~\cite{MODAF}. 
+Recent
+frameworks include the ISO Reference Model for Open Distributed
+Processing, GERAM (Generalized Enterprise Reference Architecture
+and Methodology)~\cite{ISO15704}, DODAF (US Department of Defense Architecture
+Framework)~\cite{DODAF}, TOGAF~\cite{TOGAF}, and MODAF~\cite{MODAF}. 
 For an extensive survey of
 frameworks, see~\cite{AFS}. 
     
@@ -71,9 +71,7 @@ frameworks, see~\cite{AFS}.
 
 %\subsection{Automotive domain}\label{sec:automotiveAFs}
 
-Architecture frameworks have not been standardized in the automotive domain and automotive industry. 
-However, some attempts exist and different types of architecture viewpoints and views have been introduced recently as part
-of automotive architecture frameworks.
+
 
 %Automotive embedded systems are typically categorized into different domains, such as vehicle-centric functional domains
 %(including powertrain control, chassis control, and active/passive safety systems) and
@@ -89,9 +87,50 @@ of automotive architecture frameworks.
 %These considerations motivate the need of considering different viewpoints and views from the perspective of specific system concerns, which are relevant to one or more stakeholders. At the same time it is of key importance to identify and devise suitable connections among the various views and viewpoints.
 %In other words, these considerations testify the need of an automotive architecture framework.
 
-\patrizio{}
+According to the description above and to the standard~\cite{42010}, in this paper we will describe architecture viewpoints according to the following template:
+
+\begin{itemize}
+\item {\em Name}: name of the viewpoint.
+\item {\em Overview}: overview of the viewpoint, by highlighting the motivation and importance for the domain to define this viewpoint.
+\item {\em Concerns}: a listing of the architecture-related concerns framed by this viewpoint. This is
+crucial information for the Architect, because it helps her decide whether this
+viewpoint will be useful to apply to a given system of interest, and to
+communicate with its stakeholders.
+\item {\em Anti-concerns [Optional]}: It can be useful to document the kinds of issues a viewpoint is not
+appropriate for. Articulating anti?concerns may be a good antidote for certain
+overly used notations.
+\item {\em Typical stakeholders}: The typical audience for views prepared using this viewpoint. This item should answer the question: Who
+are the usual stakeholders for this kind of view?
+\item {\em Model languages}: For each type of model used, describe the language or modeling techniques to
+be used. Each model language is a key modeling resource that the viewpoint
+makes available. Model languages provide the vocabularies for constructing the
+view. ISO/IEC 42010 does not specify how a modeling language is documented.
+It could be by reference to an existing modeling language (e.g., EAST-ADL or UML)
+or technique (e.g., M/M/4 queues); by providing a metamodel for the language
+to define the language's core constructs; via a template that users fill in; or by
+some combination of these methods.
+\item {\em Model correspondence rules}: The viewpoint may specify model correspondence rules. Each one may be
+documented here.
+\item {\em Operations on views}: Operations define the methods which may be applied to views and their
+models. Operations can be divided into categories: Creation methods are the
+means by which views are prepared using the viewpoint. These could be in the
+form of process guidance (how to start, what to do next); or work product
+guidance (templates for views of this type); heuristics, styles, patterns, or other
+idioms. Interpretive methods provide the means by which views are to be
+understood by readers and system stakeholders. Analysis methods are used to
+check, reason about, transform, predict, apply and evaluate architectural
+results from this view. Implementation methods capture how to realize or
+construct systems using information from this view.
+\item {\em Examples [Optional]}: Optional. This section provides examples for the reader.
+\item {\em Sources}: What are the sources for this viewpoint, if any? This may include author,
+history, literature references, prior art, etc.
+\end{itemize}
+
 
 \section{State of the art in Automotive Architecture Frameworks}
+Architecture frameworks have not been standardized in the automotive domain and automotive industry. 
+However, some attempts exist and different types of architecture viewpoints and views have been introduced recently as part
+of automotive architecture frameworks. 
 A first attempt towards a standardized architectural foundation and automotive-specific
 architecture framework is the Automotive
 Architecture Framework (AAF) proposed in~\cite{Broy}. 
