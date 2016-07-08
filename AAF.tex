@@ -87,43 +87,147 @@ frameworks, see~\cite{AFS}.
 %These considerations motivate the need of considering different viewpoints and views from the perspective of specific system concerns, which are relevant to one or more stakeholders. At the same time it is of key importance to identify and devise suitable connections among the various views and viewpoints.
 %In other words, these considerations testify the need of an automotive architecture framework.
 
-According to the description above and to the standard~\cite{42010}, in this paper we will describe architecture viewpoints according to the following template:
+In this paper we use the template called \textit{Architecture Viewpoint Template} for specifying architecture viewpoints in
+  accordance with ISO/IEC/IEEE~42010:2011, \textit{Systems and
+    software engineering---Architecture description}\footnote{The template is called \textit{Architecture Viewpoint Template}, which is released under copyright \copyright\
+2012--2014 by \href{http://www.iso-architecture.org/42010/templates/}%
+{Rich Hilliard}. 
+The template is licensed under a
+Creative Commons Attribution 3.0 Unported License. The terms of use
+are here: 
+\url{http://creativecommons.org/licenses/by/3.0/}.}   
+
+
+%\input{42010-template-kit/viewpoint-template.tex}
+
+%According to the description above and to the standard~\cite{42010}, in this paper we will describe architecture viewpoints according to the following template:
+%
+In the following we report the template sections and an excerpt of the guidelines; please refer to the links above for a complete description of the template: 
 
 \begin{itemize}
-\item {\em Name}: name of the viewpoint.
-\item {\em Overview}: overview of the viewpoint, by highlighting the motivation and importance for the domain to define this viewpoint.
-\item {\em Concerns}: a listing of the architecture-related concerns framed by this viewpoint. This is
-crucial information for the Architect, because it helps her decide whether this
-viewpoint will be useful to apply to a given system of interest, and to
-communicate with its stakeholders.
-\item {\em Anti-concerns [Optional]}: It can be useful to document the kinds of issues a viewpoint is not
-appropriate for. Articulating anti?concerns may be a good antidote for certain
-overly used notations.
-\item {\em Typical stakeholders}: The typical audience for views prepared using this viewpoint. This item should answer the question: Who
-are the usual stakeholders for this kind of view?
-\item {\em Model languages}: For each type of model used, describe the language or modeling techniques to
-be used. Each model language is a key modeling resource that the viewpoint
-makes available. Model languages provide the vocabularies for constructing the
-view. ISO/IEC 42010 does not specify how a modeling language is documented.
-It could be by reference to an existing modeling language (e.g., EAST-ADL or UML)
-or technique (e.g., M/M/4 queues); by providing a metamodel for the language
-to define the language's core constructs; via a template that users fill in; or by
-some combination of these methods.
-\item {\em Model correspondence rules}: The viewpoint may specify model correspondence rules. Each one may be
-documented here.
-\item {\em Operations on views}: Operations define the methods which may be applied to views and their
-models. Operations can be divided into categories: Creation methods are the
-means by which views are prepared using the viewpoint. These could be in the
-form of process guidance (how to start, what to do next); or work product
-guidance (templates for views of this type); heuristics, styles, patterns, or other
-idioms. Interpretive methods provide the means by which views are to be
-understood by readers and system stakeholders. Analysis methods are used to
-check, reason about, transform, predict, apply and evaluate architectural
-results from this view. Implementation methods capture how to realize or
-construct systems using information from this view.
-\item {\em Examples [Optional]}: Optional. This section provides examples for the reader.
-\item {\em Sources}: What are the sources for this viewpoint, if any? This may include author,
-history, literature references, prior art, etc.
+\item {\em Viewpoint Name}: name of the viewpoint. If there are any synonyms or other common names by which this viewpoint is
+known or used, record them here.
+\item {\em Overview}: Provide an abstract or brief overview of the viewpoint. 
+Describe the viewpoint's key features.
+\item {\em Concerns and stakeholders}: Architects looking for an architecture viewpoint suitable for their
+purposes often use the identified concerns and typical stakeholders to
+guide them in their search.  Therefore it is important (and required
+by the Standard) to document the concerns and stakeholders for which a
+viewpoint is intended.
+%a listing of the architecture-related concerns framed by this viewpoint. This is
+%crucial information for the Architect, because it helps her decide whether this
+%viewpoint will be useful to apply to a given system of interest, and to
+%communicate with its stakeholders.
+\begin{itemize}
+\item {\bf Concerns}: Describe each concern.
+Concerns name ``areas of interest'' in a system.
+Concerns may be very general (e.g., \textit{Reliability}) or quite
+specific (\textit{e.g., How does the system handle network latency?}).
+Concerns identified in this section are critical information for an
+architect because they help her decide when this viewpoint will be
+useful.
+When used in an architecture description, the viewpoint becomes a
+``contract'' between the architect and stakeholders that these
+concerns will be addressed in the view resulting from this viewpoint.
+It can be helpful to express concerns \emph{in the form of questions}
+that views resulting from that viewpoint will be able to answer. E.g., {\em How does the system manage faults?} or {\em What services does the system provide?}
+\item {\bf Typical stakeholders}: Provide a listing of the typical stakeholders of a system who
+  are in the potential audience for views of this kind.
+Typical stakeholders would include those likely to read such views
+and/or those who need to use the results of this view for another
+task.
+\item {\bf Anti-concerns [Optional]} It may be helpful to architects and stakeholders to
+document the kinds of issues for which this viewpoint is \emph{not
+  appropriate or not particularly useful}.
+Identifying the ``anti-concerns'' of a given notation or approach may
+be a good antidote for certain overly used models and notations.
+\end{itemize}
+%\item {\em Anti-concerns [Optional]}: It can be useful to document the kinds of issues a viewpoint is not
+%appropriate for. Articulating anti?concerns may be a good antidote for certain
+%overly used notations.
+%\item {\em Typical stakeholders}: The typical audience for views prepared using this viewpoint. This item should answer the question: Who
+%are the usual stakeholders for this kind of view?
+%\item {\bf Model Kind+} 
+\item {\em Model Kind name\footnote{In the Standard, each architecture view consists of multiple
+architecture models. Each model is governed by a \textit{model kind}
+which establishes the notations, conventions and rules for models of
+that type.  
+Repeat the next section for each model kind listed here the viewpoint
+being specified.}}:  Identify the model kind
+%For each type of model used, describe the language or modeling techniques to
+%be used. Each model language is a key modeling resource that the viewpoint
+%makes available. Model languages provide the vocabularies for constructing the
+%view. ISO/IEC 42010 does not specify how a modeling language is documented.
+%It could be by reference to an existing modeling language (e.g., EAST-ADL or UML)
+%or technique (e.g., M/M/4 queues); by providing a metamodel for the language
+%to define the language's core constructs; via a template that users fill in; or by
+%some combination of these methods.
+\begin{itemize}
+\item {\em Conventions}: Describe the conventions for models of this kind. Conventions include languages, notations, modeling techniques,
+analytical methods and other operations. These are key modeling
+resources that the model kind makes available to architects and
+determine the vocabularies for constructing models of the kind and
+therefore, how those models are interpreted and used.
+The Standard does not prescribe \emph{how} modeling conventions are to
+be documented.  The conventions could be defined:
+\begin{description}
+\item[I)] by reference to an existing notation or language (such as
+  SADT, UML or an architecture description language such as ArchiMate
+  or SysML) or to an existing technique (such as $M/M/4$ queues);
+\item[II)] by presenting a metamodel defining its core constructs;
+\item[III)] via a template for users to fill in;
+\item[IV)] by some combination of these methods or in some other
+  manner.
+\end{description}
+\item {\em Operations}: Specify operations defined on models of this kind.
+\item {\em Correspondence rules}: Document any correspondence rules associated with the model
+  kind.
+\end{itemize}
+\item {\em Operations on views}: Operations define the methods to be applied to views and their models.
+Types of operations include:
+\begin{description}
+\item[construction methods] are the means by which views are
+  constructed under this viewpoint. These operations could be in the
+  form of process guidance (how to start, what to do next); or work
+  product guidance (templates for views of this type). Construction
+  techniques may also be heuristic: identifying styles, patterns, or
+  other idioms to apply in the synthesis of the view.
+\item[interpretation methods] which guide readers to understanding
+  and interpreting architecture views and their models.
+\item[analysis methods] are used to check, reason about, transform,
+  predict, and evaluate architectural results from this view,
+  including operations which refer to model correspondence rules.
+\item[implementation methods] are the means by which to design and
+  build systems using this view.
+\end{description}
+\item {\em Correspondence rules}: 
+Document any correspondence rules defined by this viewpoint or
+  its model kinds.
+Usually, these rules will be across models or across views since,
+constraints within a model kind will have been specified as part of
+the conventions of that model kind.
+%The viewpoint may specify model correspondence rules. Each one may be
+%documented here.
+%\item {\em Operations on views}: Operations define the methods which may be applied to views and their
+%models. Operations can be divided into categories: Creation methods are the
+%means by which views are prepared using the viewpoint. These could be in the
+%form of process guidance (how to start, what to do next); or work product
+%guidance (templates for views of this type); heuristics, styles, patterns, or other
+%idioms. Interpretive methods provide the means by which views are to be
+%understood by readers and system stakeholders. Analysis methods are used to
+%check, reason about, transform, predict, apply and evaluate architectural
+%results from this view. Implementation methods capture how to realize or
+%construct systems using information from this view.
+\item {\em Examples [Optional]}: 
+Provide helpful examples of use of the viewpoint for the reader
+(architects and other stakeholders).
+\item {\em Notes [Optional]} Provide any additional information that users of the viewpoint may
+need or find helpful.
+%Optional. This section provides examples for the reader.
+\item {\em Sources}: Identify sources for this architecture viewpoint, if any,
+  including author, history, bibliographic references, prior art, etc.
+%What are the sources for this viewpoint, if any? This may include author,
+%history, literature references, prior art, etc.
 \end{itemize}
 
 
