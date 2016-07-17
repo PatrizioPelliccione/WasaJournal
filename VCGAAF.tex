@@ -59,10 +59,13 @@ This will help the consumer of the architecture framework and of the views and c
 they are modeling and when they are done.
 In order to define the stakeholders concerns we identified a set of challenging scenarios through a number of workshops for elicitation and validation. 
 Figure~\ref{fig:challenging-scenarios} gives an overview of the scenarios that are strongly connected to the viewpoints we will detail in this paper. These scenarios are described in the following items. \patrizio{Ensure that there is a mapping between these scenarios and the viewpoints we will discuss. Indeed we need to consider also SoS from WP3}
+\magnus{Rogardt and I made a draft picture with the use cases from WP3 added.
+Color, exact naming, bubble placement etc., TDB.
+Do you think this is a workable way forward?}
 
 \begin{figure}[htb]
 \begin{center}
-\includegraphics[width=\textwidth]{figures/challenging-scenarios} 
+\includegraphics[width=\textwidth]{figures/WasaUseCaseDiagram} 
 \caption{Overview of challenging scenarios}
 \label{fig:challenging-scenarios}
 \end{center}
@@ -226,6 +229,46 @@ As a tester, I want quick updates on all levels of tests and continuous improvem
 
 \end{itemize}
 
+\item Scenario 2.5 {\bf System of Systems} includes:
+
+\magnus{Placeholder text below, should perhaps be part of the exposition at Fig.~\ref{fig:challenging-scenarios}}
+It was a different group of people involved in finding these use cases. When the other
+use cases were picked on current challenges together with Volvo, these use cases occur over several workshops with divers group, . 
+From this work we picked the five most interesting and dimensioning Use Cases based on:
+\begin{itemize}
+    \item Found in the excel sheet 
+\end{itemize}.
+
+\begin{quote}
+{User Story:} 
+\emph{``The driver does not take back control from the vehicle being in automated driving mode when prompted to. The call center is informed and an operator takes over the vehicle control remotely and guides the vehicle to a safe stop.''}
+\end{quote}
+
+\begin{quote}
+{User Story:} 
+\emph{`` The vulnerable road user is warned in case the vehicle threatening to hit him/her. The warning is issued via the phone or other device that the VRU is carrying. ''}
+\end{quote}
+
+\begin{quote}
+{User Story:} 
+\emph{``In case of a crash, notifications are automatically sent to preselected contacts. Can contain vehicle info (registration number, VIN, etc.), personal info (name of driver, ID-number, blood group, etc.), vehicle position and photos (inboard and outboard), etc.  ''}
+\end{quote}
+
+\begin{quote}
+{User Story:} 
+\emph{`` Conditions on the AD road are such that the Traffic control Center prescribes or recommends a certain behavior of the vehicles in AD mode. This could be recommended speed, headway or OK/NOK to AD, etc. (due to traffic density, bad weather, emergency vehicles, …) ''}
+\end{quote}
+
+\begin{quote}
+{User Story:} 
+\emph{``The vehicle being in automated driving mode, is overtaken by a police car and prompted to pull over and stop at the roadside. The vehicle recognizes this and performs the maneuvers necessary.''}
+\end{quote}
+
+
+
+
+
+
 \patrizio{We need to add scenarios for the System of Systems part; unfortunately this is a bit decoupled in NGEA but we can recover that from WP3}
 The identified architecture-related concerns determine the choice of viewpoints and view to be included. 
 It is important to note that almost each viewpoint detained in the following is already handled within the current architecture of Volvo Cars. However, we are investigating the definition of proper viewpoints that will create the architecture framework. %of the
@@ -264,6 +307,9 @@ two or more architecture models. Since architecture views are composed of archit
 relate views to express consistency, traceability, refinement or other dependencies~\cite{Emery-Hilliard:2009}.
 These mechanisms allow an architect to impose constraints between types of models and then demonstrate that them
 are satisfied by the architecture. 
+
+
+
 
 
 
