@@ -199,7 +199,7 @@ This would allow to develop more continuously and should decrease the peak of tr
 The \emph{cone of uncertainty} is a good example for this~\cite{cone-of-uncertainty,cone-of-uncertainty2}: In the beginning of a project, not much data is available and decisions are very uncertain. 
 As the project proceeds, assumptions are removed and uncertainty is reduced, but as  a consequence, it becomes harder to make decisions that change a lot. 
 Good transparency can help to reduce the uncertainty quicker and can allow to decide fast in order to learn fast.
-
+m
 \begin{quote}
 {User Story:} 
 \emph{``As any developer of the electrical system (internal or external), I want to have access to relevant decision, to the status of relevant assumptions, and knowledge generated during the development. 
@@ -232,44 +232,92 @@ As a tester, I want quick updates on all levels of tests and continuous improvem
 \item Scenario 2.5 {\bf System of Systems} includes:
 \patrizio{We need to add scenarios for the System of Systems part; unfortunately this is a bit decoupled in NGEA but we can recover that from WP3}
 \magnus{Placeholder text below, should perhaps be part of the exposition at Fig.~\ref{fig:challenging-scenarios}}
-It was a different group of people involved in finding these use cases. When the other
-use cases were picked on current challenges together with Volvo, these use cases occur over several workshops with divers group, . 
-From this work we picked the five most interesting and dimensioning Use Cases based on:
+\rogardt{Yes, it is not too impressive the use cases that we come up with in WP3.x, and the use cases Mangus and I picked are supposed to be the best once, so you can think how bad the other once are. Should we make new use cases ourselves, ignore 3.x use cases?}
+
+%It was a different group of people involved in finding these use cases. %When the other
+%use cases were picked on current challenges together with Volvo, these use %cases occur over several workshops with divers group, . 
+
+We had several workshops to identify different use cases for system of systems for the automotive. The use cases were identified by the use of brain storming, focusing on potential future business opportunity. 
+Since many of these use cases will have similar impact on the 
+architecture, we only picked the three
+\rogardt{We should just remove the two use cases that Patrizio don't find interesting in regards to system of systems}
+most interesting and dimensioning 
+once, base on:
+%From this work we picked the five most interesting and dimensioning Use %Cases based on:
 \begin{itemize}
-    \item Found in the excel sheet  \patrizio{Do we have them in some deliverable that we can refer?}
+    \item Type of actors (More actors require more complex communications)
+    \item Amount of information exchange (The more info to exchange the broader the bandwidth needed)
+    \item Speed in interaction (Quicker response require short latencies)
+    \item Availability/Continuous connection (Use cases sensitive to data loss etc.)
+    \item Safety (if use case is not correctly executed it can cause harm) \rogardt{is this really about system of system concern? Should we remove it?}
+    \item Integrity/Security (Actors authorised, information trustworthy) \rogardt{Again, very important, but is this about System of systems, and in addition Integrity is Security, so it should be maybe just Integrity or Security or nothing at all?}
+    \item Sharing information (People/System must be willing to share information) \rogardt{sound like security}
+    %Found in the excel sheet  \patrizio{Do we have them in some deliverable %that we can refer?}
 \end{itemize}.
 
+
+\begin{itemize}
+\item {\em Remote control of the vehicle (2.5.1)}
 \begin{quote}
 {User Story:} 
 \emph{``The driver does not take back control from the vehicle being in automated driving mode when prompted to. The call center is informed and an operator takes over the vehicle control remotely and guides the vehicle to a safe stop.''}
 \end{quote}
 
+In the future, if we will have self-driving cars, there might be cases where one might want to take over the control of the car, but not necessary the driver as in this use case. For example, the driver might
+have become ill and there are a situation that require human interaction. 
+This require the possibility of interacting in safe way with the vehicle from outside.  \rogardt{When I think about it, is this really a system of system use case, is this not mostly about an interface to the car?}
+%When vehicle become
+%Time-out reached for manual control - message sent to - call center - call %center operator overtakes control.The vehicle is remotely guided by an %operator in a call center.
+
+\rogardt{A more interesting use case (I just made them up now): (1) AD vehicle want to park as close as possible to place where passengers want to be. The vehicle obtain information about the closes parking places, ask for available places and drive to the one that is closes parking place where there are available places. (At least three systems: Vehicles, Parking places, and GPS) (2) There is a road sign to reduce the car speed and give instruction on how to place the vehicle. The vehicle inform the passengers and follow the instructions. The vehicle are told when to take over the control again. (At least two systems: Vehicles and Road Sign (3) The driver have sensors to indicate his status, in case of fatal illness the sensor system signal to the car to come to a safe stop, and send the GPS position to a SOS center (kind of similar to the previous one, the only different is that there are a system to monitor the human:-}
+\rogardt{In the three cases above you have system to systems interaction, is that not the whole point? Should we just make our own use cases, that have an interesting impact on the architecture, I guess it should be: One that have input to the vehicle from another system, one that have output from the vehicle to another system, and a process (input and output)???? }
+\rogardt{Question: from a system of System perspective I guess the communication would be similar, some sort of protocol. I guess the main different is how much can you trust the information, and how much should you relay on it }
+\rogardt{I think we have worked with the wrong questions in SoS, we should have focused on: What impact can another systems have on Vehicles, how can you trust them, what happen when you get disconnected, what part of the architecture can you move outside the vehicles, ... }
+\rogardt{**************************************}
+\rogardt{meet with Mangus this afternoon, maybe we should make
+completely different type of use cases, maybe the use cases we produced in 
+WP3.5 is not the correct one, they should be more like the one we made in WP2.2, influence the architecture, for example:
+Main use case: 1. Communication with other systems, 1.1: Control of car, 1.2 trusted information, 1.3: Share information ...
+Find all the use cases that is necessary for a vehicle to work in a system of system context. For example, in the use case "Share information" one need to model what is public and what is private. For control of car, one need to have interfaces, and one ... ...}
+\rogardt{***************************************}
+
+\item {\em Approaching vehicle warning (2.5.1)}
 \begin{quote}
 {User Story:} 
 \emph{`` The vulnerable road user is warned in case the vehicle threatening to hit him/her. The warning is issued via the phone or other device that the VRU is carrying. ''} \patrizio{is this similar to the ice on the street? \url{https://www.media.volvocars.com/global/en-gb/media/pressreleases/159478/volvo-cars-connected-car-program-delivers-pioneering-vision-of-safety-and-convenience}}
+\rogardt{I think this was people walking or cycling getting warning, we need to check this. I think this could be an interesting case}
 \end{quote}
 
+
+
+\item {\em Crash notification (2.5.3)}
 \begin{quote}
 {User Story:} 
 \emph{``In case of a crash, notifications are automatically sent to preselected contacts. Can contain vehicle info (registration number, VIN, etc.), personal info (name of driver, ID-number, blood group, etc.), vehicle position and photos (inboard and outboard), etc.  ''}\patrizio{not so clear a SoS perspective here}
 \end{quote}
 
+\item {\em Road prescribed settings (2.5.4)}
 \begin{quote}
 {User Story:} 
 \emph{`` Conditions on the AD road are such that the Traffic control Center prescribes or recommends a certain behavior of the vehicles in AD mode. This could be recommended speed, headway or OK/NOK to AD, etc. (due to traffic density, bad weather, emergency vehicles, …) ''} \patrizio{This can be merged with the ``vulnerable road user" user story above (two items above)}
 \end{quote}
 
+\item {\em Pull over request (2.5.5)}
 \begin{quote}
 {User Story:} 
-\emph{``The vehicle being in automated driving mode, is overtaken by a police car and prompted to pull over and stop at the roadside. The vehicle recognizes this and performs the maneuvers necessary.''} \patrizio{not much SoS. This is can be intersting if we want to show security needs: if the police can take control, any hacker will be able to take control ;)}
+\emph{``The vehicle being in automated driving mode, is overtaken by a police car and prompted to pull over and stop at the roadside. The vehicle recognizes this and performs the maneuvers necessary.''} \patrizio{not much SoS. This is can be interesting if we want to show security needs: if the police can take control, any hacker will be able to take control ;)}
+\rogardt{That was the point, it had high risk of being misused and one of the reason for picking it}
 \end{quote}
 
+\item {\em Collision avoidance with cyclists (....)}
 \begin{quote}
 {User Story:}
-this can be nice also to show cars connected with cyclists: \url{http://analysis.tu-auto.com/auto-mobility/volvo-connecting-cars-cyclists-safer-mobility} and \url{http://www.mirror.co.uk/news/technology-science/technology/volvos-connected-helmet-warns-cyclists-4852610} 
-\emph{``.''}
+\emph{``A cyclist wears an helmet that connects to the cloud through its smartphone. If the bicycle is on a collision course with another bicycle or a car, a notification will be sent to both of them. The helmet will warn the cyclist with a notification light and the car will display the warning on a heads up display on the windshield.''}\\\\
+\url{http://analysis.tu-auto.com/auto-mobility/volvo-connecting-cars-cyclists-safer-mobility} and \url{http://www.mirror.co.uk/news/technology-science/technology/volvos-connected-helmet-warns-cyclists-4852610} 
+
 \end{quote}
 
+\end{itemize}
 
 \end{itemize}
 
