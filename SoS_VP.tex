@@ -5,10 +5,10 @@
 \subsection{\Fillin{Viewpoint Name}}\label{vp:template}
 %%%%%%%%%%
 
-\must{Provide the name for the viewpoint.}
+The viewpoint ``\Fillin{Viewpoint Name}" focus on the car as a constituent of the SoS. Therefore, this viewpoint aims at giving an
+answer to this question: How to engineering a car so to be part of a system
+of systems?
 
-If there are any synonyms or other common names by which this viewpoint is
-known or used, record them here.
 
 
 %%%%%%%%%%
@@ -60,11 +60,11 @@ In general, the main issue with safety guarantees in connected cars is that a fu
 \subsection{Concerns and stakeholders} 
 %%%%%%%%%%
 
-Architects looking for an architecture viewpoint suitable for their
-purposes often use the identified concerns and typical stakeholders to
-guide them in their search.  Therefore it is important (and required
-by the Standard) to document the concerns and stakeholders for which a
-viewpoint is intended.
+%Architects looking for an architecture viewpoint suitable for their
+%purposes often use the identified concerns and typical stakeholders to
+%guide them in their search.  Therefore it is important (and required
+%by the Standard) to document the concerns and stakeholders for which a
+%viewpoint is intended.
 
 
 
@@ -73,56 +73,75 @@ viewpoint is intended.
 \subsubsection{Concerns}\label{vp:concerns}
 %%%%%%%%%%
 
-\must{Provide a listing of architecture-relevant concerns to be framed by
-this architecture viewpoint per \std{7a}.}
+In this section we focus on the concerns that are essential to enable functions in the systems of systems for cars. We express the concerns in the form of questions as suggested by the ISO/IEC/IEEE 42010 standard.
 
-Describe each concern.
-
-Concerns name ``areas of interest'' in a system.
-
-\note{Following ISO/IEC/IEEE 42010, \textbf{system} is a shorthand for
-  any number of things including man-made systems, software products
-  and services, and software-intensive systems such as ``individual
-  applications, systems in the traditional sense, subsystems, systems
-  of systems, product lines, product families, whole enterprises, and
-  other aggregations of interest''.}
-
-Concerns may be very general (e.g., \textit{Reliability}) or quite
-specific (\textit{e.g., How does the system handle network latency?}).
-  
-Concerns identified in this section are critical information for an
-architect because they help her decide when this viewpoint will be
-useful.
-
-When used in an architecture description, the viewpoint becomes a
-``contract'' between the architect and stakeholders that these
-concerns will be addressed in the view resulting from this viewpoint.
-
-It can be helpful to express concerns \emph{in the form of questions}
-that views resulting from that viewpoint will be able to answer. E.g.,
 \begin{itemize}
-\item \textit{How does the system manage faults?}
-\item \textit{What services does the system provide?}
+\item Once the car is part of SoS, how to guarantee functional safety requirements?
+\item What are the implication on system design and functional distribution for functional safety?
+\item Once functional safety requirements involve devices that are outside of the vehicle (other constituent systems of the SoS), how to ensure that these requirements will be guaranteed?
+\item How the methods and processes for end-to-end function development and continuous delivery of software need to evolve to be suitable in a systems of systems setting?
+\item How to enable a reliable and efficient communication between the vehicle and heterogeneous entities, like other vehicles, road signals, pedestrians, etc.?
+\item How to be sure that the vehicle and other constituent systems of the SoS will be able to exchange information and to use the information that has been ex-changed?
+\item How to guarantee that the security of the vehicle is preserved once the vehicle becomes connected?
+\item How to identify the right tradeoff between shared data and users' privacy?
+\item How to keep the data shared within the SoS (and possible replication of data) sufficiently updated or synchronized?
+\item How to manage the age of available information?
+\item Which functions in the car are allowed to make use of data coming from other constituents?
 \end{itemize}
 
-\note{``In the form of a question'' is inspired by the television quiz
-  show, \textit{Jeopardy!}}
- 
-\std{5.3} contains a candidate list of concerns that must be considered
-when producing an architecture description. These can be considered
-here for their relevance to the viewpoint being specified:
-\begin{itemize}
-\item What are the purpose(s) of the system-of-interest?
-\item What is the suitability of the architecture for achieving the
-  system-of-interest's purpose(s)?
-\item How feasible is it to construct and deploy the
-  system-of-interest?
-\item What are the potential risks and impacts of the
-  system-of-interest to its stakeholders throughout its life cycle?
-\item How is the system-of-interest to be maintained and evolved?
-\end{itemize}
 
-See also: \std{4.2.3}.
+
+
+%\must{Provide a listing of architecture-relevant concerns to be framed by
+%this architecture viewpoint per \std{7a}.}
+%
+%Describe each concern.
+%
+%Concerns name ``areas of interest'' in a system.
+%
+%\note{Following ISO/IEC/IEEE 42010, \textbf{system} is a shorthand for
+%  any number of things including man-made systems, software products
+%  and services, and software-intensive systems such as ``individual
+%  applications, systems in the traditional sense, subsystems, systems
+%  of systems, product lines, product families, whole enterprises, and
+%  other aggregations of interest''.}
+%
+%Concerns may be very general (e.g., \textit{Reliability}) or quite
+%specific (\textit{e.g., How does the system handle network latency?}).
+%  
+%Concerns identified in this section are critical information for an
+%architect because they help her decide when this viewpoint will be
+%useful.
+%
+%When used in an architecture description, the viewpoint becomes a
+%``contract'' between the architect and stakeholders that these
+%concerns will be addressed in the view resulting from this viewpoint.
+%
+%It can be helpful to express concerns \emph{in the form of questions}
+%that views resulting from that viewpoint will be able to answer. E.g.,
+%\begin{itemize}
+%\item \textit{How does the system manage faults?}
+%\item \textit{What services does the system provide?}
+%\end{itemize}
+%
+%\note{``In the form of a question'' is inspired by the television quiz
+%  show, \textit{Jeopardy!}}
+% 
+%\std{5.3} contains a candidate list of concerns that must be considered
+%when producing an architecture description. These can be considered
+%here for their relevance to the viewpoint being specified:
+%\begin{itemize}
+%\item What are the purpose(s) of the system-of-interest?
+%\item What is the suitability of the architecture for achieving the
+%  system-of-interest's purpose(s)?
+%\item How feasible is it to construct and deploy the
+%  system-of-interest?
+%\item What are the potential risks and impacts of the
+%  system-of-interest to its stakeholders throughout its life cycle?
+%\item How is the system-of-interest to be maintained and evolved?
+%\end{itemize}
+%
+%See also: \std{4.2.3}.
 
 %%%%%%%%%%
 \subsubsection{Typical stakeholders} 
