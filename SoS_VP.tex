@@ -1,5 +1,5 @@
 %%% Version 2.1b %%%
-\section{System of Systems viewpoint: vehicle point of view}
+\section{System of Systems viewpoint: vehicle point of view}\label{sec:SoSVP}
 \renewcommand{\Fillin}[1]{{System of Systems: vehicle point of view}}
 %%%%%%%%%%
 \subsection{\Fillin{Viewpoint Name}}\label{vp:template}
@@ -76,8 +76,8 @@ In general, the main issue with safety guarantees in connected cars is that a fu
 In this section we focus on the concerns that are essential to enable functions in the systems of systems for cars. We express the concerns in the form of questions as suggested by the ISO/IEC/IEEE 42010 standard.
 
 \begin{itemize}
-\item Once the car is part of SoS, how to guarantee functional safety requirements?
-\item What are the implication on system design and functional distribution for functional safety?
+\item Once the car is part of a SoS, how to guarantee functional safety requirements?
+\item Once the car is part of a SoS, what are the implication on system design and functional distribution for functional safety?
 \item Once functional safety requirements involve devices that are outside of the vehicle (other constituent systems of the SoS), how to ensure that these requirements will be guaranteed?
 \item How the methods and processes for end-to-end function development and continuous delivery of software need to evolve to be suitable in a systems of systems setting?
 \item How to enable a reliable and efficient communication between the vehicle and heterogeneous entities, like other vehicles, road signals, pedestrians, etc.?
@@ -147,37 +147,39 @@ In this section we focus on the concerns that are essential to enable functions 
 \subsubsection{Typical stakeholders} 
 %%%%%%%%%%
 
-\must{Provide a listing of the typical stakeholders of a system who
-  are in the potential audience for views of this kind, per \std{7b}.}
+Since it this viewpoint we take the vehicle point of view, potentially every stakeholder described in Section~\ref{sec:VCGAF} and summarized in Table~\ref{tab:stakeholders} will be part of the audience of this viewpoint. Moreover, additional stakeholders external to the company should be considered as stakeholders. Examples of them are standard authorities for communication means used by the SoS, stakeholders of other OEMs, suppliers, road authorities, etc.
 
-Typical stakeholders would include those likely to read such views
-and/or those who need to use the results of this view for another
-task.
+%\must{Provide a listing of the typical stakeholders of a system who
+%  are in the potential audience for views of this kind, per \std{7b}.}
+%
+%Typical stakeholders would include those likely to read such views
+%and/or those who need to use the results of this view for another
+%task.
+%
+%Stakeholders to consider include:
+%\begin{itemize}
+%\item users of a system; 
+%\item operators of a system; 
+%\item acquirers of a system;
+%\item owners of a system; 
+%\item suppliers of a system; 
+%\item developers of a system; 
+%\item builders of a system; 
+%\item maintainers of a system.
+%\end{itemize}
 
-Stakeholders to consider include:
-\begin{itemize}
-\item users of a system; 
-\item operators of a system; 
-\item acquirers of a system;
-\item owners of a system; 
-\item suppliers of a system; 
-\item developers of a system; 
-\item builders of a system; 
-\item maintainers of a system.
-\end{itemize}
-
-%%%%%%%%%%
-\subsubsection{``Anti-concerns'' \Optional} 
-%%%%%%%%%%
-
-It may be helpful to architects and stakeholders to
-document the kinds of issues for which this viewpoint is \emph{not
-  appropriate or not particularly useful}.
-
-Identifying the ``anti-concerns'' of a given notation or approach may
-be a good antidote for certain overly used models and notations.
-
-% \tbd{Examples!}
+%%%%%%%%%%%
+%\subsubsection{``Anti-concerns'' \Optional} 
+%%%%%%%%%%%
+%
+%It may be helpful to architects and stakeholders to
+%document the kinds of issues for which this viewpoint is \emph{not
+%  appropriate or not particularly useful}.
+%
+%Identifying the ``anti-concerns'' of a given notation or approach may
+%be a good antidote for certain overly used models and notations.
+%
+%% \tbd{Examples!}
 
 
 
@@ -185,189 +187,222 @@ be a good antidote for certain overly used models and notations.
 \subsection{Model kinds+}\label{mk:list}
 %%%%%%%%%%
 
-\must{Identify each model kind used in the viewpoint per \std{7c}.}
+There are not obvious model kinds that can be used for this viewpoint. UML and general purpose architecture description languages seem to be not appropriate to architecting SoSs. There are some attempts in the literature to define architectural languages (Als) for SoS, such as...\patrizio{Add Oquendo and others}, however, a deep analysis of these languages need to be performed in order to precisely understand whether the ADL can exactly satisfy the needs of this viewpoint and of Volvo cars. Results of an initial analysis suggest that this language is might be too formal and heavy. As it is stated in~\cite{whatindustrywants,IEEESoftwarePatrizio} often ALs are not adopted by practitioners since they are (i) too complex and require specialized competencies, (ii) the return on investment is insufficient perceived, (iii) they require over-specification and at the same time practitioners are not able to model design decisions explicitly in the AL, and (iv) there is a lack of integration in the software and system life cycle, lack of
+mature tools, and usability issues. 
 
-In the Standard, each architecture view consists of multiple
-architecture models. Each model is governed by a \textit{model kind}
-which establishes the notations, conventions and rules for models of
-that type.  See: \std{4.2.5, 5.5 and 5.6}.
+This suggests that the language to be used should be defined and/or customized within the company, so that it can precisely implement the needs of the company and users and at the same time can be integrated with the company life-cycle.
+An interesting approach to customize existing ALs according to specific needs might be found in~\cite{ICSE2010}.
 
-Repeat the next section for each model kind listed here the viewpoint
-being specified.
+The model kind for this viewpoint should enable the specification of the following concepts that are essential building blocks for engineering a car that will be part of a system of systems. These building blocks have been identified within the NGEA project and are documented in the deliverable D3.2 Systems of Systems for Cars Concepts. 
 
-
-%%%%%%%%%%
-\subsection{\Fillin{Model Kind Name}}\label{vp:mk}
-%%%%%%%%%%
-
-\must{Identify the model kind.}
-
-
-%%%%%%%%%%
-\subsubsection{\Fillin{Model Kind Name} conventions} 
-%%%%%%%%%%
-
-\must{Describe the conventions for models of this kind.}
-
-Conventions include languages, notations, modeling techniques,
-analytical methods and other operations. These are key modeling
-resources that the model kind makes available to architects and
-determine the vocabularies for constructing models of the kind and
-therefore, how those models are interpreted and used.
-
-It can be useful to separate these conventions into a \emph{language
-  part}: in terms of a metamodel or specification of notation to be
-used and a \emph{process part}: to describe modeling techniques used
-to create the models and methods which can be used on the models that
-result.  These include operations on models of the model kind.
-
-The remainder of this section focuses on the language part. The next
-section focuses on the process part.
-
-The Standard does not prescribe \emph{how} modeling conventions are to
-be documented.  The conventions could be defined:
-\begin{description}
-\item[I)] by reference to an existing notation or language (such as
-  SADT, UML or an architecture description language such as ArchiMate
-  or SysML) or to an existing technique (such as $M/M/4$ queues);
-\item[II)] by presenting a metamodel defining its core constructs;
-\item[III)] via a template for users to fill in;
-\item[IV)] by some combination of these methods or in some other
-  manner.
-\end{description}
-
-Further guidance on methods I) through III) is provided below.
- 
-Sometimes conventions are applicable across more than one model kind
--- it is not necessary to provide a separate set of conventions, a
-metamodel, notations, or operations for each, when a single
-specification is adequate.
+\begin{itemize}
+\item {\bf Heterogeneity of communication channels}: Today cars already use several communication channels  for communicating with other systems. Communication means include also GPS receivers, sound signals, visual break lights, and turn indicators, which can be used to communicate to other systems the intention of the driver, as well as cameras able to detect other vehicles intentions or to read road signs, which are then highlighted to the driver. In the near future we can expect several new communication channels. Examples are IMT2020 (5G) the successor of the LTE (4G) mobile networks, Vehicle to vehicle (V2V) and Vehicle to infrastructure (V2I) communication over IEEE 802.11p, BLE (Bluetooth low energy), Proprietary communication channels used by single or a few vendors, standard WiFi versions, etc.
+\item {\bf Connectivity}: Connectivity is essential to enable the expected service level in different places of the SoS. Connectivity may be possible through many different channels as discusses in the previous item. However there has to be on-board functions that handle graceful degradation of services when connectivity is limited or not available at all. The user shall experience a robust behaviour of the available functions. The quality of service (QoS) of both data and functions must be made sufficiently clear to the users. Acceptable QoS typically requires very good connectivity and availability of real-time information. However, since connectivity cannot always be guaranteed, other forms of fall-back solutions or redundancy are usually needed. The QoS available in a specific location and time need to be communicated to the user in a user-friendly and  easy to grasp way.
+\item {\bf Large and unreliable information}: low quality information could lead to disastrous events, especially when functions are implemented to rely heavily on external information. Therefore, it is important to be able to determine whether the received information's quality is high in term of correctness and timeliness. Multi-sensor data fusion provides an answer by combining perceived data from sensors to make the resulting information more reliable. 
+\item {\bf Interoperability}: Interoperability is the ability of diverse systems to work together. This general definition has been conjugated in many different ways based on the reference application area and on the many different factors and aspects characterizing them. Interoperability involves standards, protocols, and integration and adaptation of interfaces to enable the effective and efficient communication between constituent systems. Interoperability is the ability of two or more constituent systems that are part of SoS to exchange information and to use the information that has been ex-changed. Unambiguous interpretation of shared data between systems is necessary for interoperation, but it is not sufficient. Despite standards for shared data provides specification with the objective to enhance the functionality and interoperability, the data encoded using these standards are not necessarily interoperable. For instance, concepts that have the same labels, and somehow even the same meaning, can be used completely differently in different applications. This is for instance the case of speed within a car that can have different meanings.
+\item {\bf Cyber security and privacy}:
+Connectivity of cars opens problems of both security and privacy. On one side cars become exposed as any other device that is connected to Internet. A representative example is given by Jeep \patrizio{find reference}. For what concerns privacy, as mentioned above cars will need to share several information, however sensitive information should be properly protected.
+\item {\bf Distributed end-to-end functionality}: End-to-end functionalities should be provided not only between nodes in the vehicles but also outside the vehicle, and then involving other constituent systems of the SoS, e.g., clouds, other cars, pedestrians, road infrastructure and signals, etc. Connected vehicles can benefit a lot from access to cloud computing based data and services. %By cloud or cloud functionality is meant a database centric service available via the Internet used to extend an existing function in a car or to create a new function enabled by cloud data. This means that a 
+%A cloud function is a function that does something for the car it-self or its driver and it is enabled by use of data or services (interpreted data) from the cloud. 
+Services implemented in distributed end-to-end functions will benefit from the possibility to dynamically load software to the on-board electrical architecture. Dynamically loaded software may be executed in one or several physical nodes, and %virtual machines may be essential to ensure 
+this will open challenges in terms of cyber-security, functional safety and compatibility. 
+\item {\bf Functional safety}: Functional safety requirements are expected to apply for functions outside the car. To be able to handle safety once the car becomes a constituent system of a SoS, one can expect that operational and key functions will be protected. However, connected safety\footnote{\patrizio{add reference to connected safety of Volvo cars} \url{}} promises important and interesting improvements for what concerns the overall safety of the car. A typical example is a car that receives information about some ice on the street from the cloud as reported from another trusted vehicle. These types of scenarios might implicitly create expectations to the driver of a car that will start relying on a service that is however dependent on potentially uncontrollable connections, devices, sensors, etc. 
+%In general, it is important to understand the implication on system design and functional distribution for functional safety. 
+%\item {\bf Services}: Services implemented in distributed end-to-end functions will benefit from the possibility to dynamically load software to the on-board electrical architecture. Dynamically loaded software may be executed in one or several physical nodes, and virtual ma-chines may be essential to ensure cyber-security, functional safety and compatibility. \patrizio{move with end-to-end?}
+\end{itemize}
 
 
-%%%%%%%%%%
-\subsubsection*{I) Model kind languages or notations \Optional}
-%%%%%%%%%%
 
-Identify or define the notation used in models of the kind.
+%\must{Identify each model kind used in the viewpoint per \std{7c}.}
+%
+%In the Standard, each architecture view consists of multiple
+%architecture models. Each model is governed by a \textit{model kind}
+%which establishes the notations, conventions and rules for models of
+%that type.  See: \std{4.2.5, 5.5 and 5.6}.
+%
+%Repeat the next section for each model kind listed here the viewpoint
+%being specified.
 
-Identify an existing notation or model language or define one that can
-be used for models of this model kind. Describe its syntax, semantics,
-tool support, as needed.
-
-
-%%%%%%%%%%
-\subsubsection*{II) Model kind metamodel \Optional} 
-%%%%%%%%%%
-
-A metamodel presents the AD elements that constitute the
-vocabulary of a model kind, and their rules of combination. There are
-different ways of representing metamodels (such as UML class diagrams, OWL,
-eCore). The metamodel should present:
-\begin{description}
-\item[entities] What are the major sorts of conceptual elements that
-  are present in models of this kind?
-\item[attributes] What properties do entities possess in models of
-  this kind?
-\item[relationships] What relations are defined among entities in
-  models of this kind?
-\item[constraints] What constraints are there on entities, attributes
-  and/or relationships and their combinations in models of this kind?
-\end{description}
-
-\note{Metamodel constraints should not be confused with architecture
-  constraints that apply to the subject being modeled, not the
-  notations used.}
-
-In the terms of the Standard, entities, attributes, relationships are
-\textit{AD elements} per \std{3.4, 4.2.5 and 5.7}.
-
-In the \textit{Views-and-Beyond} approach~\cite{DSA:2010}, each
-viewtype (which is similar to a viewpoint) is specified by a set of
-elements, properties, and relations (which correspond to entities,
-attributes and relationships here, respectively).
-
-When a viewpoint specifies multiple model kinds it can be useful to
-specify a single viewpoint metamodel unifying the definition of the
-model kinds and the expression of correspondence rules.  When defining
-an architecture framework, it may be helpful to use a single metamodel
-to express multiple, related viewpoints and model kinds.
-
-% \tbd{EXAMPLE -- In \cite{Hilliard:1999} and earlier work, we said that
-%   all views are built from primitives called components, connections
-%   and constraints which basically gives views a graph structure with
-%   components as nodes and two types of edges (connections and
-%   constraints). There are two issues with this: (\textit{1})
-%   components and \textit{connectors} have taken on a specialized
-%   meaning from the work by CMU and others \cite{Shaw-Garlan:1996};
-%   (\textit{2}) this ur-ontology may be over-commiting for some views.}
-
-
-%%%%%%%%%%
-\subsubsection*{III) Model kind templates \Optional}
-%%%%%%%%%%
-
-Provide a template or form specifying the format and/or content of
-models of this model kind.
-
-%% \tbd{EXAMPLE} 
-
-
-%%%%%%%%%%
-\subsubsection{\Fillin{Model Kind Name} operations \Optional} 
-%%%%%%%%%%
-
-Specify operations defined on models of this kind.
-
-See~\S\ref{Opns} for further guidance.
-
-
-%%%%%%%%%%
-\subsubsection{\Fillin{Model Kind Name} correspondence rules}
-%%%%%%%%%%
-
-\must{Document any correspondence rules associated with the model
-  kind.}
-
-See~\S\ref{CRs} for further guidance.
+%
+%%%%%%%%%%%
+%\subsection{\Fillin{Model Kind Name}}\label{vp:mk}
+%%%%%%%%%%%
+%
+%\must{Identify the model kind.}
+%
+%
+%%%%%%%%%%%
+%\subsubsection{\Fillin{Model Kind Name} conventions} 
+%%%%%%%%%%%
+%
+%\must{Describe the conventions for models of this kind.}
+%
+%Conventions include languages, notations, modeling techniques,
+%analytical methods and other operations. These are key modeling
+%resources that the model kind makes available to architects and
+%determine the vocabularies for constructing models of the kind and
+%therefore, how those models are interpreted and used.
+%
+%It can be useful to separate these conventions into a \emph{language
+%  part}: in terms of a metamodel or specification of notation to be
+%used and a \emph{process part}: to describe modeling techniques used
+%to create the models and methods which can be used on the models that
+%result.  These include operations on models of the model kind.
+%
+%The remainder of this section focuses on the language part. The next
+%section focuses on the process part.
+%
+%The Standard does not prescribe \emph{how} modeling conventions are to
+%be documented.  The conventions could be defined:
+%\begin{description}
+%\item[I)] by reference to an existing notation or language (such as
+%  SADT, UML or an architecture description language such as ArchiMate
+%  or SysML) or to an existing technique (such as $M/M/4$ queues);
+%\item[II)] by presenting a metamodel defining its core constructs;
+%\item[III)] via a template for users to fill in;
+%\item[IV)] by some combination of these methods or in some other
+%  manner.
+%\end{description}
+%
+%Further guidance on methods I) through III) is provided below.
+% 
+%Sometimes conventions are applicable across more than one model kind
+%-- it is not necessary to provide a separate set of conventions, a
+%metamodel, notations, or operations for each, when a single
+%specification is adequate.
+%
+%
+%%%%%%%%%%%
+%\subsubsection*{I) Model kind languages or notations \Optional}
+%%%%%%%%%%%
+%
+%Identify or define the notation used in models of the kind.
+%
+%Identify an existing notation or model language or define one that can
+%be used for models of this model kind. Describe its syntax, semantics,
+%tool support, as needed.
+%
+%
+%%%%%%%%%%%
+%\subsubsection*{II) Model kind metamodel \Optional} 
+%%%%%%%%%%%
+%
+%A metamodel presents the AD elements that constitute the
+%vocabulary of a model kind, and their rules of combination. There are
+%different ways of representing metamodels (such as UML class diagrams, OWL,
+%eCore). The metamodel should present:
+%\begin{description}
+%\item[entities] What are the major sorts of conceptual elements that
+%  are present in models of this kind?
+%\item[attributes] What properties do entities possess in models of
+%  this kind?
+%\item[relationships] What relations are defined among entities in
+%  models of this kind?
+%\item[constraints] What constraints are there on entities, attributes
+%  and/or relationships and their combinations in models of this kind?
+%\end{description}
+%
+%\note{Metamodel constraints should not be confused with architecture
+%  constraints that apply to the subject being modeled, not the
+%  notations used.}
+%
+%In the terms of the Standard, entities, attributes, relationships are
+%\textit{AD elements} per \std{3.4, 4.2.5 and 5.7}.
+%
+%In the \textit{Views-and-Beyond} approach~\cite{DSA:2010}, each
+%viewtype (which is similar to a viewpoint) is specified by a set of
+%elements, properties, and relations (which correspond to entities,
+%attributes and relationships here, respectively).
+%
+%When a viewpoint specifies multiple model kinds it can be useful to
+%specify a single viewpoint metamodel unifying the definition of the
+%model kinds and the expression of correspondence rules.  When defining
+%an architecture framework, it may be helpful to use a single metamodel
+%to express multiple, related viewpoints and model kinds.
+%
+%% \tbd{EXAMPLE -- In \cite{Hilliard:1999} and earlier work, we said that
+%%   all views are built from primitives called components, connections
+%%   and constraints which basically gives views a graph structure with
+%%   components as nodes and two types of edges (connections and
+%%   constraints). There are two issues with this: (\textit{1})
+%%   components and \textit{connectors} have taken on a specialized
+%%   meaning from the work by CMU and others \cite{Shaw-Garlan:1996};
+%%   (\textit{2}) this ur-ontology may be over-commiting for some views.}
+%
+%
+%%%%%%%%%%%
+%\subsubsection*{III) Model kind templates \Optional}
+%%%%%%%%%%%
+%
+%Provide a template or form specifying the format and/or content of
+%models of this model kind.
+%
+%%% \tbd{EXAMPLE} 
+%
+%
+%%%%%%%%%%%
+%\subsubsection{\Fillin{Model Kind Name} operations \Optional} 
+%%%%%%%%%%%
+%
+%Specify operations defined on models of this kind.
+%
+%See~\S\ref{Opns} for further guidance.
+%
+%
+%%%%%%%%%%%
+%\subsubsection{\Fillin{Model Kind Name} correspondence rules}
+%%%%%%%%%%%
+%
+%\must{Document any correspondence rules associated with the model
+%  kind.}
+%
+%See~\S\ref{CRs} for further guidance.
 
 
 %%%%%%%%%%
 \subsection{Operations on views}\label{Opns}
 %%%%%%%%%%
 
-Operations define the methods to be applied to views and their models.
-Types of operations include:
+An interesting way to define model kinds is to properly define the metamodel of the model kind through the use of model-driven engineering techniques like ecore\patrizio{write properly}. This will help defining operations to define views (model) that are compliant to the viewpoint's rules and constraints (conforms to metamodel). The interested reader can refer to the work described in~\cite{MEGAF2010,MEGAF2012}.
 
-\begin{description}
+Other operations should help and guide the user in interpreting the views. The starting point should be a serious study on understanding exactly both the users and the purpose of the views. This study will then define the requirements of the syntax (e.g., graphical, textual, tree-like) to be used for the language. 
+Operations should be also provided to evaluate architecture descriptions and decisions. For instance, analysis methods might be defined to evaluate the interoperability level, the ability of the system to cope with heterogeneity of communication channels, security and privacy when the car become part of the SoS, etc.
+Finally, the view should be connected to the software and system life-cycle through methods helping the design and build of the system.
 
-\item[construction methods] are the means by which views are
-  constructed under this viewpoint. These operations could be in the
-  form of process guidance (how to start, what to do next); or work
-  product guidance (templates for views of this type). Construction
-  techniques may also be heuristic: identifying styles, patterns, or
-  other idioms to apply in the synthesis of the view.
 
-\item[interpretation methods] which guide readers to understanding
-  and interpreting architecture views and their models.
+%Operations define the methods to be applied to views and their models.
+%Types of operations include:
+%
+%\begin{description}
+%
+%\item[construction methods] are the means by which views are
+%  constructed under this viewpoint. These operations could be in the
+%  form of process guidance (how to start, what to do next); or work
+%  product guidance (templates for views of this type). Construction
+%  techniques may also be heuristic: identifying styles, patterns, or
+%  other idioms to apply in the synthesis of the view.
+%
+%\item[interpretation methods] which guide readers to understanding
+%  and interpreting architecture views and their models.
+%
+%\item[analysis methods] are used to check, reason about, transform,
+%  predict, and evaluate architectural results from this view,
+%  including operations which refer to model correspondence rules.
+%
+%\item[implementation methods] are the means by which to design and
+%  build systems using this view.
+%
+%\end{description}
 
-\item[analysis methods] are used to check, reason about, transform,
-  predict, and evaluate architectural results from this view,
-  including operations which refer to model correspondence rules.
-
-\item[implementation methods] are the means by which to design and
-  build systems using this view.
-
-\end{description}
-
-Another approach to categorizing operations is from Finkelstein et
-al. \cite{Finkelstein+1992}. The \emph{work plan} for a viewpoint
-defines 4 kinds of actions (on the view representations):
-\textit{assembly actions} which contains the actions available to the
-developer to build a specification; \textit{check actions} which
-contains the actions available to the developer to check the
-consistency of the specification; \textit{viewpoint actions} which
-create new viewpoints as development proceeds; \textit{guide actions}
-which provide the developer with guidance on what to do and when.
+%Another approach to categorizing operations is from Finkelstein et
+%al. \cite{Finkelstein+1992}. The \emph{work plan} for a viewpoint
+%defines 4 kinds of actions (on the view representations):
+%\textit{assembly actions} which contains the actions available to the
+%developer to build a specification; \textit{check actions} which
+%contains the actions available to the developer to check the
+%consistency of the specification; \textit{viewpoint actions} which
+%create new viewpoints as development proceeds; \textit{guide actions}
+%which provide the developer with guidance on what to do and when.
 
 
 %%%%%%%%%%
@@ -383,29 +418,33 @@ the conventions of that model kind.
 
 See: \std{4.2.6 and 5.7}
 
+\begin{itemize}
+\item security, privacy, the other SoS viewpoint
+\end{itemize}
+
 %%\tbd{examples or specs}
 
-%%%%%%%%%%
-\subsection{Examples \Optional} 
-%%%%%%%%%%
+%%%%%%%%%%%
+%\subsection{Examples \Optional} 
+%%%%%%%%%%%
+%
+%Provide helpful examples of use of the viewpoint for the reader
+%(architects and other stakeholders).
+%
+%
+%%%%%%%%%%%
+%\subsection{Notes \Optional} 
+%%%%%%%%%%%
+%
+%Provide any additional information that users of the viewpoint may
+%need or find helpful.
 
-Provide helpful examples of use of the viewpoint for the reader
-(architects and other stakeholders).
-
-
-%%%%%%%%%%
-\subsection{Notes \Optional} 
-%%%%%%%%%%
-
-Provide any additional information that users of the viewpoint may
-need or find helpful.
-
-
-%%%%%%%%%%
-\subsection{Sources} 
-%%%%%%%%%%
-
-\must{Identify sources for this architecture viewpoint, if any,
-  including author, history, bibliographic references, prior art, per
-  \std{7e}.}
+%
+%%%%%%%%%%%
+%\subsection{Sources} 
+%%%%%%%%%%%
+%
+%\must{Identify sources for this architecture viewpoint, if any,
+%  including author, history, bibliographic references, prior art, per
+%  \std{7e}.}
 
