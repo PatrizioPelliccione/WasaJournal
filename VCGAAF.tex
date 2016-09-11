@@ -58,10 +58,10 @@ Then the identified stakeholders motivate the set of concerns on which the archi
 This will help the consumer of the architecture framework and of the views and connected modeling tools to understand why
 they are modeling and when they are done.
 In order to define the stakeholders concerns we identified a set of challenging scenarios through a number of workshops for elicitation and validation. 
-Figure~\ref{fig:challenging-scenarios} gives an overview of the scenarios that are strongly connected to the viewpoints we will detail in this paper. These scenarios are described in the following items. \patrizio{Ensure that there is a mapping between these scenarios and the viewpoints we will discuss. Indeed we need to consider also SoS from WP3}
+Figure~\ref{fig:challenging-scenarios} gives an overview of the scenarios that are strongly connected to the viewpoints we will detail in this paper. These scenarios are described in the following items.
 \magnus{Rogardt and I made a draft picture with the use cases from WP3 added.
 Color, exact naming, bubble placement etc., TDB.
-Do you think this is a workable way forward?}
+Do you think this is a workable way forward?}\patrizio{Magnus, might you please change the figure according to the new text I wrote? I don't have the source files.}
 
 \begin{figure}[htb]
 \begin{center}
@@ -232,11 +232,43 @@ As a tester, I want quick updates on all levels of tests and continuous improvem
 \item Scenario 2.5 {\bf System of Systems} includes:
 
 \begin{itemize}
-\item {\em Communication}
-\item {\em Interoperability}
-\item {\em Degree of autonomy and readiness to be at the service of the SoS}
-\item {\em Dealing with uncertainty and functional safety}
-\item {\em Cyber security and privacy}
+\item {\em the need of having reliable communication (2.5.1)}: To have the car as a constituent of a System of Systems (SoS), the car needs to be connected to other cars, infrastructure, cloud and any other kind of constituent system of the SoS. Most probably the car will be connected through heterogeneous communication means and with various degree of quality of service.
+
+\begin{quote}
+{User Story:} 
+\emph{``As an architect I need to engineer the car so that it will support heterogeneous communication means with various quality of service (QoS). The QoS of the different communication means should be clearly identified so that it will be possible to develop end-to-end functionalities that go beyond the boundaries of the car.''}
+\end{quote}
+
+\item {\em guaranteerning that communication from and to the car is properly understood (2.5.2)}: It is not enough to have proper communication means; the exchanged messages should be properly understood by all involved parts.
+
+\begin{quote}
+{User Story:} 
+\emph{``As an architect I need to ensure a high degree of interoperability between the car and other constituent systems of the SoS. End-to-end functionalities that go beyond the boundaries of the car might require to build under the assumption that exchanged messages are properly understood and required actions are taken by the receiving system.''}
+\end{quote}
+
+\item {\em Degree of autonomy and readiness to be at the service of the SoS (2.5.3)}: Often SoS scenarios require a degree of autonomy of the vehicle. Moreover, often a constituent system has to temporarily sacrifice its own goal in order to take actions needed to fulfil the goal of the SoS.
+
+\begin{quote}
+{User Story:} 
+\emph{``As an architect I need to manage the transition towards autonomous behaviours of the car that are needed to achieve the goal of the SoS. The car should be engineered so to, often immediately, switch to another mode and perform the actions required by the SoS. The right tradeoff between independence of the vehicle (from the SoS) and service offered to the SoS needs to be found.''}
+\end{quote}
+
+\item {\em Dealing with uncertainty and functional safety (2.5.4)}: Vehicles are starting receiving a huge amount of information from the environment as communication coming from other vehicles, pedestrians, road signals, city in general. This information might be precious for supporting new safety behaviours\footnote{Here there is an example: \url{https://www.media.volvocars.com/global/en-gb/media/pressreleases/159478/volvo-cars-connected-car-program-delivers-pioneering-vision-of-safety-and-convenience}}. However, this information is often unreliable and subject to different dimensions of uncertainty, like presence of other constituent systems, communication means, etc.
+
+\begin{quote}
+{User Story:} 
+\emph{``As an architect I would like to support innovative and very promising safety scenarios that can involve cyclists, pedestrians, etc. However, this would imply that the way functional safety is ensured should change since the SoS is open (constituent systems might join or leave the SoS at any moment) and we cannot relay 100\% on information sent by uncontrollable and independent constituent systems.''}
+\end{quote}
+
+
+\item {\em Cyber security and privacy (2.5.5)}: Once the car is connected it is exposed to attacks as any other computer or device that is connected to Internet. The effects might be tragic.
+
+\begin{quote}
+{User Story:} 
+\emph{``As an architect I need to protect the car from attacks to avoid dangerous or catastrophic scenarios and to guarantee the privacy of user data.''}
+\end{quote}
+
+
 \end{itemize}
 
 
@@ -343,13 +375,13 @@ It is important to note that almost each viewpoint detained in the following is 
 \patrizio{here we have to explain that there are the viewpoints in the litareture, other important viewpoints for Volvo Cars, but that in this paper, due to space restrictions we only focus on three viewpoints}
 Therefore, in addition to the viewpoints summarized in Section~\ref{sec:AAF} we foresee the following viewpoints:
 	\begin{itemize}
-	\item \emph{Continuous integration and deployment} (detailed in Section~\ref{sec:CIDviewpoint}) - OEMs are increasingly interested to reduce the development time, to increase flexibility, to have early feedback on decisions made, and to add new functionalities incrementally even after production. %However, another trend is the rapid development of more advanced active safety systems that require \del{a} special handling.\eric{does the last point here not relate more to connected cars and safety?}
-	\item \emph{Connected cars and safety} (detailed in Section~\ref{sec:SoSviewpoint}) - Future scenarios of collaborating autonomous vehicles, like platooning, will require to extend the vehicle safety architecture across the classical boundaries of single vehicles and will ask for an open and adaptive architecture able to support runtime assessment of safety. 
+	\item \emph{Continuous integration and deployment} (detailed in Section~\ref{sec:CID_VP}) - OEMs are increasingly interested to reduce the development time, to increase flexibility, to have early feedback on decisions made, and to add new functionalities incrementally even after production. %However, another trend is the rapid development of more advanced active safety systems that require \del{a} special handling.\eric{does the last point here not relate more to connected cars and safety?}
+		\item \emph{Ecosystem and transparency} (detailed in Section~\ref{sec:ET_VP}) - related to the value net viewpoint of AAF~\cite{TUM-I0915,Broy}. %activities of, and the dependencies between the stakeholders of the end-toend value creation process which happens within a specific value net. 
+		The ecosystem around the OEM can be seen as a virtual %A value net is defined as a virtual
+	organization consisting of the OEM, its suppliers and other partners %and other constituents 
+	involved in the process of creating customer value.
+	\item \emph{Connected cars and safety} (detailed in Section~\ref{sec:SoSVP}) - Future scenarios of collaborating autonomous vehicles, like platooning, will require to extend the vehicle safety architecture across the classical boundaries of single vehicles and will ask for an open and adaptive architecture able to support runtime assessment of safety. 
 	\item \emph{Security and privacy of connected cars} - Connected cars open new important challenges from the point of view of security and privacy.
-	\item \emph{Ecosystem and transparency} - related to the value net viewpoint of AAF~\cite{TUM-I0915,Broy}. %activities of, and the dependencies between the stakeholders of the end-toend value creation process which happens within a specific value net. 
-	The ecosystem around the OEM can be seen as a virtual %A value net is defined as a virtual
-organization consisting of the OEM, its suppliers and other partners %and other constituents 
-involved in the process of creating customer value.
 	\item \emph{Autonomous cars} - autonomous cars require special architecture solutions, e.g. inspired to autonomous and self-adaptive systems~\cite{Salehie2009}.
 	\item \emph{Modes management} - a mode viewpoint is needed to design the different modes of a vehicle as well as the transitions from one mode to another.
 	\item Special viewpoints and views might be conceived to enable dissemination and communication of the architecture to developers and other stakeholders.
