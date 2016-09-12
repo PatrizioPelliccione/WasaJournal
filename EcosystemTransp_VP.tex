@@ -1,17 +1,17 @@
 % !TEX root = main.tex
 %%% Version 2.1b %%%
 \section{Ecosystem and transparency viewpoint}\label{sec:ET_VP}
-\renewcommand{\Fillin}[1]{{Ecosystem and transparency}}
+\renewcommand{\Fillin}[1]{{Ecosystem and Transparency}}
 %%%%%%%%%%
-\subsection{\Fillin{Viewpoint Name}}\label{vp:template}
+\subsection{\Fillin{Viewpoint Name}}\label{vp:eco}
 %%%%%%%%%%
 
-\del{\must{Provide the name for the viewpoint.}}
+\todo[inline,size=\small]{Provide the name for the viewpoint.
 
-\del{If there are any synonyms or other common names by which this viewpoint is
+If there are any synonyms or other common names by which this viewpoint is
 known or used, record them here.}
 
-The viewpoint ``Ecosystem and transparency'' focuses on the value-chain of \ugh{logical components of the electrical architecture}\eric{is this a good way of describing what is delivered by the ecosystem? It should be some abstraction of hw, software, logical components, no?} and aims at answering the following questions:
+The viewpoint ``\Fillin{Viewpoint Name}'' focuses on the value-chain of \ugh{logical components of the electrical architecture}\eric{is this a good way of describing what is delivered by the ecosystem? It should be some abstraction of hw, software, logical components, no?} and aims at answering the following questions:
 \begin{enumerate}
 \item How can an electrical architecture enable a network of organizations (including OEM, Tier-1 supplier, Tier-2 supplier) to work together to (continuously) provide value?
 \item How are architectural decisions affected by the need for transparent and continuous collaboration within the value-chain?
@@ -22,26 +22,38 @@ The viewpoint ``Ecosystem and transparency'' focuses on the value-chain of \ugh{
 \subsection{Overview} 
 %%%%%%%%%%
 
-Provide an abstract or brief overview of the viewpoint. 
+\todo[inline,size=\small]{Provide an abstract or brief overview of the viewpoint. 
 
-Describe the viewpoint's key features.
+Describe the viewpoint's key features.}
+
+The \Fillin{Viewpoint Name} viewpoint takes into account that architectural assets in automotive engineering are provided based on a complex network of cooperating organizations. 
+A logical component in the architecture will be implemented by a variaty of physical components, including hardware (ECUs) and software on different levels of abstraction. 
+
+In a concrete scenario, a logical component could be based on several AUTOSAR ECUs.
+The hardware in this scenario would be provided by different Tier-1 suppliers, while the AUTOSAR layer would be provided by one or more certified AUTOSAR suppliers.
+These AUTOSAR suppliers could be characterised as Tier-2 suppliers, since they are contracted by the Tier-1 suppliers who are supposed to deliver an ECU with basic software, but different setups are possible. 
+On top of these ECUs, application software would be developed either by the OEM or by separate software suppliers in order to provide the services defined by a logical component. 
+
+The example scenario above shows the importance of the \Fillin{Viewpoint Name} viewpoint: if an electrical architecture should take into account strategic business goals such as improved flexibility, reduced time-to-market, or development efficiency, the \Fillin{Viewpoint Name} viewpoint will offer important information that must be considered.
+This viewpoint ties into business decisions and often long-running sourcing contracts, but also into new business models with respect to after market software updates.
+Thus, we expect that lifecycles of hardware and software components are important architectural aspects as well as managing different development cycles of suppliers and components.
 
 
 %%%%%%%%%%
 \subsection{Concerns and stakeholders} 
 %%%%%%%%%%
 
-Architects looking for an architecture viewpoint suitable for their
+\todo[inline, size=\small]{Architects looking for an architecture viewpoint suitable for their
 purposes often use the identified concerns and typical stakeholders to
 guide them in their search.  Therefore it is important (and required
 by the Standard) to document the concerns and stakeholders for which a
-viewpoint is intended.
+viewpoint is intended.}
 
 %%%%%%%%%%
 \subsubsection{Concerns}\label{vp:concerns}
 %%%%%%%%%%
 
-\must{Provide a listing of architecture-relevant concerns to be framed by
+\todo[inline, size=\footnotesize]{\must{Provide a listing of architecture-relevant concerns to be framed by
 this architecture viewpoint per \std{7a}.}
 
 Describe each concern.
@@ -68,10 +80,11 @@ concerns will be addressed in the view resulting from this viewpoint.
 
 It can be helpful to express concerns \emph{in the form of questions}
 that views resulting from that viewpoint will be able to answer. E.g.,
-\begin{itemize}
-\item \textit{How does the system manage faults?}
-\item \textit{What services does the system provide?}
-\end{itemize}
+
+~~--~\textit{How does the system manage faults?}
+
+~~--~\textit{What services does the system provide?}
+
 
 \note{``In the form of a question'' is inspired by the television quiz
   show, \textit{Jeopardy!}}
@@ -79,23 +92,27 @@ that views resulting from that viewpoint will be able to answer. E.g.,
 \std{5.3} contains a candidate list of concerns that must be considered
 when producing an architecture description. These can be considered
 here for their relevance to the viewpoint being specified:
-\begin{itemize}
-\item What are the purpose(s) of the system-of-interest?
-\item What is the suitability of the architecture for achieving the
-  system-of-interest's purpose(s)?
-\item How feasible is it to construct and deploy the
-  system-of-interest?
-\item What are the potential risks and impacts of the
-  system-of-interest to its stakeholders throughout its life cycle?
-\item How is the system-of-interest to be maintained and evolved?
-\end{itemize}
+%\begin{itemize}
 
-See also: \std{4.2.3}.
+~~--~ What are the purpose(s) of the system-of-interest?
+
+~~--~What is the suitability of the architecture for achieving the
+  system-of-interest's purpose(s)?
+
+~~--~How feasible is it to construct and deploy the
+  system-of-interest?
+
+~~--~What are the potential risks and impacts of the
+  system-of-interest to its stakeholders throughout its life cycle?
+
+~~--~How is the system-of-interest to be maintained and evolved?
+
+See also: \std{4.2.3}.}
 
 %%%%%%%%%%
 \subsubsection{Typical stakeholders} 
 %%%%%%%%%%
-
+\todo[inline, size=\footnotesize]{
 \must{Provide a listing of the typical stakeholders of a system who
   are in the potential audience for views of this kind, per \std{7b}.}
 
@@ -104,28 +121,36 @@ and/or those who need to use the results of this view for another
 task.
 
 Stakeholders to consider include:
-\begin{itemize}
-\item users of a system; 
-\item operators of a system; 
-\item acquirers of a system;
-\item owners of a system; 
-\item suppliers of a system; 
-\item developers of a system; 
-\item builders of a system; 
-\item maintainers of a system.
-\end{itemize}
+%\begin{itemize}
 
+~~--~users of a system; 
+
+~~--~operators of a system; 
+
+~~--~acquirers of a system;
+
+~~--~owners of a system; 
+
+~~--~suppliers of a system; 
+
+~~--~developers of a system; 
+
+~~--~builders of a system; 
+
+~~--~maintainers of a system.
+%\end{itemize}
+}
 %%%%%%%%%%
 \subsubsection{``Anti-concerns'' \Optional} 
 %%%%%%%%%%
-
+\todo[inline, size=\footnotesize]{
 It may be helpful to architects and stakeholders to
 document the kinds of issues for which this viewpoint is \emph{not
   appropriate or not particularly useful}.
 
 Identifying the ``anti-concerns'' of a given notation or approach may
 be a good antidote for certain overly used models and notations.
-
+}
 % \tbd{Examples!}
 
 
@@ -133,6 +158,7 @@ be a good antidote for certain overly used models and notations.
 %%%%%%%%%%
 \subsection{Model kinds+}\label{mk:list}
 %%%%%%%%%%
+\todo[inline, size=\footnotesize]{
 
 \must{Identify each model kind used in the viewpoint per \std{7c}.}
 
@@ -144,17 +170,19 @@ that type.  See: \std{4.2.5, 5.5 and 5.6}.
 Repeat the next section for each model kind listed here the viewpoint
 being specified.
 
-
+}
 %%%%%%%%%%
 \subsection{\Fillin{Model Kind Name}}\label{vp:mk}
 %%%%%%%%%%
+\todo[inline, size=\footnotesize]{
 
 \must{Identify the model kind.}
 
-
+}
 %%%%%%%%%%
 \subsubsection{\Fillin{Model Kind Name} conventions} 
 %%%%%%%%%%
+\todo[inline, size=\footnotesize]{
 
 \must{Describe the conventions for models of this kind.}
 
@@ -175,15 +203,19 @@ section focuses on the process part.
 
 The Standard does not prescribe \emph{how} modeling conventions are to
 be documented.  The conventions could be defined:
-\begin{description}
-\item[I)] by reference to an existing notation or language (such as
+%\begin{description}
+
+\textbf{I)} by reference to an existing notation or language (such as
   SADT, UML or an architecture description language such as ArchiMate
   or SysML) or to an existing technique (such as $M/M/4$ queues);
-\item[II)] by presenting a metamodel defining its core constructs;
-\item[III)] via a template for users to fill in;
-\item[IV)] by some combination of these methods or in some other
+  
+\textbf{II)} by presenting a metamodel defining its core constructs;
+
+\textbf{III)} via a template for users to fill in;
+
+\textbf{IV)} by some combination of these methods or in some other
   manner.
-\end{description}
+%\end{description}
 
 Further guidance on methods I) through III) is provided below.
  
@@ -191,37 +223,51 @@ Sometimes conventions are applicable across more than one model kind
 -- it is not necessary to provide a separate set of conventions, a
 metamodel, notations, or operations for each, when a single
 specification is adequate.
+}
 
 
 %%%%%%%%%%
 \subsubsection*{I) Model kind languages or notations \Optional}
 %%%%%%%%%%
+\todo[inline, size=\footnotesize]{
 
 Identify or define the notation used in models of the kind.
 
 Identify an existing notation or model language or define one that can
 be used for models of this model kind. Describe its syntax, semantics,
 tool support, as needed.
+}
+\eric{seems like we will have to be a bit soft on how to do this. One could use goal models to define win-win situations. One could use process models to describe development cycles. What are good models to describe component lifecycles? Probably a template would be good at this point of time.}
 
 
 %%%%%%%%%%
 \subsubsection*{II) Model kind metamodel \Optional} 
 %%%%%%%%%%
+\todo[inline, size=\footnotesize]{
 
 A metamodel presents the AD elements that constitute the
 vocabulary of a model kind, and their rules of combination. There are
 different ways of representing metamodels (such as UML class diagrams, OWL,
 eCore). The metamodel should present:
-\begin{description}
-\item[entities] What are the major sorts of conceptual elements that
+%\begin{description}
+%\item[entities] What are the major sorts of conceptual elements that  are present in models of this kind?
+% \item[attributes] What properties do entities possess in models of this kind?
+% \item[relationships] What relations are defined among entities in models of this kind?
+% \item[constraints] What constraints are there on entities, attributes  and/or relationships and their combinations in models of this kind?
+%\end{description}
+
+\textbf{entities} What are the major sorts of conceptual elements that
   are present in models of this kind?
-\item[attributes] What properties do entities possess in models of
+  
+\textbf{attributes} What properties do entities possess in models of
   this kind?
-\item[relationships] What relations are defined among entities in
+  
+\textbf{relationships} What relations are defined among entities in
   models of this kind?
-\item[constraints] What constraints are there on entities, attributes
+  
+\textbf{constraints} What constraints are there on entities, attributes
   and/or relationships and their combinations in models of this kind?
-\end{description}
+
 
 \note{Metamodel constraints should not be confused with architecture
   constraints that apply to the subject being modeled, not the
@@ -240,7 +286,7 @@ specify a single viewpoint metamodel unifying the definition of the
 model kinds and the expression of correspondence rules.  When defining
 an architecture framework, it may be helpful to use a single metamodel
 to express multiple, related viewpoints and model kinds.
-
+}
 % \tbd{EXAMPLE -- In \cite{Hilliard:1999} and earlier work, we said that
 %   all views are built from primitives called components, connections
 %   and constraints which basically gives views a graph structure with
@@ -250,63 +296,77 @@ to express multiple, related viewpoints and model kinds.
 %   meaning from the work by CMU and others \cite{Shaw-Garlan:1996};
 %   (\textit{2}) this ur-ontology may be over-commiting for some views.}
 
+\eric{seems like we can anticipate a few entities and their relationshipts that will be important in this viewpoint, but much is left for future work.}
 
 %%%%%%%%%%
 \subsubsection*{III) Model kind templates \Optional}
 %%%%%%%%%%
+\todo[inline, size=\footnotesize]{
 
 Provide a template or form specifying the format and/or content of
 models of this model kind.
-
+}
 %% \tbd{EXAMPLE} 
 
 
 %%%%%%%%%%
 \subsubsection{\Fillin{Model Kind Name} operations \Optional} 
 %%%%%%%%%%
+\todo[inline, size=\footnotesize]{
 
 Specify operations defined on models of this kind.
 
 See~\S\ref{Opns} for further guidance.
 
+}
 
+\eric{Would that be ``identify win-win situations'', identify ``development lifecycle compatibility''?}
 %%%%%%%%%%
 \subsubsection{\Fillin{Model Kind Name} correspondence rules}
 %%%%%%%%%%
+\todo[inline, size=\footnotesize]{
 
 \must{Document any correspondence rules associated with the model
   kind.}
 
 See~\S\ref{CRs} for further guidance.
+}
 
+\eric{no clue what to write here.}
 
 %%%%%%%%%%
 \subsection{Operations on views}\label{Opns}
 %%%%%%%%%%
+\todo[inline, size=\footnotesize]{
 
 Operations define the methods to be applied to views and their models.
 Types of operations include:
 
-\begin{description}
+%\begin{description}
 
-\item[construction methods] are the means by which views are
-  constructed under this viewpoint. These operations could be in the
-  form of process guidance (how to start, what to do next); or work
-  product guidance (templates for views of this type). Construction
-  techniques may also be heuristic: identifying styles, patterns, or
-  other idioms to apply in the synthesis of the view.
+%\item[construction methods] are the means by which views are  constructed under this viewpoint. 
+% These operations could be in the  form of process guidance (how to start, what to do next); or work product guidance (templates for views of this type). 
+% Construction techniques may also be heuristic: identifying styles, patterns, or other idioms to apply in the synthesis of the view.
 
-\item[interpretation methods] which guide readers to understanding
-  and interpreting architecture views and their models.
+% \item[interpretation methods] which guide readers to understanding and interpreting architecture views and their models.
 
-\item[analysis methods] are used to check, reason about, transform,
-  predict, and evaluate architectural results from this view,
-  including operations which refer to model correspondence rules.
+% \item[analysis methods] are used to check, reason about, transform,  predict, and evaluate architectural results from this view, including operations which refer to model correspondence rules.
 
-\item[implementation methods] are the means by which to design and
-  build systems using this view.
+% \item[implementation methods] are the means by which to design and build systems using this view.
 
-\end{description}
+% \end{description}
+
+
+\textbf{construction methods} are the means by which views are  constructed under this viewpoint. 
+ These operations could be in the  form of process guidance (how to start, what to do next); or work product guidance (templates for views of this type). 
+ Construction techniques may also be heuristic: identifying styles, patterns, or other idioms to apply in the synthesis of the view.
+
+\textbf{interpretation methods} which guide readers to understanding and interpreting architecture views and their models.
+
+\textbf{analysis methods} are used to check, reason about, transform,  predict, and evaluate architectural results from this view, including operations which refer to model correspondence rules.
+
+\textbf{implementation methods} are the means by which to design and build systems using this view.
+
 
 Another approach to categorizing operations is from Finkelstein et
 al. \cite{Finkelstein+1992}. The \emph{work plan} for a viewpoint
@@ -317,11 +377,13 @@ contains the actions available to the developer to check the
 consistency of the specification; \textit{viewpoint actions} which
 create new viewpoints as development proceeds; \textit{guide actions}
 which provide the developer with guidance on what to do and when.
-
+}
+\eric{A bit speculative right now, no? Define transparency needs and collaboration patterns?}
 
 %%%%%%%%%%
 \subsection{Correspondence rules}\label{CRs}
 %%%%%%%%%%
+\todo[inline, size=\footnotesize]{
 
 \must{Document any correspondence rules defined by this viewpoint or
   its model kinds.}
@@ -331,30 +393,38 @@ constraints within a model kind will have been specified as part of
 the conventions of that model kind.
 
 See: \std{4.2.6 and 5.7}
-
+}
+\eric{What ever could that be? Obviously, Continuous Integration and Deployment, since if we want to do that, the syncing of development cycles becomes important. Also Systems of Systems. But in what way?}
 %%\tbd{examples or specs}
 
 %%%%%%%%%%
 \subsection{Examples \Optional} 
 %%%%%%%%%%
+\todo[inline, size=\footnotesize]{
 
 Provide helpful examples of use of the viewpoint for the reader
 (architects and other stakeholders).
-
+}
+\eric{Future work}
 
 %%%%%%%%%%
 \subsection{Notes \Optional} 
 %%%%%%%%%%
+\todo[inline, size=\footnotesize]{
 
 Provide any additional information that users of the viewpoint may
 need or find helpful.
 
+}
+\eric{future work}
 
 %%%%%%%%%%
 \subsection{Sources} 
 %%%%%%%%%%
+\todo[inline, size=\footnotesize]{
 
 \must{Identify sources for this architecture viewpoint, if any,
   including author, history, bibliographic references, prior art, per
   \std{7e}.}
-
+}
+\eric{future work?!?}
