@@ -93,7 +93,13 @@ Markets are however prone to constant change and such change might invalidate ar
 \item \emph{How can we deal with changing interfaces?} \ins{Reacting to change in the market will lead to late changes of the architecture, which in turn will affect continuous integration and deployment: It is not possible to integrate a component into the system after the interface changes unless the platform and other dependent components have already been adjusted to the new interface. 
 Deployment after an interface change might therefore involve a large number of updated components, which will not be possible in a continuous fashion. 
 With other words, after an interface change it will be hard to guarantee that the main branch of all components is in a deployable state. }
+\item \emph{How can we deal with dependencies?} 
+\ins{There are two types of dependencies, real and accidental dependencies. As car get more and more dependent on different sensors that also increase the dependencies in the overall system. This type of dependencies needs to be handle.  One the other hand accidental dependencies should be removed.  Dependencies can hamper team to work in isolation.} 
+
+\rogardt{Dependencies seem to be one of the largest show stopper for agile devlopment}
+
 \end{itemize}
+
 
 %\must{Provide a listing of architecture-relevant concerns to be framed by
 %this architecture viewpoint per \std{7a}.}
