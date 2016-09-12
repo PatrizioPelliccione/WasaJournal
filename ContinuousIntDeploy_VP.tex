@@ -46,8 +46,9 @@ compatible combinations need to be validated.
 Second, support for continuous deployment has to face \del{with} safety concerns.
 %relates to the connectivity of ECUs. 
 %the extent of this, in turn, raises not least security concerns.
-Should, for instance, the software \chg{of an}{delivered by an} ECU responsible\eric{does an ECU responsible actually deliver software? Seems weird, as this seems to imply responsibility for a specifc ECU, while the software should be hw independent. Should it be a ``Software Responsible'' instead?} for a safety critical function
-be modifiable at runtime?
+Should, for instance, the software \chg{of an}{delivered by an} ECU responsible\eric{does an ECU responsible actually deliver software? Seems weird, as this seems to imply responsibility for a specifc ECU, while the software should be hw independent. Should it be a ``Software Responsible'' instead?}
+\magnus{it's an ECU -- responsible for a safety critical\ldots not the role of ECU responsible}
+for a safety critical function be modifiable at runtime?
 
 Dependencies between ECUs are a property of the architecture.
 As mentioned, the emergent architecture may differ from the intended architecture,
@@ -83,20 +84,25 @@ viewpoint is intended.
 In this section we focus on the concerns that are essential to enable continuous integration and deployment when engineering software for cars. 
 We express the concerns in the form of questions as suggested by the ISO/IEC/IEEE 42010 standard.
 \eric{Suggesting some edits and a change in order here to improve the flow. Please check if it is still correct!}
+\magnus{Made some minor tweaks}
 \begin{itemize}
-\item \emph{How can we avoid building the wrong architecture?} \chg{It is no use in making a good architecture if it is for the wrong purpose.}{Even technically sound architecture is worthless if it does not fit the desired purpose. 
+\item \emph{How can we avoid building the wrong architecture?}
+\chg{It is no use in making a good architecture if it is for the wrong purpose.}{Even a technically sound architecture is worthless if it does not fit the desired purpose.
 Naturally, an electrical architecture needs to exist long before the product under consideration is developed and can reach the market, since it is required to guide organization of development activities. 
 Even though a lot of information is needed early in the product lifecycle, a crucial amount of information will only become available during its development and early market phase.}
-\item \emph{How can we reduce the number of architectural assumptions?} The more of the architecture \chg{one make}{is defined} up-front,  the more \ins{it is based on }assumptions \chg{are needed to be added}{instead of facts}. \del{It is hard to guarantee that these assumptions are true, moreover, if there are too many assumption one might loose the overviews as well. }\ins{This can lead to late changes, duplicate work, or in the worst case to problems that only surface when the product is in the market.} 
-\item \emph{How can \chg{we}{an electrical architecture} respond quicker to changes in the market?} \ins{Many of the assumptions will concern the situation at the market once the product is released. 
+\item \emph{How can we reduce the number of architectural assumptions?} The more of the architecture \chg{one make}{that is defined} up-front,  the more \ins{it is based on }assumptions \chg{are needed to be added}{instead of facts}. \del{It is hard to guarantee that these assumptions are true, moreover, if there are too many assumption one might loose the overviews as well. }\ins{This can lead to late changes, duplicate work, or in the worst case to problems that only surface once the product is on the market.}
+\item \emph{How can \chg{we}{an electrical architecture} respond quicker to changes in the market?} \ins{Many of the assumptions will concern the market situation once the product has been released. 
 Markets are however prone to constant change and such change might invalidate architectural decisions during the development of software. }
-\item \emph{How can we deal with changing interfaces?} \ins{Reacting to change in the market will lead to late changes of the architecture, which in turn will affect continuous integration and deployment: It is not possible to integrate a component into the system after the interface changes unless the platform and other dependent components have already been adjusted to the new interface. 
+\item \emph{How can we deal with changing interfaces?} \ins{Reacting to change in the market will lead to late changes of the architecture, which in turn will affect continuous integration and deployment: It is not possible to integrate a component into the system after its interface changes, unless the platform and other dependent components have already been adjusted to the new interface.
 Deployment after an interface change might therefore involve a large number of updated components, which will not be possible in a continuous fashion. 
-With other words, after an interface change it will be hard to guarantee that the main branch of all components is in a deployable state. }
+In other words, after an interface change it will be hard to guarantee that the main branch of all components is in a deployable state.}
 \item \emph{How can we deal with dependencies?} 
-\ins{There are two types of dependencies, real and accidental dependencies. As car get more and more dependent on different sensors that also increase the dependencies in the overall system. This type of dependencies needs to be handle.  One the other hand accidental dependencies should be removed.  Dependencies can hamper team to work in isolation.} 
+\ins{There are two types of dependencies, real and accidental dependencies. As cars get more and more dependent on different sensors that also increases the dependencies in the overall system. This type of dependencies needs to be handle.  One the other hand accidental dependencies should be removed.  Dependencies can hamper
+\chg{team to work in isolation}{separation of work between teams}.} 
 
 \rogardt{Dependencies seem to be one of the largest show stopper for agile devlopment}
+\magnus{Are dependencies alone a strong enough culprit,
+or is it when combined with slow feedback/low automation that they cause trouble for CI\&D?}
 
 \end{itemize}
 

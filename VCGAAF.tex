@@ -49,9 +49,9 @@ Table~\ref{tab:stakeholders} describes the main stakeholders we have identified;
 
 \begin{itemize}
 \item \emph{End-users} of the electrical system, like drivers and passengers.
-\item \emph{Customers} stakeholders, such as paying customers of products and services that depend on the electrical system (i.e. the car) and product planners, who acquire the electrical system as part of the overall product.
+\item \emph{Customer} stakeholders, such as paying customers of products and services that depend on the electrical system (i.e. the car) and product planners, who acquire the electrical system as part of the overall product.
 \item \emph{Management} with responsibility for scheduling, long term quality, groups, departments, and budget.
-\item \emph{Developers of the electrical system}  include engineers throughout the value chain that create the electrical system, its architecture, and the necessary tools as well as that test and integrate the various components. 
+\item \emph{Developers of the electrical system}  include engineers throughout the value chain that create the electrical system, its architecture, and the necessary tools \del{as well as} that test and integrate the various components. 
 \item \emph{Maintainers of the electrical system} who interact with the electrical system throughout its lifetime. 
 \end{itemize}
 
@@ -61,9 +61,10 @@ This will help the consumer of the architecture framework and of the views and c
 they are modeling and when they are done.
 In order to define the stakeholders concerns we identified a set of challenging scenarios through a number of workshops for elicitation and validation. 
 Figure~\ref{fig:challenging-scenarios} gives an overview of the scenarios that are strongly connected to the viewpoints we will detail in this paper. These scenarios are described in the following items.
-\magnus{Rogardt and I made a draft picture with the use cases from WP3 added.
+ogardt and I made a draft picture with the use cases from WP3 added.
 Color, exact naming, bubble placement etc., TDB.
-Do you think this is a workable way forward?}\patrizio{Magnus, might you please change the figure according to the new text I wrote? I don't have the source files.}
+%\patrizio{Magnus, might you please change the figure according to the new text I wrote? I don't have the source files.}
+\magnus{Graphviz generated figure in place, may require some layout tweaking.}
 
 \begin{figure}[htb]
 \begin{center}
@@ -254,7 +255,7 @@ As a tester, I want quick updates on all levels of tests and continuous improvem
 \emph{``As an architect I need to manage the transition towards autonomous behaviours of the car that are needed to achieve the goal of the SoS. The car should be engineered so to, often immediately, switch to another mode and perform the actions required by the SoS. The right tradeoff between independence of the vehicle (from the SoS) and service offered to the SoS needs to be found.''}
 \end{quote}
 
-\item {\em Dealing with uncertainty and functional safety (5.4)}: Vehicles are starting receiving a huge amount of information from the environment as communication coming from other vehicles, pedestrians, road signals, city in general. This information might be precious for supporting new safety behaviours\footnote{Here there is an example: \url{https://www.media.volvocars.com/global/en-gb/media/pressreleases/159478/volvo-cars-connected-car-program-delivers-pioneering-vision-of-safety-and-convenience}}. However, this information is often unreliable and subject to different dimensions of uncertainty, like presence of other constituent systems, communication means, etc.
+\item {\em Dealing with uncertainty and functional safety (5.4)}: Vehicles are starting receiving a huge amount of information from the environment as communication coming from other vehicles, pedestrians, road signals, city in general. This information might be precious for supporting new safety behaviours\footnote{\chg{Here there is an e}{E}xample: \url{https://www.media.volvocars.com/global/en-gb/media/pressreleases/159478/volvo-cars-connected-car-program-delivers-pioneering-vision-of-safety-and-convenience}}. However, this information is often unreliable and subject to different dimensions of uncertainty, like presence of other constituent systems, communication means, etc.
 
 \begin{quote}
 {User Story:} 
