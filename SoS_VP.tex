@@ -187,6 +187,7 @@ Since \chg{it}{in} this viewpoint we take the vehicle point of view, potentially
 %%%%%%%%%%
 \subsection{Model kinds+}\label{mk:list}
 %%%%%%%%%%
+\eric{Suggest to change heading of this section}
 
 There are not obvious model kinds that can be used for this viewpoint. UML and general purpose architecture description languages seem to be not appropriate to architecting SoSs. There are some attempts in the literature to define architectural languages (Als) for SoS, such as...\patrizio{Add Oquendo and others}, however, a deep analysis of these languages need to be performed in order to precisely understand whether the ADL can exactly satisfy the needs of this viewpoint and of Volvo cars. Results of an initial analysis suggest that this language is might be too formal and heavy. As it is stated in~\cite{whatindustrywants,IEEESoftwarePatrizio} often ALs are not adopted by practitioners since they are (i) too complex and require specialized competencies, (ii) the return on investment is insufficient perceived, (iii) they require over-specification and at the same time practitioners are not able to model design decisions explicitly in the AL, and (iv) there is a lack of integration in the software and system life cycle, lack of
 mature tools, and usability issues. 
@@ -369,7 +370,10 @@ An interesting way to define model kinds is to properly define the metamodel of 
 Other operations should help and guide the user in interpreting the views. The starting point should be a serious study on understanding exactly both the users and the purpose of the views. This study will then define the requirements of the syntax (e.g., graphical, textual, tree-like) to be used for the language. 
 Operations should be also provided to evaluate architecture descriptions and decisions. For instance, analysis methods might be defined to evaluate the interoperability level, the ability of the system to cope with heterogeneity of communication channels, security and privacy when the car become part of the SoS, etc.
 Finally, the view should be connected to the software and system life-cycle through methods helping the design and build of the system.
-
+\eric{It feels like this is something we should have in all three subsections. So we should understand how we do that without repeating ourselves too much. In CID (6.5) I would replace the ``For instance'' part as follows:}
+\ins{For instance, analysis methods might be defined to evaluate the efficiency of the feedback cycle in continuous integration and deployment as well as its ability to help resolving assumptions.}
+\eric{And for the ECOS/T VP it would look like this:}
+\ins{For instance, analysis methods could be defined to analys win-win situations in the ecosystem and to identify suitable partners for critical value-chains as well as for analysing and managing required transparency levels with development partners.}
 
 %Operations define the methods to be applied to views and their models.
 %Types of operations include:

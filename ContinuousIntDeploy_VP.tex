@@ -183,24 +183,24 @@ Stakeholders to consider include:
 }
 
 %%%%%%%%%%
-\subsubsection{``Anti-concerns'' \Optional} 
+\subsubsection{``Anti-concerns'' \Optional}
 %%%%%%%%%%
 
-It may be helpful to architects and stakeholders to
+\del{It may be helpful to architects and stakeholders to
 document the kinds of issues for which this viewpoint is \emph{not
-  appropriate or not particularly useful}.
+  appropriate or not particularly useful}.}
 
-Identifying the ``anti-concerns'' of a given notation or approach may
-be a good antidote for certain overly used models and notations.
-
+\del{Identifying the ``anti-concerns'' of a given notation or approach may
+be a good antidote for certain overly used models and notations.}
+\eric{I think we can remove this optional section here, no?}
 % \tbd{Examples!}
 
 
 
 %%%%%%%%%%
-\subsection{Model kinds+}\label{mk:list}
+\subsection{Model kinds for Continuous Integration and Deployment Viewpoint}\label{mk:list}
 %%%%%%%%%%
-
+\todo[inline, size=\footnotesize]{
 \must{Identify each model kind used in the viewpoint per \std{7c}.}
 
 In the Standard, each architecture view consists of multiple
@@ -209,104 +209,109 @@ which establishes the notations, conventions and rules for models of
 that type.  See: \std{4.2.5, 5.5 and 5.6}.
 
 Repeat the next section for each model kind listed here the viewpoint
-being specified.
+being specified.}
+
+Various notations have been proposed to model continuous integration and deployment pipelines \ref{example1,example2,example3}\eric{Take something from the CID SLR}.
+Among those, several could be applicable to this viewpoint, e.g. \ref{Stahl}.
+In addition, one would need to relate those to architectural approaches as well as to the concerns defined above. 
+We are currently working on a qualitative assessment method that allows to identify disruptors and bottlenecks for continuous integration and deployment\eric{I am thinking about the KACI model here (not published yet). What else?}.
+
+\eric{Several subsections commented out in accordance to Section 8 (I believe).}
+%%%%%%%%%%
+% \subsection{\Fillin{Model Kind Name}}\label{vp:mk}
+%%%%%%%%%%
+
+%\must{Identify the model kind.}
 
 
 %%%%%%%%%%
-\subsection{\Fillin{Model Kind Name}}\label{vp:mk}
+%\subsubsection{\Fillin{Model Kind Name} conventions} 
 %%%%%%%%%%
 
-\must{Identify the model kind.}
+%\must{Describe the conventions for models of this kind.}
 
+%Conventions include languages, notations, modeling techniques,
+%analytical methods and other operations. These are key modeling
+%resources that the model kind makes available to architects and
+%determine the vocabularies for constructing models of the kind and
+%therefore, how those models are interpreted and used.
 
-%%%%%%%%%%
-\subsubsection{\Fillin{Model Kind Name} conventions} 
-%%%%%%%%%%
+%It can be useful to separate these conventions into a \emph{language
+%  part}: in terms of a metamodel or specification of notation to be
+%used and a \emph{process part}: to describe modeling techniques used
+%to create the models and methods which can be used on the models that
+%result.  These include operations on models of the model kind.
 
-\must{Describe the conventions for models of this kind.}
+%The remainder of this section focuses on the language part. The next
+%section focuses on the process part.
 
-Conventions include languages, notations, modeling techniques,
-analytical methods and other operations. These are key modeling
-resources that the model kind makes available to architects and
-determine the vocabularies for constructing models of the kind and
-therefore, how those models are interpreted and used.
+%The Standard does not prescribe \emph{how} modeling conventions are to
+%be documented.  The conventions could be defined:
+%\begin{description}
+%\item[I)] by reference to an existing notation or language (such as
+%  SADT, UML or an architecture description language such as ArchiMate
+%  or SysML) or to an existing technique (such as $M/M/4$ queues);
+%\item[II)] by presenting a metamodel defining its core constructs;
+%\item[III)] via a template for users to fill in;
+%\item[IV)] by some combination of these methods or in some other
+%  manner.
+%\end{description}
 
-It can be useful to separate these conventions into a \emph{language
-  part}: in terms of a metamodel or specification of notation to be
-used and a \emph{process part}: to describe modeling techniques used
-to create the models and methods which can be used on the models that
-result.  These include operations on models of the model kind.
-
-The remainder of this section focuses on the language part. The next
-section focuses on the process part.
-
-The Standard does not prescribe \emph{how} modeling conventions are to
-be documented.  The conventions could be defined:
-\begin{description}
-\item[I)] by reference to an existing notation or language (such as
-  SADT, UML or an architecture description language such as ArchiMate
-  or SysML) or to an existing technique (such as $M/M/4$ queues);
-\item[II)] by presenting a metamodel defining its core constructs;
-\item[III)] via a template for users to fill in;
-\item[IV)] by some combination of these methods or in some other
-  manner.
-\end{description}
-
-Further guidance on methods I) through III) is provided below.
+%Further guidance on methods I) through III) is provided below.
  
-Sometimes conventions are applicable across more than one model kind
--- it is not necessary to provide a separate set of conventions, a
-metamodel, notations, or operations for each, when a single
-specification is adequate.
+%Sometimes conventions are applicable across more than one model kind
+%-- it is not necessary to provide a separate set of conventions, a
+%metamodel, notations, or operations for each, when a single
+%specification is adequate.
 
 
 %%%%%%%%%%
-\subsubsection*{I) Model kind languages or notations \Optional}
+%\subsubsection*{I) Model kind languages or notations \Optional}
 %%%%%%%%%%
 
-Identify or define the notation used in models of the kind.
+%Identify or define the notation used in models of the kind.
 
-Identify an existing notation or model language or define one that can
-be used for models of this model kind. Describe its syntax, semantics,
-tool support, as needed.
+%Identify an existing notation or model language or define one that can
+%be used for models of this model kind. Describe its syntax, semantics,
+%tool support, as needed.
 
 
 %%%%%%%%%%
-\subsubsection*{II) Model kind metamodel \Optional} 
+%\subsubsection*{II) Model kind metamodel \Optional} 
 %%%%%%%%%%
 
-A metamodel presents the AD elements that constitute the
-vocabulary of a model kind, and their rules of combination. There are
-different ways of representing metamodels (such as UML class diagrams, OWL,
-eCore). The metamodel should present:
-\begin{description}
-\item[entities] What are the major sorts of conceptual elements that
-  are present in models of this kind?
-\item[attributes] What properties do entities possess in models of
-  this kind?
-\item[relationships] What relations are defined among entities in
-  models of this kind?
-\item[constraints] What constraints are there on entities, attributes
-  and/or relationships and their combinations in models of this kind?
-\end{description}
+%A metamodel presents the AD elements that constitute the
+%vocabulary of a model kind, and their rules of combination. There are
+%different ways of representing metamodels (such as UML class diagrams, OWL,
+%eCore). The metamodel should present:
+%\begin{description}
+%\item[entities] What are the major sorts of conceptual elements that
+ % are present in models of this kind?
+%\item[attributes] What properties do entities possess in models of
+%  this kind?
+%\item[relationships] What relations are defined among entities in
+%  models of this kind?
+%\item[constraints] What constraints are there on entities, attributes
+%  and/or relationships and their combinations in models of this kind?
+%\end{description}
 
-\note{Metamodel constraints should not be confused with architecture
-  constraints that apply to the subject being modeled, not the
-  notations used.}
+%\note{Metamodel constraints should not be confused with architecture
+%  constraints that apply to the subject being modeled, not the
+%  notations used.}
 
-In the terms of the Standard, entities, attributes, relationships are
-\textit{AD elements} per \std{3.4, 4.2.5 and 5.7}.
+%In the terms of the Standard, entities, attributes, relationships are
+%\textit{AD elements} per \std{3.4, 4.2.5 and 5.7}.
 
-In the \textit{Views-and-Beyond} approach~\cite{DSA:2010}, \eric{reference missing?} each
-viewtype (which is similar to a viewpoint) is specified by a set of
-elements, properties, and relations (which correspond to entities,
-attributes and relationships here, respectively).
+%In the \textit{Views-and-Beyond} approach~\cite{DSA:2010}, \eric{reference missing?} each
+%viewtype (which is similar to a viewpoint) is specified by a set of
+%elements, properties, and relations (which correspond to entities,
+%attributes and relationships here, respectively).
 
-When a viewpoint specifies multiple model kinds it can be useful to
-specify a single viewpoint metamodel unifying the definition of the
-model kinds and the expression of correspondence rules.  When defining
-an architecture framework, it may be helpful to use a single metamodel
-to express multiple, related viewpoints and model kinds.
+%When a viewpoint specifies multiple model kinds it can be useful to
+%specify a single viewpoint metamodel unifying the definition of the
+%model kinds and the expression of correspondence rules.  When defining
+%an architecture framework, it may be helpful to use a single metamodel
+%to express multiple, related viewpoints and model kinds.
 
 % \tbd{EXAMPLE -- In \cite{Hilliard:1999} and earlier work, we said that
 %   all views are built from primitives called components, connections
@@ -319,61 +324,70 @@ to express multiple, related viewpoints and model kinds.
 
 
 %%%%%%%%%%
-\subsubsection*{III) Model kind templates \Optional}
+%\subsubsection*{III) Model kind templates \Optional}
 %%%%%%%%%%
 
-Provide a template or form specifying the format and/or content of
-models of this model kind.
+%Provide a template or form specifying the format and/or content of
+%models of this model kind.
 
 %% \tbd{EXAMPLE} 
 
 
 %%%%%%%%%%
-\subsubsection{\Fillin{Model Kind Name} operations \Optional} 
+%\subsubsection{\Fillin{Model Kind Name} operations \Optional} 
 %%%%%%%%%%
 
-Specify operations defined on models of this kind.
+%Specify operations defined on models of this kind.
 
-See~\S\ref{Opns} for further guidance.
+%See~\S\ref{Opns} for further guidance.
 
 
 %%%%%%%%%%
-\subsubsection{\Fillin{Model Kind Name} correspondence rules}
+%\subsubsection{\Fillin{Model Kind Name} correspondence rules}
 %%%%%%%%%%
 
-\must{Document any correspondence rules associated with the model
-  kind.}
+%\must{Document any correspondence rules associated with the model
+%  kind.}
 
-See~\S\ref{CRs} for further guidance.
+%See~\S\ref{CRs} for further guidance.
 
 
 %%%%%%%%%%
 \subsection{Operations on views}\label{Opns}
 %%%%%%%%%%
 
+\eric{Cannot see how we could write something completely different from what is in Section 8.5. Made a suggestion for addition there. Perhaps copy that text here and reference it in Section 7.5 and 8.5?}
+
+\todo[inline, size=\footnotesize]{
+
 Operations define the methods to be applied to views and their models.
 Types of operations include:
 
-\begin{description}
+%\begin{description}
 
-\item[construction methods] are the means by which views are
-  constructed under this viewpoint. These operations could be in the
-  form of process guidance (how to start, what to do next); or work
-  product guidance (templates for views of this type). Construction
-  techniques may also be heuristic: identifying styles, patterns, or
-  other idioms to apply in the synthesis of the view.
+%\item[construction methods] are the means by which views are  constructed under this viewpoint. 
+% These operations could be in the  form of process guidance (how to start, what to do next); or work product guidance (templates for views of this type). 
+% Construction techniques may also be heuristic: identifying styles, patterns, or other idioms to apply in the synthesis of the view.
 
-\item[interpretation methods] which guide readers to understanding
-  and interpreting architecture views and their models.
+% \item[interpretation methods] which guide readers to understanding and interpreting architecture views and their models.
 
-\item[analysis methods] are used to check, reason about, transform,
-  predict, and evaluate architectural results from this view,
-  including operations which refer to model correspondence rules.
+% \item[analysis methods] are used to check, reason about, transform,  predict, and evaluate architectural results from this view, including operations which refer to model correspondence rules.
 
-\item[implementation methods] are the means by which to design and
-  build systems using this view.
+% \item[implementation methods] are the means by which to design and build systems using this view.
 
-\end{description}
+% \end{description}
+
+
+\textbf{construction methods} are the means by which views are  constructed under this viewpoint. 
+ These operations could be in the  form of process guidance (how to start, what to do next); or work product guidance (templates for views of this type). 
+ Construction techniques may also be heuristic: identifying styles, patterns, or other idioms to apply in the synthesis of the view.
+
+\textbf{interpretation methods} which guide readers to understanding and interpreting architecture views and their models.
+
+\textbf{analysis methods} are used to check, reason about, transform,  predict, and evaluate architectural results from this view, including operations which refer to model correspondence rules.
+
+\textbf{implementation methods} are the means by which to design and build systems using this view.
+
 
 Another approach to categorizing operations is from Finkelstein et
 al. \cite{Finkelstein+1992}. The \emph{work plan} for a viewpoint
@@ -384,7 +398,7 @@ contains the actions available to the developer to check the
 consistency of the specification; \textit{viewpoint actions} which
 create new viewpoints as development proceeds; \textit{guide actions}
 which provide the developer with guidance on what to do and when.
-
+}
 
 %%%%%%%%%%
 \subsection{Correspondence rules}\label{CRs}

@@ -168,16 +168,16 @@ Stakeholders to consider include:
 %\end{itemize}
 }
 %%%%%%%%%%
-\subsubsection{``Anti-concerns'' \Optional} 
+%\subsubsection{``Anti-concerns'' \Optional} 
 %%%%%%%%%%
-\todo[inline, size=\footnotesize]{
-It may be helpful to architects and stakeholders to
-document the kinds of issues for which this viewpoint is \emph{not
-  appropriate or not particularly useful}.
+%\todo[inline, size=\footnotesize]{
+%It may be helpful to architects and stakeholders to
+%document the kinds of issues for which this viewpoint is \emph{not
+%  appropriate or not particularly useful}.
 
-Identifying the ``anti-concerns'' of a given notation or approach may
-be a good antidote for certain overly used models and notations.
-}
+%Identifying the ``anti-concerns'' of a given notation or approach may
+%be a good antidote for certain overly used models and notations.
+%}
 % \tbd{Examples!}
 
 
@@ -194,88 +194,100 @@ architecture models. Each model is governed by a \textit{model kind}
 which establishes the notations, conventions and rules for models of
 that type.  See: \std{4.2.5, 5.5 and 5.6}.
 
-Repeat the next section for each model kind listed here the viewpoint
+Repeat the next section \eric{commented out} for each model kind listed here the viewpoint
 being specified.
 
 }
 %%%%%%%%%%
-\subsection{\Fillin{Model Kind Name}}\label{vp:mk}
+%\subsection{\Fillin{Model Kind Name}}\label{vp:mk}
 %%%%%%%%%%
-\todo[inline, size=\footnotesize]{
+%\todo[inline, size=\footnotesize]{
 
-\must{Identify the model kind.}
+%\must{Identify the model kind.}
 
-}
+%}
 %%%%%%%%%%
-\subsubsection{\Fillin{Model Kind Name} conventions} 
+%\subsubsection{\Fillin{Model Kind Name} conventions} 
 %%%%%%%%%%
-\todo[inline, size=\footnotesize]{
+%\todo[inline, size=\footnotesize]{
 
-\must{Describe the conventions for models of this kind.}
+%\must{Describe the conventions for models of this kind.}
 
-Conventions include languages, notations, modeling techniques,
-analytical methods and other operations. These are key modeling
-resources that the model kind makes available to architects and
-determine the vocabularies for constructing models of the kind and
-therefore, how those models are interpreted and used.
+%Conventions include languages, notations, modeling techniques,
+%analytical methods and other operations. These are key modeling
+%resources that the model kind makes available to architects and
+%determine the vocabularies for constructing models of the kind and
+%therefore, how those models are interpreted and used.
 
-It can be useful to separate these conventions into a \emph{language
-  part}: in terms of a metamodel or specification of notation to be
-used and a \emph{process part}: to describe modeling techniques used
-to create the models and methods which can be used on the models that
-result.  These include operations on models of the model kind.
+%It can be useful to separate these conventions into a \emph{language
+%  part}: in terms of a metamodel or specification of notation to be
+%used and a \emph{process part}: to describe modeling techniques used
+%to create the models and methods which can be used on the models that
+%result.  These include operations on models of the model kind.
 
-The remainder of this section focuses on the language part. The next
-section focuses on the process part.
+%The remainder of this section focuses on the language part. The next
+%section focuses on the process part.
 
-The Standard does not prescribe \emph{how} modeling conventions are to
-be documented.  The conventions could be defined:
+%The Standard does not prescribe \emph{how} modeling conventions are to
+%be documented.  The conventions could be defined:
 %\begin{description}
 
-\textbf{I)} by reference to an existing notation or language (such as
-  SADT, UML or an architecture description language such as ArchiMate
-  or SysML) or to an existing technique (such as $M/M/4$ queues);
+%\textbf{I)} by reference to an existing notation or language (such as
+%  SADT, UML or an architecture description language such as ArchiMate
+%  or SysML) or to an existing technique (such as $M/M/4$ queues);
   
-\textbf{II)} by presenting a metamodel defining its core constructs;
+%\textbf{II)} by presenting a metamodel defining its core constructs;
 
-\textbf{III)} via a template for users to fill in;
+%\textbf{III)} via a template for users to fill in;
 
-\textbf{IV)} by some combination of these methods or in some other
-  manner.
+%\textbf{IV)} by some combination of these methods or in some other
+ % manner.
 %\end{description}
 
-Further guidance on methods I) through III) is provided below.
+%Further guidance on methods I) through III) is provided below.
  
-Sometimes conventions are applicable across more than one model kind
--- it is not necessary to provide a separate set of conventions, a
-metamodel, notations, or operations for each, when a single
-specification is adequate.
-}
+%Sometimes conventions are applicable across more than one model kind
+%-- it is not necessary to provide a separate set of conventions, a
+%metamodel, notations, or operations for each, when a single
+%specification is adequate.
+%}
 
 
 %%%%%%%%%%
-\subsubsection*{I) Model kind languages or notations \Optional}
+%\subsubsection*{I) Model kind languages or notations \Optional}
 %%%%%%%%%%
-\todo[inline, size=\footnotesize]{
+%\todo[inline, size=\footnotesize]{
 
-Identify or define the notation used in models of the kind.
+%Identify or define the notation used in models of the kind.
 
-Identify an existing notation or model language or define one that can
-be used for models of this model kind. Describe its syntax, semantics,
-tool support, as needed.
-}
-\eric{seems like we will have to be a bit soft on how to do this. One could use goal models to define win-win situations. One could use process models to describe development cycles. What are good models to describe component lifecycles? Probably a template would be good at this point of time.}
+%Identify an existing notation or model language or define one that can
+%be used for models of this model kind. Describe its syntax, semantics,
+%tool support, as needed.
+%}
+%\eric{seems like we will have to be a bit soft on how to do this. One could use goal models to define win-win situations. One could use process models to describe development cycles. What are good models to describe component lifecycles? Probably a template would be good at this point of time.}
 
+Since the we are proposing a new viewpoint for Ecosystem and Transperency concerns in this paper, there is no established way of modelling it so far. 
+Models would need to provide the following information:
+\begin{description}
+\item[Analysis of Value-Chain] In order to document the different value-chains, on could either create a map of a (part of an) ecosystem as proposed by Janssen or single out a specific value chain as we for example did in our previous work on the AUTOSAR ecosystem based on Brinkkamper et al.'s notation \ref{Janssen,Mozhan,Sjaak}.
+\item[Analysis of Actors and Goals] In addition to the critical value chains, one should maintain information about the actors involved in those chains and their goals.
+Yu and Franch have proposed to use goal models for this purpose, which is a promising approach to align goals of different actors based on architectural decisions and to achieve win-win situations. These are important when targeting strong collaborations and partnerships \ref{Yu,Franch}.
+\item[Reasoning about anonymous actors] To some extend, the concrete partners and suppliers are not known when creating the electrical architecture. 
+In such situations, we propose a persona based approach, i.e. defining archetypical actors with important characteristics as well as their expectation towards the ecosystem \cite{EAM}.
+\item[Defining Transparency Requirements] Ali et al. have proposed a framework for defining transparency requirements which could be a good starting point for these aspects \ref{Ali}. For practical use in this viewpoint, this framework would need to be extended with dynamic aspects, e.g. for withdrawing information when a partnership ends. 
+Obviously, this includes also ownership and digital rights management issues, for which we hope to borrow concepts from other works \ref{Muller,Averbakh}.
+\end{description}
+\eric{obviously need to add some details and references here...}
 
 %%%%%%%%%%
-\subsubsection*{II) Model kind metamodel \Optional} 
+%\subsubsection*{II) Model kind metamodel \Optional} 
 %%%%%%%%%%
-\todo[inline, size=\footnotesize]{
+%\todo[inline, size=\footnotesize]{
 
-A metamodel presents the AD elements that constitute the
-vocabulary of a model kind, and their rules of combination. There are
-different ways of representing metamodels (such as UML class diagrams, OWL,
-eCore). The metamodel should present:
+%A metamodel presents the AD elements that constitute the
+%vocabulary of a model kind, and their rules of combination. There are
+%different ways of representing metamodels (such as UML class diagrams, OWL,
+%eCore). The metamodel should present:
 %\begin{description}
 %\item[entities] What are the major sorts of conceptual elements that  are present in models of this kind?
 % \item[attributes] What properties do entities possess in models of this kind?
@@ -283,37 +295,37 @@ eCore). The metamodel should present:
 % \item[constraints] What constraints are there on entities, attributes  and/or relationships and their combinations in models of this kind?
 %\end{description}
 
-\textbf{entities} What are the major sorts of conceptual elements that
-  are present in models of this kind?
+%\textbf{entities} What are the major sorts of conceptual elements that
+%  are present in models of this kind?
   
-\textbf{attributes} What properties do entities possess in models of
-  this kind?
+%\textbf{attributes} What properties do entities possess in models of
+%  this kind?
   
-\textbf{relationships} What relations are defined among entities in
-  models of this kind?
+%\textbf{relationships} What relations are defined among entities in
+%  models of this kind?
   
-\textbf{constraints} What constraints are there on entities, attributes
-  and/or relationships and their combinations in models of this kind?
+%\textbf{constraints} What constraints are there on entities, attributes
+%  and/or relationships and their combinations in models of this kind?
 
 
-\note{Metamodel constraints should not be confused with architecture
-  constraints that apply to the subject being modeled, not the
-  notations used.}
+%\note{Metamodel constraints should not be confused with architecture
+%  constraints that apply to the subject being modeled, not the
+ % notations used.}
 
-In the terms of the Standard, entities, attributes, relationships are
-\textit{AD elements} per \std{3.4, 4.2.5 and 5.7}.
+%In the terms of the Standard, entities, attributes, relationships are
+%\textit{AD elements} per \std{3.4, 4.2.5 and 5.7}.
 
-In the \textit{Views-and-Beyond} approach~\cite{DSA:2010}, each
-viewtype (which is similar to a viewpoint) is specified by a set of
-elements, properties, and relations (which correspond to entities,
-attributes and relationships here, respectively).
+%In the \textit{Views-and-Beyond} approach~\cite{DSA:2010}, each
+%viewtype (which is similar to a viewpoint) is specified by a set of
+%elements, properties, and relations (which correspond to entities,
+%attributes and relationships here, respectively).
 
-When a viewpoint specifies multiple model kinds it can be useful to
-specify a single viewpoint metamodel unifying the definition of the
-model kinds and the expression of correspondence rules.  When defining
-an architecture framework, it may be helpful to use a single metamodel
-to express multiple, related viewpoints and model kinds.
-}
+%When a viewpoint specifies multiple model kinds it can be useful to
+%specify a single viewpoint metamodel unifying the definition of the
+%model kinds and the expression of correspondence rules.  When defining
+%an architecture framework, it may be helpful to use a single metamodel
+%to express multiple, related viewpoints and model kinds.
+%}
 % \tbd{EXAMPLE -- In \cite{Hilliard:1999} and earlier work, we said that
 %   all views are built from primitives called components, connections
 %   and constraints which basically gives views a graph structure with
@@ -323,47 +335,52 @@ to express multiple, related viewpoints and model kinds.
 %   meaning from the work by CMU and others \cite{Shaw-Garlan:1996};
 %   (\textit{2}) this ur-ontology may be over-commiting for some views.}
 
-\eric{seems like we can anticipate a few entities and their relationshipts that will be important in this viewpoint, but much is left for future work.}
+%\eric{seems like we can anticipate a few entities and their relationshipts that will be important in this viewpoint, but much is left for future work.}
 
 %%%%%%%%%%
-\subsubsection*{III) Model kind templates \Optional}
+%\subsubsection*{III) Model kind templates \Optional}
 %%%%%%%%%%
-\todo[inline, size=\footnotesize]{
+%\todo[inline, size=\footnotesize]{
 
-Provide a template or form specifying the format and/or content of
-models of this model kind.
-}
+%Provide a template or form specifying the format and/or content of
+%models of this model kind.
+%}
 %% \tbd{EXAMPLE} 
 
 
 %%%%%%%%%%
-\subsubsection{\Fillin{Model Kind Name} operations \Optional} 
+%\subsubsection{\Fillin{Model Kind Name} operations \Optional} 
 %%%%%%%%%%
-\todo[inline, size=\footnotesize]{
+%\todo[inline, size=\footnotesize]{
 
-Specify operations defined on models of this kind.
+%Specify operations defined on models of this kind.
 
-See~\S\ref{Opns} for further guidance.
+%See~\S\ref{Opns} for further guidance.
 
-}
+%}
 
-\eric{Would that be ``identify win-win situations'', identify ``development lifecycle compatibility''?}
+%
 %%%%%%%%%%
-\subsubsection{\Fillin{Model Kind Name} correspondence rules}
+%\subsubsection{\Fillin{Model Kind Name} correspondence rules}
 %%%%%%%%%%
-\todo[inline, size=\footnotesize]{
+%\todo[inline, size=\footnotesize]{
 
-\must{Document any correspondence rules associated with the model
-  kind.}
+%\must{Document any correspondence rules associated with the model
+%  kind.}
 
-See~\S\ref{CRs} for further guidance.
-}
+%See~\S\ref{CRs} for further guidance.
+%}
 
-\eric{no clue what to write here.}
+%\eric{no clue what to write here.}
 
 %%%%%%%%%%
 \subsection{Operations on views}\label{Opns}
 %%%%%%%%%%
+\eric{Cannot see how we could write something completely different from what is in Section 8.5. Made a suggestion for addition there. Perhaps copy that text here and reference it in Section 7.5 and 8.5?}
+
+
+\eric{Suggestions: ``identify win-win situations'', identify ``development lifecycle compatibility'', Define transparency needs and collaboration patterns}
+
 \todo[inline, size=\footnotesize]{
 
 Operations define the methods to be applied to views and their models.
@@ -405,7 +422,7 @@ consistency of the specification; \textit{viewpoint actions} which
 create new viewpoints as development proceeds; \textit{guide actions}
 which provide the developer with guidance on what to do and when.
 }
-\eric{A bit speculative right now, no? Define transparency needs and collaboration patterns?}
+
 
 %%%%%%%%%%
 \subsection{Correspondence rules}\label{CRs}
