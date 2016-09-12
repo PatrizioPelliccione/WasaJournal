@@ -52,6 +52,26 @@ viewpoint is intended.}
 %%%%%%%%%%
 \subsubsection{Concerns}\label{vp:concerns}
 %%%%%%%%%%
+In this section we focus on the concerns that are essential to enable efficient work in the ecosystem of automotive electrical systems. 
+We express the concerns in the form of questions as suggested by the ISO/IEC/IEEE 42010 standard.
+\eric{Wonder if it is good or bad that all three viewpoints have very similar text here...}
+
+\begin{itemize}
+\item \emph{Which types of value-chains are implied by a given electrical architecture and what is their purpose?} A given electrical architecture will define the interplay of different types of logical components with the goal to support user visible features. 
+While some of these features will be well-understood and stable, others will be highly innovative and their development will be subject to volatile requirements. 
+Value-chains for implementing those logical components will differ based on the type of feature that they support. 
+
+\item \emph{How to map supplier development capabilities to demands created by a specific electrical architecture?} Different capabilities are demanded for development across the value-chain, depending of the type of feature. 
+An electrical architecture might be able to minimize or limit interaction on critical innovative features in the ecosystem to only actors that can support a highly iterative development. 
+
+\item \emph{What is the suitability of the architecture for managing different kinds of value-chains?}
+
+\item \emph{How can we establish the required level of transparency in a value-chain?} The more volatile the requirements of a feature are, the more information exchange is needed between ecosystem actors. 
+If we were to implement continuous delivery throughout the value-chain, all involved partners should have access to critical information so that they can take responsibility. 
+In a less volatile environment the (legal and organizational) effort of creating high transparency will not pay off. 
+
+\item \emph{How can we manage transparency (e.g. of architectural decisions) in the face of changing suppliers?} In order to maintain a powerful automotive engineering ecosystem we need to be able to change actor relationships. This will also affect the level of transparency (including what information to share and at what frequency).
+\end{itemize}
 
 \todo[inline, size=\footnotesize]{\must{Provide a listing of architecture-relevant concerns to be framed by
 this architecture viewpoint per \std{7a}.}
