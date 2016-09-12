@@ -1,0 +1,82 @@
+graph UseCases {
+  layout=neato;
+  overlap=false;
+
+  {
+    node [style=filled];
+    node [label="1. Decision\nManagement"] s1;
+    node [label="2. Define/\nEvolve\nArchitecture"] s2;
+    node [label="3. Flexibility of\nArchitecture"] s3;
+    node [label="4. Continuous\nDeployment and\nTransparency"] s4;
+    node [label="5. System\nof Systems"] sos;
+
+  s2 -- s1;
+  s2 -- s3;
+  s2 -- s4;
+  s4 -- s1;
+  s2 -- sos;
+  }
+
+  { // 1.*
+    node [label="1.1. ... on\nRequirements"] s11;
+    node [label="1.2. ... on\nArchitecture"] s12;
+    node [label="1.3. ... on\nCustomer Func."] s13;
+    node [label="1.4. Change\nManagement"] s14;
+
+    s1 -- s11;
+    s1 -- s12;
+    s1 -- s13;
+    s1 -- s14;
+  }
+
+  { // 2.*
+    node [label="2.1. Func.\nEvol. and\nSourcing"] s21;
+    node [label="2.2. Sync\nhigh/low level\narchitecture"] s22;
+
+    s2 -- s21;
+    s2 -- s22;
+  }
+
+  { // 3.*
+    node [label="3.1. App. Wrkld.\nManagement\nProcess"] s31;
+    node [label="3.2. App. Wrkld.\nManagement\nTechn."] s32;
+    node [label="3.3. Easy\nand Secure\nAdd-ons"] s33;
+    node [label="3.4. Separation of\nConcerns"] s34;
+    node [label="3.5. Flexible\nFunctionality"] s35;
+
+    s3 -- s31;
+    s3 -- s32;
+    s3 -- s33;
+    s3 -- s34;
+    s3 -- s35;
+  }
+
+  { // 4.*
+    node [label="4.1. Ecosystem\nTransparency"] s41;
+    node [label="4.2. Continuous CD\nImprovement"] s42;
+    node [label="4.3. Short\nFeedback Cycles"] s43;
+
+    s4 -- s41;
+    s4 -- s42;
+    s4 -- s43;
+  }
+
+  { // 5.*
+    node [label="5.1. Reliable\nCommunication"] sos1;
+    node [label="5.2. Communication\nUnderstood"] sos2;
+    node [label="5.3. Degree of\nAutonomy"] sos3;
+    node [label="5.4. Uncertainty\nand Safety"] sos4;
+    node [label="5.5. Security\nand Privacy"] sos5;
+
+    sos -- sos1;
+    sos -- sos2;
+    sos -- sos3;
+    sos -- sos4;
+    sos -- sos5;
+  }
+
+  {
+    edge [style=dashed];
+    s14 -- s35;
+  }
+}
