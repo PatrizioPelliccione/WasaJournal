@@ -12,10 +12,10 @@
 \del{If there are any synonyms or other common names by which this viewpoint is
 known or used, record them here.}
 
-The viewpoint ``Continuous Integration and Deployment'' adds a development perspective to the electrical architecture and aims to give an answer to the following questions:
+The viewpoint ``Continuous Integration and Deployment'' adds a development perspective to the \del{electrical} architecture and aims to give an answer to the following questions:
 \begin{enumerate}
-\item How do continuous integration and deployment practices in automotive engineering impact electrical architecture?
-\item How do architectural decisions in the electrical architecture impact continuous integration and deployment practices?
+\item How do continuous integration and deployment practices in automotive engineering impact \del{electrical} architecture?
+\item How do architectural decisions in the \del{electrical} architecture impact continuous integration and deployment practices?
 \end{enumerate}
 \eric{I think it is crucial that we align on those questions. First draft above, please comment. I am not sure I hit a good level of ganularity.}
 
@@ -23,8 +23,8 @@ The viewpoint ``Continuous Integration and Deployment'' adds a development persp
 \subsection{Overview} 
 %%%%%%%%%%
 
-Agile approaches and practices such as continuous integration and deployment promise to help reducing development time, to increase flexibility, and to generally shorten the feedback cycle time\ins{which in turn can lead to a better management of complex system knowledge}. 
-However, the  \ugh{complex supplier network}\eric{should we mention ecosystem viewpoint here to reduce overlap?},
+Agile approaches and practices such as continuous integration and deployment promise to help reducing development time, to increase flexibility, and to generally shorten the feedback cycle time, which in turn can lead to a better management of complex system knowledge. 
+However, the  complex supplier network (see the Ecosystem and Transparency viewpoint in Section~\ref{sec:ET_VP}),
 and typical setup with a large number of ECUs,
 pose specific challenges to %\chg{agile development methods, and specifically 
 %with respect 
@@ -43,7 +43,7 @@ the question is related to the compatibility of the software version of specific
 %that are compatible.
 (iii)  testing -  %This then carries over to the testing effort,
 compatible combinations need to be validated. 
-Second, support for continuous deployment has to face \del{with} safety concerns.
+Second, support for continuous deployment has to face safety concerns.
 %relates to the connectivity of ECUs. 
 %the extent of this, in turn, raises not least security concerns.
 Should, for instance, the software \chg{of an}{delivered by an} ECU responsible\eric{does an ECU responsible actually deliver software? Seems weird, as this seems to imply responsibility for a specifc ECU, while the software should be hw independent. Should it be a ``Software Responsible'' instead?}
@@ -91,7 +91,7 @@ We express the concerns in the form of questions as suggested by the ISO/IEC/IEE
 Naturally, an electrical architecture needs to exist long before the product under consideration is developed and can reach the market, since it is required to guide organization of development activities. 
 Even though a lot of information is needed early in the product lifecycle, a crucial amount of information will only become available during its development and early market phase.}
 \item \emph{How can we reduce the number of architectural assumptions?} The more of the architecture \chg{one make}{that is defined} up-front,  the more \ins{it is based on }assumptions \chg{are needed to be added}{instead of facts}. \del{It is hard to guarantee that these assumptions are true, moreover, if there are too many assumption one might loose the overviews as well. }\ins{This can lead to late changes, duplicate work, or in the worst case to problems that only surface once the product is on the market.}
-\item \emph{How can \chg{we}{an electrical architecture} respond quicker to changes in the market?} \ins{Many of the assumptions will concern the market situation once the product has been released. 
+\item \emph{How can \chg{we}{a system} respond quicker to changes in the market?} \ins{Many of the assumptions will concern the market situation once the product has been released. 
 Markets are however prone to constant change and such change might invalidate architectural decisions during the development of software. }
 \item \emph{How can we deal with changing interfaces?} \ins{Reacting to change in the market will lead to late changes of the architecture, which in turn will affect continuous integration and deployment: It is not possible to integrate a component into the system after its interface changes, unless the platform and other dependent components have already been adjusted to the new interface.
 Deployment after an interface change might therefore involve a large number of updated components, which will not be possible in a continuous fashion. 
@@ -165,47 +165,47 @@ or is it when combined with slow feedback/low automation that they cause trouble
 For the continuous integration and deployment viewpoint, we need to consider all stakeholders described in Section~\ref{sec:VCGAF} and summarized in Table~\ref{tab:stakeholders}.
 In addition, we need to consider suppliers, as continuous integration and deployment will depend on their deliveries (see also the ecosystem and transparency viewpoint in the next section).
 
-\todo[inline, size=\footnotesize]{
-\must{Provide a listing of the typical stakeholders of a system who
-  are in the potential audience for views of this kind, per \std{7b}.}
-
-Typical stakeholders would include those likely to read such views
-and/or those who need to use the results of this view for another
-task.
-
-Stakeholders to consider include:
-%\begin{itemize}
-
-~~--~users of a system; 
-
-~~--~operators of a system; 
-
-~~--~acquirers of a system;
-
-~~--~owners of a system; 
-
-~~--~suppliers of a system; 
-
-~~--~developers of a system; 
-
-~~--~builders of a system; 
-
-~~--~maintainers of a system.
-%\end{itemize}
-}
+%\todo[inline, size=\footnotesize]{
+%\must{Provide a listing of the typical stakeholders of a system who
+%  are in the potential audience for views of this kind, per \std{7b}.}
+%
+%Typical stakeholders would include those likely to read such views
+%and/or those who need to use the results of this view for another
+%task.
+%
+%Stakeholders to consider include:
+%%\begin{itemize}
+%
+%~~--~users of a system; 
+%
+%~~--~operators of a system; 
+%
+%~~--~acquirers of a system;
+%
+%~~--~owners of a system; 
+%
+%~~--~suppliers of a system; 
+%
+%~~--~developers of a system; 
+%
+%~~--~builders of a system; 
+%
+%~~--~maintainers of a system.
+%%\end{itemize}
+%}
 
 %%%%%%%%%%
-\subsubsection{``Anti-concerns'' \Optional}
-%%%%%%%%%%
-
-\del{It may be helpful to architects and stakeholders to
-document the kinds of issues for which this viewpoint is \emph{not
-  appropriate or not particularly useful}.}
-
-\del{Identifying the ``anti-concerns'' of a given notation or approach may
-be a good antidote for certain overly used models and notations.}
-\eric{I think we can remove this optional section here, no?}
-% \tbd{Examples!}
+%\subsubsection{``Anti-concerns'' \Optional}
+%%%%%%%%%%%
+%
+%\del{It may be helpful to architects and stakeholders to
+%document the kinds of issues for which this viewpoint is \emph{not
+%  appropriate or not particularly useful}.}
+%
+%\del{Identifying the ``anti-concerns'' of a given notation or approach may
+%be a good antidote for certain overly used models and notations.}
+%\eric{I think we can remove this optional section here, no?}
+%% \tbd{Examples!}
 
 
 

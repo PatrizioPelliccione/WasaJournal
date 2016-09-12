@@ -6,8 +6,8 @@
 \subsection{\Fillin{Viewpoint Name}}\label{vp:template}
 %%%%%%%%%%
 
-The viewpoint ``\Fillin{Viewpoint Name}" \chg{focus}{focuses} on the car as a constituent of the SoS. Therefore, this viewpoint aims at giving an
-answer to this question: How to engineer\del{ing} a car so to be part of a system
+The viewpoint ``\Fillin{Viewpoint Name}" focuses on the car as a constituent of the SoS. Therefore, this viewpoint aims at giving an
+answer to this question: How to engineer a car so to be part of a system
 of systems?
 
 
@@ -36,21 +36,26 @@ e.g., this new technology will allow a connected car to be aware of a slippery r
 %
 %after it has been informed by another car and the information has been propagated via the Volvo Cloud. In such scenario, the informed car could automatically slow down reducing the risk for potential accidents. 
 
-These scenarios are posing new requirements to the architecture. %To deal with similar scenarios, changes need to be made in the architecture. 
-We \chg{foreseen}{foresee} two different viewpoints\eric{But this is \textbf{the} system of systems viewpoint. Should it then be two sub-viewpoints?}  and views: (i) %one viewpoint and view showing the architecture 
-from the point of view of a single connected car, which has to offer the functionalities needed to realize the scenario, and (ii) %another viewpoint and view representing the 
-from the point of view of the system of systems  (i.e. cars connected with other entities of their environment), spanning from the agreements between the different systems affected, e.g. different OEMs, cloud providers, road infrastructures, etc., to the definition of the scenario that the system of systems has to realize, like the slippery road mentioned above. 
-
+These scenarios are posing new requirements to the architecture. 
+%To deal with similar scenarios, changes need to be made in the architecture. 
+%We \chg{foreseen}{foresee} two different viewpoints\eric{But this is \textbf{the} system of systems viewpoint. Should it then be two sub-viewpoints?}  and views: (i) %one viewpoint and view showing t
+%the architecture 
+%%from the point of view of a single
+%of the connected car %, which 
+%has to offer the functionalities needed to realize the scenarios. %, and (ii) %another viewpoint and view representing the 
+%from the point of view of the system of systems  (i.e. cars connected with other entities of their environment), spanning from the agreements between the different systems affected, e.g. different OEMs, cloud providers, road infrastructures, etc., to the definition of the scenario that the system of systems has to realize, like the slippery road mentioned above. 
+%
 % agreements between the different systems affected. In order to achieve the proper behavior of such system different stakeholders must be involved. From tier 1 and tier 2 suppliers to the cloud provider, they all have to agree on common interfaces and safety guarantees that must be respected.
-
+%
 %The core ECUs of the car (in charge of braking, steering, engine control, etc.) are part of a closed system in which all the safety requirements can be certified at design time. Exposing these crucial components to the outside environment would invalidates the assumptions that have been made so far. In fact, manufactures have preferred to limit the interfaces of the communication infrastructure due to the enormous hazard potential. In a connected world,  this is no longer possible. Sharing and controlling sensitive information could be crucial in dangerous situations. 
-
+%
 %Until lately, safety has been dedicated in surviving crashes, with the emerging connected vehicle it will be about avoiding them. For example, the new technologies developed by Volvo allow a connected car to be aware of a slippery road after it has been informed by another car and the information has been propagated via the Volvo Cloud. In such scenario, the informed car could automatically slow down reducing the risk for potential accidents.
-
+%
 %To accomplish similar scenarios, radical changes need to be made in the architecture descriptions and agreements between the different systems affected. In order to achieve the proper behavior of such system different stakeholders must be involved. From tier 1 and tier 2 suppliers to the cloud provider, they all have to agree on common interfaces and safety guarantees that must be respected.
-
+%
 %<<<<<<< HEAD
-In general, the main issue with safety guarantees in connected cars is that a full analysis of the system is not possible at design time. When moving from a single vehicle to a cooperative system, a new safety analysis is required to handle uncertainties at runtime. Some approaches have been proposed to deal with certification at runtime, e.g.~\cite{runtime1, runtime3}, but a clear framework that can be used to define the connected safety requirements is still missing.
+For instance, %In general, 
+one of the main issue with safety guarantees in connected cars is that a full analysis of the system is not possible at design time. When moving from a single vehicle to a cooperative system, a new safety analysis is required to handle uncertainties at runtime. Some approaches have been proposed to deal with certification at runtime, e.g.~\cite{runtime1, runtime3}, but a clear framework that can be used to define the connected safety requirements is still missing.
 %=======
 %The main issue with safety guarantees in connected cars, is that a full analysis of the system is not possible at design time. When moving from a single vehicle to a cooperative system, a new safety analysis is required to handle the uncertainties at runtime. Therefore, in order to benefit from the collaborative system, is necessary to move some of the safety analysis from design time to runtime. Some approaches have been proposed to deals with certification of the safety guarantees at runtime \cite{runtime1}, \cite{runtime2}, \cite{runtime3}, but there is still not a clear framework utilized to define the connected safety requirements.
 %>>>>>>> 4ffb434a25eb0042a3685e7d03d264e7c0eb62b1
@@ -148,7 +153,7 @@ In this section we focus on the concerns that are essential to enable functions 
 \subsubsection{Typical stakeholders} 
 %%%%%%%%%%
 
-Since \chg{it}{in} this viewpoint we take the vehicle point of view, potentially every stakeholder described in Section~\ref{sec:VCGAF} and summarized in Table~\ref{tab:stakeholders} will be part of the audience of this viewpoint. Moreover, additional stakeholders external to the company should be considered as stakeholders. Examples of them are standard authorities for communication means used by the SoS, stakeholders of other OEMs, suppliers, road authorities, etc.
+Since in this viewpoint we take the vehicle point of view, potentially every stakeholder described in Section~\ref{sec:VCGAF} and summarized in Table~\ref{tab:stakeholders} will be part of the audience of this viewpoint. Moreover, additional stakeholders external to the company should be considered as stakeholders. Examples of them are standard authorities for communication means used by the SoS, stakeholders of other OEMs, suppliers, road authorities, etc.
 
 %\must{Provide a listing of the typical stakeholders of a system who
 %  are in the potential audience for views of this kind, per \std{7b}.}
