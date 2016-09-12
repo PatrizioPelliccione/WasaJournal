@@ -23,8 +23,8 @@ The viewpoint ``Continuous Integration and Deployment'' adds a development persp
 \subsection{Overview} 
 %%%%%%%%%%
 
-Agile approaches and practices such as continuous integration and deployment promise to help reducing development time, to increase flexibility, and to generally shorten the feedback cycle time. However, 
-the  complex supplier network,
+Agile approaches and practices such as continuous integration and deployment promise to help reducing development time, to increase flexibility, and to generally shorten the feedback cycle time\ins{which in turn can lead to a better management of complex system knowledge}. 
+However, the  \ugh{complex supplier network}\eric{should we mention ecosystem viewpoint here to reduce overlap?},
 and typical setup with a large number of ECUs,
 pose specific challenges to %\chg{agile development methods, and specifically 
 %with respect 
@@ -64,92 +64,87 @@ facilitating variant handling and coordination of updates, and
 %
 (ii) another considering continuous integration and deployment
 on the architecture level,
-facilitating reasoning about modifications to the architecture itself.
+facilitating reasoning about modifications to the architecture itself.\eric{In a way, continuous integration and deployment might also enable certain architecural decisions that otherwise might not be possible...}
 
 
 %%%%%%%%%%
 \subsection{Concerns and stakeholders} 
 %%%%%%%%%%
-
+\todo[inline, size=\footnotesize]{
 Architects looking for an architecture viewpoint suitable for their
 purposes often use the identified concerns and typical stakeholders to
 guide them in their search.  Therefore it is important (and required
 by the Standard) to document the concerns and stakeholders for which a
 viewpoint is intended.
-
+}
 %%%%%%%%%%
 \subsubsection{Concerns}\label{vp:concerns}
 %%%%%%%%%%
-
+In this section we focus on the concerns that are essential to enable continuous integration and deployment when engineering software for cars. 
+We express the concerns in the form of questions as suggested by the ISO/IEC/IEEE 42010 standard.
+\eric{Suggesting some edits and a change in order here to improve the flow. Please check if it is still correct!}
 \begin{itemize}
-\item How can we reduce the number of architectural assumptions?
+\item \emph{How can we avoid building the wrong architecture?} \chg{It is no use in making a good architecture if it is for the wrong purpose.}{Even technically sound architecture is worthless if it does not fit the desired purpose. 
+Naturally, an electrical architecture needs to exist long before the product under consideration is developed and can reach the market, since it is required to guide organization of development activities. 
+Even though a lot of information is needed early in the product lifecycle, a crucial amount of information will only become available during its development and early market phase.}
+\item \emph{How can we reduce the number of architectural assumptions?} The more of the architecture \chg{one make}{is defined} up-front,  the more \ins{it is based on }assumptions \chg{are needed to be added}{instead of facts}. \del{It is hard to guarantee that these assumptions are true, moreover, if there are too many assumption one might loose the overviews as well. }\ins{This can lead to late changes, duplicate work, or in the worst case to problems that only surface when the product is in the market.} 
+\item \emph{How can \chg{we}{an electrical architecture} respond quicker to changes in the market?} \ins{Many of the assumptions will concern the situation at the market once the product is released. 
+Markets are however prone to constant change and such change might invalidate architectural decisions during the development of software. }
+\item \emph{How can we deal with changing interfaces?} \ins{Reacting to change in the market will lead to late changes of the architecture, which in turn will affect continuous integration and deployment: It is not possible to integrate a component into the system after the interface changes unless the platform and other dependent components have already been adjusted to the new interface. 
+Deployment after an interface change might therefore involve a large number of updated components, which will not be possible in a continuous fashion. 
+With other words, after an interface change it will be hard to guarantee that the main branch of all components is in a deployable state. }
 \end{itemize}
 
-The more of the architecture one make up front the more assumptions are needed to be added. It is hard to guarantee that these assumptions are true, moreover, if there are too many assumption one might loose the overviews as well.  
+%\must{Provide a listing of architecture-relevant concerns to be framed by
+%this architecture viewpoint per \std{7a}.}
 
-\begin{itemize}
-\item How can we avoid building the wrong architecture?
-\end{itemize}
+%Describe each concern.
 
-It is no use in making a good architecture if it is for the wrong purpose.
+%Concerns name ``areas of interest'' in a system.
 
-\begin{itemize}
-\item How can we reduce the number of architectural assumptions?
-\item How can we avoid building the wrong architecture?
-\item How can we respond quicker to change in the market?
-\item How can we deal with changing interfaces 
-\end{itemize}
+%\note{Following ISO/IEC/IEEE 42010, \textbf{system} is a shorthand for
+%  any number of things including man-made systems, software products
+%  and services, and software-intensive systems such as ``individual
+%  applications, systems in the traditional sense, subsystems, systems
+%  of systems, product lines, product families, whole enterprises, and
+%  other aggregations of interest''.}
 
-\must{Provide a listing of architecture-relevant concerns to be framed by
-this architecture viewpoint per \std{7a}.}
-
-Describe each concern.
-
-Concerns name ``areas of interest'' in a system.
-
-\note{Following ISO/IEC/IEEE 42010, \textbf{system} is a shorthand for
-  any number of things including man-made systems, software products
-  and services, and software-intensive systems such as ``individual
-  applications, systems in the traditional sense, subsystems, systems
-  of systems, product lines, product families, whole enterprises, and
-  other aggregations of interest''.}
-
-Concerns may be very general (e.g., \textit{Reliability}) or quite
-specific (\textit{e.g., How does the system handle network latency?}).
+%Concerns may be very general (e.g., \textit{Reliability}) or quite
+%specific (\textit{e.g., How does the system handle network latency?}).
   
-Concerns identified in this section are critical information for an
-architect because they help her decide when this viewpoint will be
-useful.
+%Concerns identified in this section are critical information for an
+%architect because they help her decide when this viewpoint will be
+%useful.
 
-When used in an architecture description, the viewpoint becomes a
-``contract'' between the architect and stakeholders that these
-concerns will be addressed in the view resulting from this viewpoint.
+%When used in an architecture description, the viewpoint becomes a
+%``contract'' between the architect and stakeholders that these
+%concerns will be addressed in the view resulting from this viewpoint.
 
-It can be helpful to express concerns \emph{in the form of questions}
-that views resulting from that viewpoint will be able to answer. E.g.,
-\begin{itemize}
-\item \textit{How does the system manage faults?}
-\item \textit{What services does the system provide?}
-\end{itemize}
+%It can be helpful to express concerns \emph{in the form of questions}
+%that views resulting from that viewpoint will be able to answer. E.g.,
+%\begin{itemize}
+%\item \textit{How does the system manage faults?}
+%\item \textit{What services does the system provide?}
+%\end{itemize}
 
-\note{``In the form of a question'' is inspired by the television quiz
-  show, \textit{Jeopardy!}}
+%\note{``In the form of a question'' is inspired by the television quiz
+%  show, \textit{Jeopardy!}}
  
-\std{5.3} contains a candidate list of concerns that must be considered
-when producing an architecture description. These can be considered
-here for their relevance to the viewpoint being specified:
-\begin{itemize}
-\item What are the purpose(s) of the system-of-interest?
-\item What is the suitability of the architecture for achieving the
-  system-of-interest's purpose(s)?
-\item How feasible is it to construct and deploy the
-  system-of-interest?
-\item What are the potential risks and impacts of the
-  system-of-interest to its stakeholders throughout its life cycle?
-\item How is the system-of-interest to be maintained and evolved?
-\end{itemize}
+%\std{5.3} contains a candidate list of concerns that must be considered
+%when producing an architecture description. These can be considered
+%here for their relevance to the viewpoint being specified:
+%\begin{itemize}
+%\item What are the purpose(s) of the system-of-interest?
+%\item What is the suitability of the architecture for achieving the
+%  system-of-interest's purpose(s)?
+%\item How feasible is it to construct and deploy the
+%  system-of-interest?
+%\item What are the potential risks and impacts of the
+%  system-of-interest to its stakeholders throughout its life cycle?
+%\item How is the system-of-interest to be maintained and evolved?
+%\end{itemize}
 
-See also: \std{4.2.3}.
+%See also: \std{4.2.3}.
 
 %%%%%%%%%%
 \subsubsection{Typical stakeholders} 
