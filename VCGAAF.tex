@@ -1,3 +1,5 @@
+% !TEX root = main.tex
+
 \section{Volvo Cars architecture framework}\label{sec:VCGAF}
 
 The starting point for defining an architecture framework is to start from the identification of established stakeholders within the domain of the framework. Stakeholders may be individuals, teams,
@@ -146,7 +148,7 @@ The architecture is then perceived as outdated and not useful, thus it looses it
 
 \begin{quote}
 {User Story:} 
-\emph{``As a system architect or function developer I want a stringent correlation between architecture and design. Otherwise, one or the other is wrong. ''}
+\emph{``As a system architect or function developer I want a stringent correlation between architecture and design. Otherwise, one or the other is wrong.''}
 \end{quote}
 \end{itemize}
 
@@ -159,7 +161,7 @@ This includes:
 \begin{quote}
 {User Story:} 
 \emph{``As a functional developer, I want to be flexible when it comes to application workload. 
-Suppliers should be able to acquire and return resources dynamically throughout the lifecycle. ''}
+Suppliers should be able to acquire and return resources dynamically throughout the lifecycle.''}
 \end{quote}
 \item {\em application workload management from a technical perspective (2.3.2)}: higher capacity of ECUs and Buses will facilitate late or even very late updates (i.e. when the vehicle is on the street), because new functionality could use more resources.
 This flexibility comes at a cost and it is not trivial to understand where the break-even point is.
@@ -176,7 +178,7 @@ This would allow to develop more continuously and should decrease the peak of tr
 
 \begin{quote}
 {User Story:} 
-\emph{``As a  functional developer I want to be able to add new functions (very) late. Such add-ons could originate from third parties and should be added even after the vehicle has been put into use. ''}
+\emph{``As a  functional developer I want to be able to add new functions (very) late. Such add-ons could originate from third parties and should be added even after the vehicle has been put into use.''}
 \end{quote}
 
 \item {\em separation of concerns (2.3.4)}: 
@@ -188,7 +190,7 @@ This would allow to develop more continuously and should decrease the peak of tr
 \item {\em flexible functionality (2.3.5)}:
 \begin{quote}
 {User Story:} 
-\emph{``As a functional developer, I want to be flexible about the functions that are running in the car and allow for very late deployment. ''}
+\emph{``As a functional developer, I want to be flexible about the functions that are running in the car and allow for very late deployment.''}
 \end{quote}
 \end{itemize}
  
@@ -199,7 +201,6 @@ This would allow to develop more continuously and should decrease the peak of tr
 The \emph{cone of uncertainty} is a good example for this~\cite{cone-of-uncertainty,cone-of-uncertainty2}: In the beginning of a project, not much data is available and decisions are very uncertain. 
 As the project proceeds, assumptions are removed and uncertainty is reduced, but as  a consequence, it becomes harder to make decisions that change a lot. 
 Good transparency can help to reduce the uncertainty quicker and can allow to decide fast in order to learn fast.
-m
 \begin{quote}
 {User Story:} 
 \emph{``As any developer of the electrical system (internal or external), I want to have access to relevant decision, to the status of relevant assumptions, and knowledge generated during the development. 

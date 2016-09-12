@@ -1,3 +1,4 @@
+% !TEX root = main.tex
 %%% Version 2.1b %%%
 
 \section{Continuous Integration and Deployment viewpoint}\label{sec:CID_VP}
@@ -6,11 +7,17 @@
 \subsection{\Fillin{Viewpoint Name}}\label{vp:template}
 %%%%%%%%%%
 
-\must{Provide the name for the viewpoint.}
+\del{\must{Provide the name for the viewpoint.}}
 
-If there are any synonyms or other common names by which this viewpoint is
-known or used, record them here.
+\del{If there are any synonyms or other common names by which this viewpoint is
+known or used, record them here.}
 
+The viewpoint ``Continuous Integration and Deployment'' adds a development perspective to the electrical architecture and aims to give an answer to the following questions:
+\begin{enumerate}
+\item How do continuous integration and deployment practices in automotive engineering impact electrical architecture?
+\item How do architectural decisions in the electrical architecture impact continuous integration and deployment practices?
+\end{enumerate}
+\eric{I think it is crucial that we align on those questions. First draft above, please comment. I am not sure I hit a good level of ganularity.}
 
 %%%%%%%%%%
 \subsection{Overview} 
@@ -36,10 +43,10 @@ the question is related to the compatibility of the software version of specific
 %that are compatible.
 (iii)  testing -  %This then carries over to the testing effort,
 compatible combinations need to be validated. 
-Second, support for continuous deployment has to face with safety concerns.
+Second, support for continuous deployment has to face \del{with} safety concerns.
 %relates to the connectivity of ECUs. 
 %the extent of this, in turn, raises not least security concerns.
-Should, for instance, the software of an ECU responsible for a safety critical function
+Should, for instance, the software \chg{of an}{delivered by an} ECU responsible\eric{does an ECU responsible actually deliver software? Seems weird, as this seems to imply responsibility for a specifc ECU, while the software should be hw independent. Should it be a ``Software Responsible'' instead?} for a safety critical function
 be modifiable at runtime?
 
 Dependencies between ECUs are a property of the architecture.
@@ -50,8 +57,7 @@ between parts of the organization working on different architectural levels, and
 for agile and flexible architecting.
 %Furthermore, the architectural framework should support agile architecting.
 
-Addressing these concerns suggests
-two architectural views and viewpoints:
+Addressing these concerns suggests \ugh{two architectural views and viewpoints}\eric{Should we then not split it into two viewpoints? Otherwise needs to be rephrased. I think we should have one viewpoint answering both questions.}:
 (i) one covering architecture as an enabler
 of continuous integration and deployment,
 facilitating variant handling and coordination of updates, and
@@ -283,7 +289,7 @@ eCore). The metamodel should present:
 In the terms of the Standard, entities, attributes, relationships are
 \textit{AD elements} per \std{3.4, 4.2.5 and 5.7}.
 
-In the \textit{Views-and-Beyond} approach~\cite{DSA:2010}, each
+In the \textit{Views-and-Beyond} approach~\cite{DSA:2010}, \eric{reference missing?} each
 viewtype (which is similar to a viewpoint) is specified by a set of
 elements, properties, and relations (which correspond to entities,
 attributes and relationships here, respectively).
