@@ -208,9 +208,9 @@ connected to each other through several networks within the car, and the car is 
 %This need for addressing ever increasing complexity as well as for offering flexibility, support of continuous evolution, and very late changes in user visible features introduces new challenges for developing and maintaining a suitable electronic architecture. %} 
 These novelties ask for a change on how the software is engineered and produced and for a disruptive renovation of the electrical and software architecture of the car.   
 In this paper we describe the current investigation of the Volvo Cars to create an 
-architecture framework able to cope with the complexity and needs of present and future vehicles.   \eric{need to mention viewpoints and scenarios? Since the three viewpoints we present seem to be crucial, we probably should mention them here?}
-\ins{Specifically, we present scenarios that describe demands for the architectural framework and introduce three new viewpoints that need to be taken into account for future architectural decisions: Continuous Integration and Deployment, Ecosystem and Transparency, and System of Systems.
-Our results are based on a series of focus groups with experts in automotive engineering and architecture from different companies and universities.}
+architecture framework able to cope with the complexity and needs of present and future vehicles.  
+Specifically, we present scenarios that describe demands for the architectural framework and introduce three new viewpoints that need to be taken into account for future architectural decisions: Continuous Integration and Deployment, Ecosystem and Transparency, and System of Systems.
+Our results are based on a series of focus groups with experts in automotive engineering and architecture from different companies and universities.
 \end{abstract}
 
 \begin{keyword}
@@ -232,10 +232,10 @@ Architecture Framework \sep Software architecture \sep Automotive domain \sep Sy
 \label{sec:intro}
 %\eric{just checking if github/sharelatex work as expected before working on plane.}
 %\patrizio{Taken from the WASA paper.}
-Today's automotive industry is \ins{concerned with} much more than the traditional view of assembled
+Today's automotive industry is concerned with much more than the traditional view of assembled
 mechanical parts controlled by a human for transportation. During the past
 twenty years vehicles have become more and more robot like, interpreting and
-exploiting input from various sensors to make \ins{(semi-)autonomous} decisions and finally commit
+exploiting input from various sensors to make (semi-)autonomous decisions and finally commit
 actions that were previously made by humans.  
 %Modern vehicles can have over 100 Electronic Control Units (ECUs), which are
 %small computers, together executing gigabytes of software. ECUs are
@@ -294,8 +294,8 @@ cars as constituents of a system of systems; (iii) reducing the number of ECUs t
 %%for enabling the key functions developed locally and thus ensure rapid communication with the partners and flexible development 
 %\end{itemize}
 
-Within the project we are investigating the possibility to create a Volvo Cars Architecture Framework \del{\cite{42010}}. %tailored to the needs of Volvo Cars. In this paper we refer to the conceptual foundations of
-We believe that an architecture framework \ins{\cite{42010}}, together with its multiple viewpoints, is the instrument to manage the increasing complexity of modern vehicles.
+Within the project we are investigating the possibility to create a Volvo Cars Architecture Framework. %tailored to the needs of Volvo Cars. In this paper we refer to the conceptual foundations of
+We believe that an architecture framework~\cite{42010}, together with its multiple viewpoints, is the instrument to manage the increasing complexity of modern vehicles.
 It aims at ensuring that descriptions of vehicle architectures can be compared and related across different vehicle programs,
 development units, and organizations, thus increasing flexibility and innovation, while reducing development time and risks.
 
@@ -319,7 +319,7 @@ documented, analysed, and realized.
 %In this paper we report about the identification of the main viewpoints we identified so far and in which we are focusing our effort.
 
 The paper is organized as follows. Section~\ref{sec:AAF} introduces the concept of architecture framework and explain a template to document architecture frameworks. Section~\ref{sec:automotiveAF} gives an overview of 
- the state of the art on architecture framework in the automotive domain. Section~\ref{sec:lessonsLearned} analyses the state of practice in the context of Volvo Cars and reports some of the lessons learned. Section~\ref{sec:VCGAF} introduces the architecture framework we are defining within Volvo Cars in the context of the NGEA project. Sections~\ref{sec:CID_VP}, \ref{sec:ET_VP}, and~\ref{sec:SoSVP} detail three \ins{new and} challenging viewpoints of the framework, namely the {\em Continuous Integration and Deployment} viewpoint (Section~\ref{sec:CID_VP}), the {\em Ecosystem and Transparency} viewpoint (Section~\ref{sec:ET_VP}), and the {\em System of Systems: vehicle point of view} viewpoint (Section~\ref{sec:SoSVP}).\eric{should we mention scenarios?}
+ the state of the art on architecture framework in the automotive domain. Section~\ref{sec:lessonsLearned} analyses the state of practice in the context of Volvo Cars and reports some of the lessons learned. Section~\ref{sec:VCGAF} introduces the architecture framework we are defining within Volvo Cars in the context of the NGEA project. Sections~\ref{sec:CID_VP}, \ref{sec:ET_VP}, and~\ref{sec:SoSVP} detail three new and challenging viewpoints of the framework, namely the {\em Continuous Integration and Deployment} viewpoint (Section~\ref{sec:CID_VP}), the {\em Ecosystem and Transparency} viewpoint (Section~\ref{sec:ET_VP}), and the {\em System of Systems: vehicle point of view} viewpoint (Section~\ref{sec:SoSVP}).\eric{should we mention scenarios?}
  %
 Finally the paper concludes in Section~\ref{sec:conclusion} with final remarks and a discussion about future work. 
 
