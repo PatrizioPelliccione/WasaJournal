@@ -1,3 +1,4 @@
+% !TEX root = main.tex
 \section{Architecture Framework}\label{sec:AAF}
 
 %\subsection{Architecture Framework}\label{sec:archFram}
@@ -5,7 +6,7 @@
 %\subsubsection{Overview}
 
 An architecture framework is a
-coordinated set of viewpoints, conventions, principles and practices
+coordinated set of viewpoints, conventions, principles, and practices
 for architecture description within a specific domain of application
 or community of stakeholders~\cite{42010}.  More specifically, it is determined by: (i) a set of architecture-related concerns,
 (i) a set of stakeholders holding those concerns, (ii) a set of architecture viewpoints which frame (i.e.,
@@ -16,7 +17,7 @@ Then, an architecture framework establishes a common practice for creating, inte
 architecture modelling tools and architecting methods, and establishing processes to facilitate communication, commitments and interoperation across multiple projects and/or organizations~\cite{42010}.
 
 
-Uses of architecture frameworks include, but are not limited to~\cite{42010}: 
+Uses of architecture frameworks include, but are not limited to~\cite{42010}\eric{should we be specific about how this is useful for VCC? E.g. systematically creating and evolving architecture?}: 
 
 \begin{itemize}
 \item creating architecture descriptions; 
@@ -27,9 +28,9 @@ architecture modelling tools and architecting methods;
 
 An architecture framework is a prefabricated knowledge structure, identified by {\em architecture viewpoints}, that
 architects use to organize an architecture description into {\em architecture views}.  The terms architecture view and architecture viewpoint are central to the standard~\cite{42010}:
-``{\em A viewpoint is a way of looking at systems; a view is the result of applying a viewpoint to a particular
-system-of-interest}". 
-An {\em architecture viewpoint} encapsulates notations, conventions, methods and techniques to
+{\em ``A viewpoint is a way of looking at systems; a view is the result of applying a viewpoint to a particular
+system-of-interest''}. 
+An {\em architecture viewpoint} encapsulates notations, conventions, methods, and techniques to
 be used according to specific 
 model kinds framing particular
 concerns and for a particular audience of system stakeholders. 
@@ -230,6 +231,9 @@ need or find helpful.
 %history, literature references, prior art, etc.
 \end{itemize}
 
+\eric{Should we relate this section to the status of the viewpoints we define here? E.g.:}
+\ins{In this paper, we apply the viewpoint template above to describe three new viewpoints that we propose.
+At the current state of our work, many details still need to be evaluated, thus we for example share model kind candidates as well as our experience on what kind of information these model kinds would need to provide, than presenting a clear definitions of models to be used.}
 
 \section{State of the art in Automotive Architecture Frameworks}\label{sec:automotiveAF}
 Architecture frameworks have not been standardized in the automotive domain and automotive industry. 
@@ -340,12 +344,12 @@ identified in the views associated to the operational viewpoint %and by properly
 are allocated to SysML Blocks. 
 \item {\em Constructional Viewpoint} - this viewpoint %is more detailed and 
 describes a further allocation (or grouping) of system functions into physical components.
-\item {\em Requirements Viewpoint} - This viewpoint is orthogonal to other viewpoints. Each requirement view has a relationship with views of
-other viewpoints. 
+\item {\em Requirements Viewpoint} - this viewpoint is orthogonal to other viewpoints. Each requirement view has a relationship with views of
+other viewpoints. \eric{despite being orthogonal, what does this viewpoint do? Description not on same level as other viewpoints.}
 \end{itemize}
 
 \subsection{Architecture Framework For Automotive Systems}
-The Architecture Framework for Automotive Systems (AFAS) is proposed in~\cite{Yania} through an analysis of AAF, ADF and of Architecture Description Languages~\cite{ADL_Neno00,whatindustrywants} tailored to automotive domain, like EAST-ADL~\cite{EAST-ADL} %, TADL\footnote{TADL: Timing Augmented Description Language version
+The Architecture Framework for Automotive Systems (AFAS) is proposed in~\cite{Yania} through an analysis of AAF, ADF, and of Architecture Description Languages~\cite{ADL_Neno00,whatindustrywants} tailored to automotive domain, like EAST-ADL~\cite{EAST-ADL} %, TADL\footnote{TADL: Timing Augmented Description Language version
 %2. \url{http://www.timmo-2-use.org/timmo/index.htm}.}, AADL~\cite{aadl}, 
 and AML~\cite{AML}. 
 It contains an elaboration and unification of the viewpoints proposed in AAF and ADF and then proposes additional viewpoints, e.g.:

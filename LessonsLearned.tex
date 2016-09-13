@@ -1,3 +1,4 @@
+% !TEX root = main.tex
 \section{Software development challenges within Volvo Cars}\label{sec:lessonsLearned}
 
 In a previous paper we made a study within Volvo Cars to identify, from the architecture point of view, the challenges that OEMs are facing in the last years~\cite{WICSA2015}. 
@@ -51,7 +52,7 @@ We identified that the architecture has a temporal aspect, that means: at any gi
 has only one architecture, however, the architecture will change over time.
 We call as {\em prescriptive architecture} the architecture that captures
 the design decisions made prior to the system's construction\footnote{A discussion in depth about prescriptive and descriptive models might be found in~\cite{Models2016}.}. This architecture is the as-conceived or as-intended architecture.
-We can call as {\em descriptive architecture} the architecture that describes how the system has been built. This architecture describes the as-implemented or as-realized architecture. We observed that there is often a discrepancy between the as-intended and the as-implemented architecture. This causes what is called {\em architecture degradation}. The degradation might shows up in two different ways: (i) {\em architectural drift} when the descriptive architecture includes changes that are not included in, encompassed by, or implied by the
+We can call as {\em descriptive architecture} the architecture that describes how the system has been built. This architecture describes the as-implemented or as-realized architecture. We observed that there is often a discrepancy between the as-intended and the as-implemented architecture. This causes what is called {\em architecture degradation}. The degradation might show up in two different ways: (i) {\em architectural drift} when the descriptive architecture includes changes that are not included in, encompassed by, or implied by the
 prescriptive architecture, but which do not violate any of the prescriptive architecture's
 design decisions; (ii) {\em architectural erosion} is the introduction of
 architectural design decisions into a system's descriptive architecture that violate its prescriptive
@@ -66,7 +67,7 @@ When looking at the causes of architecture degradation, we can summarize the var
 \end{enumerate}
 
 
-\subsection{Organization and process challenges}
+\subsection{Organization and Process Challenges}
 The first item of the causes of architecture degradation discussed in the section above (Section~\ref{sec:gap}) might be solved by improving communication as mentioned before or by finding ways to guarantee the preservation of the  important directives of the as-intended architecture that should not be violated for any reason.
 
 On the organizational side, we found a need to improve the communication between
@@ -89,7 +90,7 @@ in~\cite{IEEESoftwarePatrizio,whatindustrywants}, architects should be first of 
 of~\cite{Kruchten2008}), i.e. devoted to communicating the architectural
 decisions and knowledge to the other stakeholders. 
 
-The different organizations have different competencies, attitude,
+The different organizations have different competencies, attitude, \ins{and}
 characteristics. However, new problems emerge. In fact, we can confirm that we
 found many architecture antipatterns. We found the {\em Goldplating}
 antipattern~\cite{Kruchten2008} since architects seem to be not
@@ -360,7 +361,7 @@ Another interesting finding is that the architecture is not clearly considering 
 In a previous study~\cite{Soltani2015,Soltani2015a} 
 we found that a holistic strategy for aligning work across the value-chain is currently missing. 
 Specifically, mixing commodity and differentiating components lead to sub-optimal situations, resulting in duplicated work.  
-We argue that automotive architecture needs to assume a holistic perspective with respect to the whole value-chain and optimize the architecture for facilitating beneficial subcontractor interaction. 
+We argue that automotive architecture needs to assume a holistic perspective with respect to the whole value-chain and optimize the architecture for facilitating beneficial subcontractor interaction. \eric{perhaps we need to cite Helena and Jan here, no?}
 \begin{itemize}
 \item \textit{Commodity Components} require clearly defined technical and organizational interfaces. 
 The goal is to develop them as efficiently as possible, thus reducing coordination overhead. 
@@ -388,7 +389,7 @@ Due to the increasing number of networked components, a level of complexity has 
 The automotive industry addresses this problem through a paradigm shift from a hardware-, component-driven to a requirement- and function-driven development process, and a stringent standardization of infrastructure elements. %\eric{Patrizio, does this clash with your earlier reasoning? Please feel free to adjust.}
 One central standardization initiative is the AUTomotive Open System ARchitecture (AUTOSAR) \cite{fennel2006achievements}. 
 The principal aim of the AUTOSAR standard is to master the growing complexity of automotive electronic architectures \cite{furst2009autosar}.
-We refer to the \emph{AUTOSAR ecosystem} as a subset of the \emph{automotive ecosystem}, where different actors participate in value creation (i.e. development of software components) by exchanging products and services based on a technical platform defined by the AUTOSAR standard.
+We refer to the \emph{AUTOSAR ecosystem} as a subset of the \emph{automotive ecosystem}, where different actors participate in value creation (i.e. development of software components) by exchanging products and services based on a technical platform defined by the AUTOSAR standard.\eric{perhaps too much focus on AUTOSAR?}
 
 Several challenging areas, including requirements engineering, are reported in the automotive domain \cite{broy2006challenges}.
 OEMs and suppliers need to communicate requirements based on the requirements documents, which are imprecise and incomplete nowadays \cite{broy2006challenges}.
