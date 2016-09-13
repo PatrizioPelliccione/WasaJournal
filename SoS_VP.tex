@@ -194,7 +194,7 @@ Since in this viewpoint we take the vehicle point of view, potentially every sta
 %%%%%%%%%%
 \eric{Suggest to change heading of this section}
 
-There are not obvious model kinds that can be used for this viewpoint. UML and general purpose architecture description languages seem to be not appropriate to architecting SoSs. There are some attempts in the literature to define architectural languages (Als) for SoS, such as...\patrizio{Add Oquendo and others}, however, a deep analysis of these languages need to be performed in order to precisely understand whether the ADL can exactly satisfy the needs of this viewpoint and of Volvo cars. Results of an initial analysis suggest that this language is might be too formal and heavy. As it is stated in~\cite{whatindustrywants,IEEESoftwarePatrizio} often ALs are not adopted by practitioners since they are (i) too complex and require specialized competencies, (ii) the return on investment is insufficient perceived, (iii) they require over-specification and at the same time practitioners are not able to model design decisions explicitly in the AL, and (iv) there is a lack of integration in the software and system life cycle, lack of
+There are not obvious model kinds that can be used for this viewpoint. UML and general purpose architecture description languages seem to be not appropriate to architecting SoSs. There are some attempts in the literature to define architectural languages (Als) for SoS, such as~\cite{SoSADL} or the effort made within the Atesst project\footnote{\url{http://www.atesst.org/home/liblocal/docs/ows/I5_ATESST2_OWS_CooperativeSystems.pdf}}, however, a deep analysis of these languages need to be performed in order to precisely understand whether the ADL can exactly satisfy the needs of this viewpoint and of Volvo cars. Results of an initial analysis suggest that this language is might be too formal and heavy. As it is stated in~\cite{whatindustrywants,IEEESoftwarePatrizio} often ALs are not adopted by practitioners since they are (i) too complex and require specialized competencies, (ii) the return on investment is insufficient perceived, (iii) they require over-specification and at the same time practitioners are not able to model design decisions explicitly in the AL, and (iv) there is a lack of integration in the software and system life cycle, lack of
 mature tools, and usability issues. 
 
 This suggests that the language to be used should be defined and/or customized within the company, so that it can precisely implement the needs of the company and users and at the same time can be integrated with the company life-cycle.
@@ -208,12 +208,12 @@ The model kind for this viewpoint should enable the specification of the followi
 \item {\bf Large and unreliable information}: low quality information could lead to disastrous events, especially when functions are implemented to rely heavily on external information. Therefore, it is important to be able to determine whether the received information's quality is high in term of correctness and timeliness. Multi-sensor data fusion provides an answer by combining perceived data from sensors to make the resulting information more reliable. 
 \item {\bf Interoperability}: Interoperability is the ability of diverse systems to work together. This general definition has been conjugated in many different ways based on the reference application area and on the many different factors and aspects characterizing them. Interoperability involves standards, protocols, and integration and adaptation of interfaces to enable the effective and efficient communication between constituent systems. Interoperability is the ability of two or more constituent systems that are part of SoS to exchange information and to use the information that has been ex-changed. Unambiguous interpretation of shared data between systems is necessary for interoperation, but it is not sufficient. Despite standards for shared data provides specification with the objective to enhance the functionality and interoperability, the data encoded using these standards are not necessarily interoperable. For instance, concepts that have the same labels, and somehow even the same meaning, can be used completely differently in different applications. This is for instance the case of speed within a car that can have different meanings.
 \item {\bf Cyber security and privacy}:
-Connectivity of cars opens problems of both security and privacy. On one side cars become exposed as any other device that is connected to Internet. A representative example is given by Jeep \patrizio{find reference}. For what concerns privacy, as mentioned above cars will need to share several information, however sensitive information should be properly protected.
+Connectivity of cars opens problems of both security and privacy. On one side cars become exposed as any other device that is connected to Internet. A representative example is the Jeep that was hacked in 2015\footnote{\url{https://www.wired.com/2015/07/hackers-remotely-kill-jeep-highway/}}. For what concerns privacy, as mentioned above cars will need to share several information, however sensitive information should be properly protected.
 \item {\bf Distributed end-to-end functionality}: End-to-end functionalities should be provided not only between nodes in the vehicles but also outside the vehicle, and then involving other constituent systems of the SoS, e.g., clouds, other cars, pedestrians, road infrastructure and signals, etc. Connected vehicles can benefit a lot from access to cloud computing based data and services. %By cloud or cloud functionality is meant a database centric service available via the Internet used to extend an existing function in a car or to create a new function enabled by cloud data. This means that a 
 %A cloud function is a function that does something for the car it-self or its driver and it is enabled by use of data or services (interpreted data) from the cloud. 
 Services implemented in distributed end-to-end functions will benefit from the possibility to dynamically load software to the on-board electrical architecture. Dynamically loaded software may be executed in one or several physical nodes, and %virtual machines may be essential to ensure 
 this will open challenges in terms of cyber-security, functional safety and compatibility. 
-\item {\bf Functional safety}: Functional safety requirements are expected to apply for functions outside the car. To be able to handle safety once the car becomes a constituent system of a SoS, one can expect that operational and key functions will be protected. However, connected safety\footnote{\patrizio{add reference to connected safety of Volvo cars} \url{}} promises important and interesting improvements for what concerns the overall safety of the car. A typical example is a car that receives information about some ice on the street from the cloud as reported from another trusted vehicle. These types of scenarios might implicitly create expectations to the driver of a car that will start relying on a service that is however dependent on potentially uncontrollable connections, devices, sensors, etc. 
+\item {\bf Functional safety}: Functional safety requirements are expected to apply for functions outside the car. To be able to handle safety once the car becomes a constituent system of a SoS, one can expect that operational and key functions will be protected. However, connected safety\footnote{\url{http://www.volvocars.com/intl/about/our-stories/made-by-sweden/vision-2020/life-saving-innovations}} promises important and interesting improvements for what concerns the overall safety of the car. A typical example is a car that receives information about some ice on the street from the cloud as reported from another trusted vehicle. These types of scenarios might implicitly create expectations to the driver of a car that will start relying on a service that is however dependent on potentially uncontrollable connections, devices, sensors, etc. 
 %In general, it is important to understand the implication on system design and functional distribution for functional safety. 
 %\item {\bf Services}: Services implemented in distributed end-to-end functions will benefit from the possibility to dynamically load software to the on-board electrical architecture. Dynamically loaded software may be executed in one or several physical nodes, and virtual ma-chines may be essential to ensure cyber-security, functional safety and compatibility. \patrizio{move with end-to-end?}
 \end{itemize}
@@ -370,15 +370,15 @@ this will open challenges in terms of cyber-security, functional safety and comp
 \subsection{Operations on views}\label{Opns}
 %%%%%%%%%%
 
-An interesting way to define model kinds is to properly define the metamodel of the model kind through the use of model-driven engineering techniques like ecore\patrizio{write properly}. This will help defining operations to define views (model) that are compliant to the viewpoint's rules and constraints (conforms to metamodel). The interested reader can refer to the work described in~\cite{MEGAF2010,MEGAF2012}.
+A possible an interesting way to define model kinds is to use model-driven engineering techniques and then defining a metamodel representing the concepts of the model kind. Then the views (models) have to compliant to the viewpoint's rules and constraints (conforms to metamodel). The interested reader can refer to the work described in~\cite{MEGAF2010,MEGAF2012}.
 
 Other operations should help and guide the user in interpreting the views. The starting point should be a serious study on understanding exactly both the users and the purpose of the views. This study will then define the requirements of the syntax (e.g., graphical, textual, tree-like) to be used for the language. 
 Operations should be also provided to evaluate architecture descriptions and decisions. For instance, analysis methods might be defined to evaluate the interoperability level, the ability of the system to cope with heterogeneity of communication channels, security and privacy when the car become part of the SoS, etc.
 Finally, the view should be connected to the software and system life-cycle through methods helping the design and build of the system.
-\eric{It feels like this is something we should have in all three subsections. So we should understand how we do that without repeating ourselves too much. In CID (6.5) I would replace the ``For instance'' part as follows:}
-\ins{For instance, analysis methods might be defined to evaluate the efficiency of the feedback cycle in continuous integration and deployment as well as its ability to help resolving assumptions.}
-\eric{And for the ECOS/T VP it would look like this:}
-\ins{For instance, analysis methods could be defined to analys win-win situations in the ecosystem and to identify suitable partners for critical value-chains as well as for analysing and managing required transparency levels with development partners.}
+%\eric{It feels like this is something we should have in all three subsections. So we should understand how we do that without repeating ourselves too much. In CID (6.5) I would replace the ``For instance'' part as follows:}
+%\ins{For instance, analysis methods might be defined to evaluate the efficiency of the feedback cycle in continuous integration and deployment as well as its ability to help resolving assumptions.}
+%\eric{And for the ECOS/T VP it would look like this:}
+%\ins{For instance, analysis methods could be defined to analys win-win situations in the ecosystem and to identify suitable partners for critical value-chains as well as for analysing and managing required transparency levels with development partners.}
 
 %Operations define the methods to be applied to views and their models.
 %Types of operations include:
@@ -419,18 +419,20 @@ Finally, the view should be connected to the software and system life-cycle thro
 \subsection{Correspondence rules}\label{CRs}
 %%%%%%%%%%
 
-\must{Document any correspondence rules defined by this viewpoint or
-  its model kinds.}
+%\must{Document any correspondence rules defined by this viewpoint or
+%  its model kinds.}
+%
+%Usually, these rules will be across models or across views since,
+%constraints within a model kind will have been specified as part of
+%the conventions of that model kind.
+%
+%See: \std{4.2.6 and 5.7}
 
-Usually, these rules will be across models or across views since,
-constraints within a model kind will have been specified as part of
-the conventions of that model kind.
-
-See: \std{4.2.6 and 5.7}
-
-\begin{itemize}
-\item security, privacy, the other SoS viewpoint
-\end{itemize}
+This viewpoint has correspondences with various other viewpoints, including functional safety, security, privacy, and the other SoS viewpoint that focuses on the engineering of the overall SoS. Moreover, this viewpoint has also correspondences with the topology, cost, variability, 
+%
+%\begin{itemize}
+%\item security, privacy, the other SoS viewpoint
+%\end{itemize}
 
 %%\tbd{examples or specs}
 
