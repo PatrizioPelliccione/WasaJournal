@@ -7,17 +7,17 @@
 \subsection{\Fillin{Viewpoint Name}}\label{vp:template}
 %%%%%%%%%%
 
-\del{\must{Provide the name for the viewpoint.}}
+%\del{\must{Provide the name for the viewpoint.}}
 
-\del{If there are any synonyms or other common names by which this viewpoint is
-known or used, record them here.}
+%\del{If there are any synonyms or other common names by which this viewpoint is
+%known or used, record them here.}
 
 The viewpoint ``Continuous Integration and Deployment'' adds a development perspective to the \del{electrical}\eric{Should there not be some qualification? Should we perhaps say system architecture?} architecture and aims to give an answer to the following questions:
 \begin{enumerate}
 \item How do continuous integration and deployment practices in automotive engineering impact \del{electrical} architecture?
 \item How do architectural decisions in the \del{electrical} architecture impact continuous integration and deployment practices?
 \end{enumerate}
-\eric{I think it is crucial that we align on those questions. First draft above, please comment. I am not sure I hit a good level of ganularity.}
+% \eric{I think it is crucial that we align on those questions. First draft above, please comment. I am not sure I hit a good level of ganularity.}
 
 %%%%%%%%%%
 \subsection{Overview} 
@@ -84,26 +84,45 @@ viewpoint is intended.
 %%%%%%%%%%
 In this section we focus on the concerns that are essential to enable continuous integration and deployment when engineering software for cars. 
 We express the concerns in the form of questions as suggested by the ISO/IEC/IEEE 42010 standard.
-\eric{Suggesting some edits and a change in order here to improve the flow. Please check if it is still correct!}
-\magnus{Made some minor tweaks}
+%\eric{Suggesting some edits and a change in order here to improve the flow. Please check if it is still correct!}
+%\magnus{Made some minor tweaks}
 \begin{itemize}
 \item \emph{How can we avoid building the wrong architecture?}
-\chg{It is no use in making a good architecture if it is for the wrong purpose.}{Even a technically sound architecture is worthless if it does not fit the desired purpose.
+%\chg{It is no use in making a good architecture if it is for the wrong purpose.}
+{Even a technically sound architecture is worthless if it does not fit the desired purpose.
 Naturally, an electrical architecture needs to exist long before the product under consideration is developed and can reach the market, since it is required to guide organization of development activities. 
 Even though a lot of information is needed early in the product lifecycle, a crucial amount of information will only become available during its development and early market phase.}
-\item \emph{How can we reduce the number of architectural assumptions?} The more of the architecture \chg{one make}{that is defined} up-front,  the more \ins{it is based on }assumptions \chg{are needed to be added}{instead of facts}. \del{It is hard to guarantee that these assumptions are true, moreover, if there are too many assumption one might loose the overviews as well. }\ins{This can lead to late changes, duplicate work, or in the worst case to problems that only surface once the product is on the market.}
-\item \emph{How can \chg{we}{a system} respond quicker to changes in the market?} \ins{Many of the assumptions will concern the market situation once the product has been released. 
+\item \emph{How can we reduce the number of architectural assumptions?} The more of the architecture 
+%\chg{one make}
+{is defined} up-front,  the more 
+%\ins
+{it is based on}
+assumptions 
+%\chg{are needed to be added}
+{instead of facts}. 
+%\del{It is hard to guarantee that these assumptions are true, moreover, if there are too many assumption one might loose the overviews as well. }\ins
+{This can lead to late changes, duplicate work, or in the worst case to problems that only surface once the product is on the market.}
+\item \emph{How can %\chg{we}
+{a system} respond quicker to changes in the market?} 
+%\ins
+{Many of the assumptions will concern the market situation once the product has been released. 
 Markets are however prone to constant change and such change might invalidate architectural decisions during the development of software. }
-\item \emph{How can we deal with changing interfaces?} \ins{Reacting to change in the market will lead to late changes of the architecture, which in turn will affect continuous integration and deployment: It is not possible to integrate a component into the system after its interface changes, unless the platform and other dependent components have already been adjusted to the new interface.
+\item \emph{How can we deal with changing interfaces?} {Reacting to change in the market will lead to late changes of the architecture, which in turn will affect continuous integration and deployment: It is not possible to integrate a component into the system after its interface changes, unless the platform and other dependent components have already been adjusted to the new interface.
 Deployment after an interface change might therefore involve a large number of updated components, which will not be possible in a continuous fashion. 
 In other words, after an interface change it will be hard to guarantee that the main branch of all components is in a deployable state.}
 \item \emph{How can we deal with dependencies?} 
-\ins{There are two types of dependencies, real and accidental dependencies. As cars get more and more dependent on different sensors that also increases the dependencies in the overall system. This type of dependencies needs to be handle.  One the other hand accidental dependencies should be removed.  Dependencies can hamper
-\chg{team to work in isolation}{separation of work between teams}.} 
+There are two types of dependencies, real and accidental dependencies. 
+\ins{An example for real dependencies is the increasing degree to that cars become dependent on different sensors, which themselves are rapidly evolving.}
+\del{As cars get more and more dependent on different sensors that also increases the dependencies in the overall system.} 
+This type of dependencies needs to be \ins{planned for during defining an architecture and to allow to} handle \ins{them later}.  
+\ins{In contrast,} \del{One the other hand} \ins{the risk of} accidental dependencies\eric{should we give an example or definition?} should be \chg{removed}{systematically reduced and avoided}.  
+\ins{Unresolved} dependencies \chg{can hamper}{require additional coordination effort between teams, which effectively slows down or even hinders continuous integration and deployment.}
+%\chg{team to work in isolation}{separation of work between teams}.} 
 
 \rogardt{Dependencies seem to be one of the largest show stopper for agile devlopment}
 \magnus{Are dependencies alone a strong enough culprit,
 or is it when combined with slow feedback/low automation that they cause trouble for CI\&D?}
+\eric{Agreed with Rogardt, same feeling as Magnus (but we just don't know yet?). Paragraph needed a bit more work, running it back by you. Is this text correct?}
 
 \end{itemize}
 
@@ -224,12 +243,12 @@ that type.  See: \std{4.2.5, 5.5 and 5.6}.
 Repeat the next section for each model kind listed here the viewpoint
 being specified.}
 
-Various notations have been proposed to model continuous integration and deployment pipelines \cite{example1,example2,example3}\eric{Take something from the CID SLR}.
-Among those, several could be applicable to this viewpoint, e.g. \cite{Stahl}.
+Various notations have been proposed to model continuous integration and deployment pipelines \cite{SB2014}\eric{Could have more citations here based on CID SLR}.
+Among those, several could be applicable to this viewpoint.
 In addition, one would need to relate those to architectural approaches as well as to the concerns defined above. 
 We are currently working on a qualitative assessment method that allows to identify disruptors and bottlenecks for continuous integration and deployment\eric{I am thinking about the KACI model here (not published yet). What else?}.
 
-\eric{Several subsections commented out in accordance to Section 8 (I believe).}
+% \eric{Several subsections commented out in accordance to Section 8 (I believe).}
 %%%%%%%%%%
 % \subsection{\Fillin{Model Kind Name}}\label{vp:mk}
 %%%%%%%%%%

@@ -59,7 +59,7 @@ Table~\ref{tab:stakeholders} describes the main stakeholders we have identified;
 Then the identified stakeholders motivate the set of concerns on which the architecture framework will focus.
 This will help the consumer of the architecture framework and of the views and connected modeling tools to understand why
 they are modeling and when they are done.
-In order to define the stakeholders concerns we identified a set of challenging scenarios through a number of workshops for elicitation and validation. 
+In order to define the stakeholders concerns we identified a set of challenging scenarios \ugh{through a number of workshops for elicitation and validation}\eric{do we need a proper research method? Above, in the abstract, I suggested to use focus groups as a term, but not sure we could defend it. WS seems to be more general. Either way, a reviewer could wish for a bit more method... Only, where to put it? Same with the viewpoints -- here we only argue about the scenarios. Should we introduce a dedicated question with research questions that motivate scenarios and the three viewpoints?}. 
 Figure~\ref{fig:challenging-scenarios} gives an overview of the scenarios that are strongly connected to the viewpoints we will detail in this paper. These scenarios are described in the following items.
 %ogardt and I made a draft picture with the use cases from WP3 added.
 %Color, exact naming, bubble placement etc., TDB.
@@ -76,7 +76,7 @@ Figure~\ref{fig:challenging-scenarios} gives an overview of the scenarios that a
 
 
 \begin{itemize}
-\item Scenario 1 {\bf decision management } aims at exploring how to make, communicate, and manage decisions. 
+\item Scenario 1 {\bf Decision Management } aims at exploring how to make, communicate, and manage decisions. 
 
 \begin{quote}
 {User Story:} \emph{``As a member of the development ecosystem I would like to have a clear understanding on how to take decisions and how to communicate them.''}
@@ -131,7 +131,7 @@ This includes for example defining and changing the allocation of Functions to E
 \end{itemize}
  
  
-\item Scenario 2 {\bf define/evolve architecture} explores aspects of long-time evolution of the electrical architecture.
+\item Scenario 2 {\bf Define/Evolve Architecture} explores aspects of long-time evolution of the electrical architecture.
 This includes:
 
 \begin{itemize} 
@@ -153,18 +153,19 @@ The architecture is then perceived as outdated and not useful, thus it looses it
 \end{quote}
 \end{itemize}
 
-\item Scenario 3 {\bf flexibility of architecture} addresses different scenarios that emphasize flexibility of the electrical architecture, both on a technical and on a process level. On a technical level, more capacity in the ECUs allows to add functionality late. 
+\item Scenario 3 {\bf Flexibility of Architecture} addresses different scenarios that emphasize flexibility of the electrical architecture, both on a technical and on a process level. On a technical level, more capacity in the ECUs allows to add functionality late. 
 On a process level, the available resources need to be managed across several contributing partners.
 This includes:
 
 \begin{itemize}
-\item {\em application workload management from a process perspective (3.1)}: 
+\item {\em Application workload management from a process perspective (3.1)}: 
 \begin{quote}
 {User Story:} 
 \emph{``As a functional developer, I want to be flexible when it comes to application workload. 
 Suppliers should be able to acquire and return resources dynamically throughout the lifecycle.''}
 \end{quote}
-\item {\em application workload management from a technical perspective (3.2)}: higher capacity of ECUs and Buses will facilitate late or even very late updates (i.e. when the vehicle is on the street), because new functionality could use more resources.
+
+\item {\em Application workload management from a technical perspective (3.2)}: Higher capacity of ECUs and Buses will facilitate late or even very late updates (i.e. when the vehicle is on the street), because new functionality could use more resources.
 This flexibility comes at a cost and it is not trivial to understand where the break-even point is.
 
 \begin{quote}
@@ -172,7 +173,7 @@ This flexibility comes at a cost and it is not trivial to understand where the b
 \emph{``As a system architect I want to balance capacity of ECUs and Buses against cost.''}
 \end{quote}
 
-\item {\em easy and secure add-ons (3.3)}: being able to add new functions in a secure and easy way would allow to detach software development to some extend from the development cycle. 
+\item {\em Easy and secure add-ons (3.3)}: Being able to add new functions in a secure and easy way would allow to detach software development to some extend from the development cycle. 
 During the development of a car, an OEM could focus on the critical basic functionality. 
 Convenience features as well as more advanced connected features could be added independent from the start of production.
 This would allow to develop more continuously and should decrease the peak of trouble reports before critical deadlines observed earlier~\cite{modelsward13}.
@@ -182,23 +183,23 @@ This would allow to develop more continuously and should decrease the peak of tr
 \emph{``As a  functional developer I want to be able to add new functions (very) late. Such add-ons could originate from third parties and should be added even after the vehicle has been put into use.''}
 \end{quote}
 
-\item {\em separation of concerns (3.4)}: 
+\item {\em Separation of concerns (3.4)}: 
 \begin{quote}
 {User Story:} 
-\emph{``As a system architect, I want to balance separation of concerns on two levels: between domains (e.g. safety vs. infotainment) and levels of abstractions (e.g. architecture vision vs architecture implementation).''}
+\emph{``As a system architect, I want to balance separation of concerns on two levels: between domains (e.g. safety vs. infotainment) and levels of abstractions (e.g. architecture vision vs. architecture implementation).''}
 \end{quote}
 
-\item {\em flexible functionality (3.5)}:
+\item {\em Flexible functionality (3.5)}:
 \begin{quote}
 {User Story:} 
 \emph{``As a functional developer, I want to be flexible about the functions that are running in the car and allow for very late deployment.''}
 \end{quote}
 \end{itemize}
  
-\item Scenario 4 {\bf continuous deployment and transparency} includes:
+\item Scenario 4 {\bf Continuous Deployment and Transparency} includes:
 
 \begin{itemize}
-\item {\em the need for openness and transparent information through out the different value chains in the automotive ecosystem (4.1)}: Good transparency in the value chain supports flexibility, since all partners can take appropriate action to reach a (changing) goal quickly. 
+\item {\em The need for openness and transparent information through out the different value chains in the automotive ecosystem (4.1)}: Good transparency in the value chain supports flexibility, since all partners can take appropriate action to reach a (changing) goal quickly. 
 The \emph{cone of uncertainty} is a good example for this~\cite{cone-of-uncertainty,cone-of-uncertainty2}: In the beginning of a project, not much data is available and decisions are very uncertain. 
 As the project proceeds, assumptions are removed and uncertainty is reduced, but as  a consequence, it becomes harder to make decisions that change a lot. 
 Good transparency can help to reduce the uncertainty quicker and can allow to decide fast in order to learn fast.
@@ -208,18 +209,17 @@ Good transparency can help to reduce the uncertainty quicker and can allow to de
 This allows me to participate in the fast learning throughout the value chain and enables me to be effective and flexible in my work.''}
 \end{quote}
 
-\item {\em the need for using this information to continuously improve an continuous integration, delivery, and deployment flow (4.2)}: 
+\item {\em The need for using this information to continuously improve an continuous integration, delivery, and deployment flow (4.2)}: 
 Cross-organizational continuous integration, delivery, and deployment facilitates fast feedback and rich learning.
 This learning should also help to improve the interaction of organizations and the integration flow between them.
-
-Have a culture of continuous improvement between VCC and partners	Apply Continuous Deployment to the CD tool chain
+\ugh{It is important to create and maintain a culture of continuous improvement between the OEM and partners, e.g. by applying continuous deployment to the (shared) CD tool chain.}\eric{This is a bit solution specific and does not flow nicely (especially it is to a large extend already in the user story). Was about to delete it, but it is kind of a nice statement. What do you think?}
 
 \begin{quote}
 {User Story:} 
 \emph{``As a Project Manager, I want to have a culture of continuous improvement within the OEM and with partners in the value-chain. As any developer of the electrical system (internal and external) I want to benefit from and take responsibility in improving the continuous delivery flow.''}
 \end{quote}
 
-\item {\em the need for establishing short feedback cycles (4.3)}: While developing new functionality, basic software, and hardware, one should plan on how to receive feedback, which data to collect, and how to use it in the development.
+\item {\em The need for establishing short feedback cycles (4.3)}: While developing new functionality, basic software, and hardware, one should plan on how to receive feedback, which data to collect, and how to use it in the development.
 
 \begin{quote}
 {User Story:} 
@@ -234,14 +234,14 @@ As a tester, I want quick updates on all levels of tests and continuous improvem
 \item Scenario 5 {\bf System of Systems} includes:
 
 \begin{itemize}
-\item {\em the need of having reliable communication (5.1)}: To have the car as a constituent of a System of Systems (SoS), the car needs to be connected to other cars, infrastructure, cloud and any other kind of constituent system of the SoS. Most probably the car will be connected through heterogeneous communication means and with various degree of quality of service.
+\item {\em The need of having reliable communication (5.1)}: To have the car as a constituent of a System of Systems (SoS), the car needs to be connected to other cars, infrastructure, cloud, and any other kind of constituent system of the SoS. Most probably the car will be connected through heterogeneous communication means and with various degrees of quality of service.
 
 \begin{quote}
 {User Story:} 
 \emph{``As an architect I need to engineer the car so that it will support heterogeneous communication means with various quality of service (QoS). The QoS of the different communication means should be clearly identified so that it will be possible to develop end-to-end functionalities that go beyond the boundaries of the car.''}
 \end{quote}
 
-\item {\em guaranteerning that communication from and to the car is properly understood (5.2)}: It is not enough to have proper communication means; the exchanged messages should be properly understood by all involved parts.
+\item {\em Guaranteeing that communication from and to the car is properly understood (5.2)}: It is not enough to have proper communication means; the exchanged messages should be properly understood by all involved parts.
 
 \begin{quote}
 {User Story:} 
@@ -252,7 +252,7 @@ As a tester, I want quick updates on all levels of tests and continuous improvem
 
 \begin{quote}
 {User Story:} 
-\emph{``As an architect I need to manage the transition towards autonomous behaviours of the car that are needed to achieve the goal of the SoS. The car should be engineered so to, often immediately, switch to another mode and perform the actions required by the SoS. The right tradeoff between independence of the vehicle (from the SoS) and service offered to the SoS needs to be found.''}
+\emph{``As an architect I need to manage the transition towards autonomous behaviours of the car that are needed to achieve the goal of the SoS. The car should be engineered so to, often immediately, \ugh{switch to another mode}\eric{we do not speak much about modes. Should we try to omit this rather difficult term here?} and perform the actions required by the SoS. The right tradeoff between independence of the vehicle (from the SoS) and service offered to the SoS needs to be found.''}
 \end{quote}
 
 \item {\em Dealing with uncertainty and functional safety (5.4)}: Vehicles are starting receiving a huge amount of information from the environment as communication coming from other vehicles, pedestrians, road signals, city in general. This information might be precious for supporting new safety behaviours\footnote{Example: \url{https://www.media.volvocars.com/global/en-gb/media/pressreleases/159478/volvo-cars-connected-car-program-delivers-pioneering-vision-of-safety-and-convenience}}. However, this information is often unreliable and subject to different dimensions of uncertainty, like presence of other constituent systems, communication means, etc.
@@ -378,7 +378,7 @@ It is important to note that the concepts involved in almost each viewpoint are 
 Most of the viewpoints summarized in Section~\ref{sec:AAF} are indeed interesting also for Volvo Cars. In addition to these viewpoints we foresee a set of viewpoints that are emerging from the new challenges of the automotive domain, as explained in Section~\ref{sec:lessonsLearned} and illustrated by the scenarios described above. The new viewpoints are listed in the following; then for space constraints in the reminder of the paper we will focus on three of the most challenging ones:
 	\begin{itemize}
 	\item \emph{Continuous integration and deployment} (detailed in Section~\ref{sec:CID_VP}) - OEMs are increasingly interested to reduce the development time, to increase flexibility, to have early feedback on decisions made, and to add new functionalities incrementally even after production. %However, another trend is the rapid development of more advanced active safety systems that require \del{a} special handling.\eric{does the last point here not relate more to connected cars and safety?}
-		\item \emph{Ecosystem and transparency} (detailed in Section~\ref{sec:ET_VP}) - related to the value net viewpoint of AAF~\cite{TUM-I0915,Broy}. %activities of, and the dependencies between the stakeholders of the end-toend value creation process which happens within a specific value net. 
+		\item \emph{Ecosystem and transparency} (detailed in Section~\ref{sec:ET_VP}) - \ugh{related to the value net viewpoint} of AAF~\cite{TUM-I0915,Broy}. \eric{Should we check if our description is sufficiently different?}%activities of, and the dependencies between the stakeholders of the end-toend value creation process which happens within a specific value net. 
 		The ecosystem around the OEM can be seen as a virtual %A value net is defined as a virtual
 	organization consisting of the OEM, its suppliers and other partners %and other constituents 
 	involved in the process of creating customer value.
