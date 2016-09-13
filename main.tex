@@ -55,7 +55,7 @@
 \usepackage{amssymb}%
 \usepackage{graphicx}
 \usepackage{multirow}
-\usepackage{todonotes}
+\usepackage[disable]{todonotes}
 \usepackage{url}
 \usepackage{graphics}
 \usepackage{balance}
@@ -208,7 +208,9 @@ connected to each other through several networks within the car, and the car is 
 %This need for addressing ever increasing complexity as well as for offering flexibility, support of continuous evolution, and very late changes in user visible features introduces new challenges for developing and maintaining a suitable electronic architecture. %} 
 These novelties ask for a change on how the software is engineered and produced and for a disruptive renovation of the electrical and software architecture of the car.   
 In this paper we describe the current investigation of the Volvo Cars to create an 
-architecture framework able to cope with the complexity and needs of present and future vehicles.   
+architecture framework able to cope with the complexity and needs of present and future vehicles.   \eric{need to mention viewpoints and scenarios? Since the three viewpoints we present seem to be crucial, we probably should mention them here?}
+\ins{Specifically, we present scenarios that describe demands for the architectural framework and introduce three new viewpoints that need to be taken into account for future architectural decisions: Continuous Integration and Deployment, Ecosystem and Transparency, and System of Systems.
+Our results are based on a series of focus groups with experts in automotive engineering and architecture from different companies and universities.}
 \end{abstract}
 
 \begin{keyword}
