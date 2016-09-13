@@ -46,10 +46,13 @@ compatible combinations need to be validated.
 Second, support for continuous deployment has to face safety concerns.
 %relates to the connectivity of ECUs. 
 %the extent of this, in turn, raises not least security concerns.
-\chg{Should, for instance,}{An example for this is the question on whether it should be possible to modify or update} the software \chg{of an}{running on an} ECU responsible for a safety critical function at runtime.
-\eric{does an ECU responsible actually deliver software? Seems weird, as this seems to imply responsibility for a specifc ECU, while the software should be hw independent. Should it be a ``Software Responsible'' instead?}
-\magnus{it's an ECU -- responsible for a safety critical\ldots not the role of ECU responsible\eric{I see. Next try then...}}
-\ins{This might be desirable, e.g. when better algorithms for autonomous driving become available.}
+%\chg{Should, for instance,}
+An example for this is the question on whether it should be possible, at runtime,
+to modify or update
+the software running on an ECU responsible for a safety critical function.
+%\eric{does an ECU responsible actually deliver software? Seems weird, as this seems to imply responsibility for a specifc ECU, while the software should be hw independent. Should it be a ``Software Responsible'' instead?}
+%\magnus{it's an ECU -- responsible for a safety critical\ldots not the role of ECU responsible\eric{I see. Next try then...}}
+This might be desirable, e.g. when better algorithms for autonomous driving become available.
 
 Dependencies between ECUs are a property of the architecture.
 As mentioned, the emergent architecture may differ from the intended architecture,
