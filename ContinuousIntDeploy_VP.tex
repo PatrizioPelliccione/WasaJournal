@@ -59,6 +59,7 @@ between parts of the organization working on different architectural levels, and
 for agile and flexible architecting.
 %Furthermore, the architectural framework should support agile architecting.
 
+\rogardt{We need to decide quickly if we go for one or two viewpoints. This will have consequences on the Correspondence rules, to permit teams to work as independent as possible quite a bit of the architecture need to be done upfront and dependencies found, however too much upfront work will also hamper agility}
 Addressing these concerns suggests \ugh{two architectural views and viewpoints}\eric{Should we then not split it into two viewpoints? Otherwise needs to be rephrased. I think we should have one viewpoint answering both questions.}:
 (i) one covering architecture as an enabler
 of continuous integration and deployment,
@@ -110,8 +111,8 @@ Markets are however prone to constant change and such change might invalidate ar
 \item \emph{How can we deal with changing interfaces?} {Reacting to change in the market will lead to late changes of the architecture, which in turn will affect continuous integration and deployment: It is not possible to integrate a component into the system after its interface changes, unless the platform and other dependent components have already been adjusted to the new interface.
 Deployment after an interface change might therefore involve a large number of updated components, which will not be possible in a continuous fashion. 
 In other words, after an interface change it will be hard to guarantee that the main branch of all components is in a deployable state.}
-\item \emph{How can we deal with dependencies?} 
-There are two types of dependencies, real and accidental dependencies. 
+\item \emph{How can we deal with dependencies?}
+There are two types of dependencies, real \rogardt{Don't know if real is the right word here} and accidental dependencies.
 \ins{An example for real dependencies is the increasing degree to that cars become dependent on different sensors, which themselves are rapidly evolving.}
 \del{As cars get more and more dependent on different sensors that also increases the dependencies in the overall system.} 
 This type of dependencies needs to be \ins{planned for during defining an architecture and to allow to} handle \ins{them later}.  
@@ -119,10 +120,13 @@ This type of dependencies needs to be \ins{planned for during defining an archit
 \ins{Unresolved} dependencies \chg{can hamper}{require additional coordination effort between teams, which effectively slows down or even hinders continuous integration and deployment.}
 %\chg{team to work in isolation}{separation of work between teams}.} 
 
-\rogardt{Dependencies seem to be one of the largest show stopper for agile devlopment}
+\rogardt{Dependencies seem to be one of the largest show stopper for agile development}
 \magnus{Are dependencies alone a strong enough culprit,
 or is it when combined with slow feedback/low automation that they cause trouble for CI\&D?}
 \eric{Agreed with Rogardt, same feeling as Magnus (but we just don't know yet?). Paragraph needed a bit more work, running it back by you. Is this text correct?}
+\rogardt{A team is working away, then it suddenly depend on another group to do some work, they will go to this group to ask them kindly to complete the job they depend on. However, this group has their own backlog and ask them even more kindly to come back in a few weeks after they have empty their own backlog:-}
+
+\rogardt{Will we leave our issue on continuous deployment to a virtual car in this paper. I think this is quite an interesting issue, but I don't know completely how it fit in. One can view the virtual car as some short of executable architecture.A new type of architecture that permit continuous deployment of part of the architecture, controlled by the high level architecture (that is more agile). Maybe this is too hard to understand}
 
 \end{itemize}
 
@@ -248,6 +252,8 @@ Among those, several could be applicable to this viewpoint.
 In addition, one would need to relate those to architectural approaches as well as to the concerns defined above. 
 We are currently working on a qualitative assessment method that allows to identify disruptors and bottlenecks for continuous integration and deployment\eric{I am thinking about the KACI model here (not published yet). What else?}.
 
+\rogardt{What about models to capture dependencies}
+\rogardt{Will a service oriented architecture improve CI\&D, however we might leave out this discussion}
 % \eric{Several subsections commented out in accordance to Section 8 (I believe).}
 %%%%%%%%%%
 % \subsection{\Fillin{Model Kind Name}}\label{vp:mk}
