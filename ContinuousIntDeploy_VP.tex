@@ -115,22 +115,22 @@ Markets are however prone to constant change and such change might invalidate ar
 Deployment after an interface change might therefore involve a large number of updated components, which will not be possible in a continuous fashion. 
 In other words, after an interface change it will be hard to guarantee that the main branch of all components is in a deployable state.}
 \item \emph{How can we deal with dependencies?}
-There are two types of dependencies, real \rogardt{Don't know if real is the right word here} and accidental dependencies.
-\ins{An example for real dependencies is the increasing degree to that cars become dependent on different sensors, which themselves are rapidly evolving.}
-\del{As cars get more and more dependent on different sensors that also increases the dependencies in the overall system.} 
-This type of dependencies needs to be \ins{planned for during defining an architecture and to allow to} handle \ins{them later}.  
-\ins{In contrast,} \del{One the other hand} \ins{the risk of} accidental dependencies\eric{should we give an example or definition?} should be \chg{removed}{systematically reduced and avoided}.  
-\ins{Unresolved} dependencies \chg{can hamper}{require additional coordination effort between teams, which effectively slows down or even hinders continuous integration and deployment.}
+There are two types of dependencies, \chg{real}{structural} \rogardt{Don't know if real is the right word here}\eric{have not seen it used and cannot google. Reminds me about the discussion on the difference between complicated and complex, where complexity lies in the problem and complicatedness in imperfect implementation. Previously, we have discussed planned vs. unplanned, but that is very different. what could work instead of real could be \ins{domain and problem inherent dependencies} or \ins{structural dependencies}, i.e. those that you cannot remove with good architecture} and accidental dependencies.
+An example for \chg{real}{structural} dependencies is the increasing degree to that cars become dependent on different sensors, which themselves are rapidly evolving.
+%\del{As cars get more and more dependent on different sensors that also increases the dependencies in the overall system.} 
+This type of dependencies needs to be {planned for during defining an architecture in order to allow } handling {them later}.  
+In contrast, the risk of accidental dependencies\eric{should we give an example or definition?} should be systematically reduced and avoided.  
+\ins{This is important, since} unresolved dependencies \ins{(both structural and accidental)} require additional coordination effort between teams, which effectively slows down or even hinders continuous integration and deployment.
 %\chg{team to work in isolation}{separation of work between teams}.} 
 
-\rogardt{Dependencies seem to be one of the largest show stopper for agile development}
-\magnus{Are dependencies alone a strong enough culprit,
-or is it when combined with slow feedback/low automation that they cause trouble for CI\&D?}
-\eric{Agreed with Rogardt, same feeling as Magnus (but we just don't know yet?). Paragraph needed a bit more work, running it back by you. Is this text correct?}
-\rogardt{A team is working away, then it suddenly depend on another group to do some work, they will go to this group to ask them kindly to complete the job they depend on. However, this group has their own backlog and ask them even more kindly to come back in a few weeks after they have empty their own backlog:-}
+%\rogardt{Dependencies seem to be one of the largest show stopper for agile development}
+%\magnus{Are dependencies alone a strong enough culprit,
+%or is it when combined with slow feedback/low automation that they cause trouble for CI\&D?}
+%\eric{Agreed with Rogardt, same feeling as Magnus (but we just don't know yet?). Paragraph needed a bit more work, running it back by you. Is this text correct?}
+%\rogardt{A team is working away, then it suddenly depend on another group to do some work, they will go to this group to ask them kindly to complete the job they depend on. However, this group has their own backlog and ask them even more kindly to come back in a few weeks after they have empty their own backlog:-}
 
 \rogardt{Will we leave our issue on continuous deployment to a virtual car in this paper. I think this is quite an interesting issue, but I don't know completely how it fit in. One can view the virtual car as some short of executable architecture.A new type of architecture that permit continuous deployment of part of the architecture, controlled by the high level architecture (that is more agile). Maybe this is too hard to understand}
-
+\eric{Let's keep that one for the next paper, okay? I agree it would fit, but it will be hard and perhaps it is even worth a paper of its own.}
 \end{itemize}
 
 
@@ -255,8 +255,8 @@ Among those, several could be applicable to this viewpoint.
 In addition, one would need to relate those to architectural approaches as well as to the concerns defined above. 
 We are currently working on a qualitative assessment method that allows to identify disruptors and bottlenecks for continuous integration and deployment\eric{I am thinking about the KACI model here (not published yet). What else?}.
 
-\rogardt{What about models to capture dependencies}
-\rogardt{Will a service oriented architecture improve CI\&D, however we might leave out this discussion}
+\rogardt{What about models to capture dependencies \eric{which? UML Package diagrams? Use Case diagrams? Feature diagrams?}}
+\rogardt{Will a service oriented architecture improve CI\&D, however we might leave out this discussion \eric{agreed, I am not aware of any evidence on this.}}
 % \eric{Several subsections commented out in accordance to Section 8 (I believe).}
 %%%%%%%%%%
 % \subsection{\Fillin{Model Kind Name}}\label{vp:mk}
