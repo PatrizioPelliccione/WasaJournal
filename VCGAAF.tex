@@ -1,6 +1,6 @@
 % !TEX root = main.tex
 
-\section{Volvo Cars architecture framework}\label{sec:VCGAF}
+\section{Volvo Cars Architecture Framework}\label{sec:VCGAF}
 
 The starting point for defining an architecture framework is to start from the identification of established stakeholders within the domain of the framework. Stakeholders may be individuals, teams,
 organizations or classes (of individuals, teams or organizations), while concerns may be fine-grained or very broad in scope~\cite{Emery-Hilliard:2009}. 
@@ -59,7 +59,8 @@ Table~\ref{tab:stakeholders} describes the main stakeholders we have identified;
 Then the identified stakeholders motivate the set of concerns on which the architecture framework will focus.
 This will help the consumer of the architecture framework and of the views and connected modeling tools to understand why
 they are modeling and when they are done.
-In order to define the stakeholders concerns we identified a set of challenging scenarios \ugh{through a number of workshops for elicitation and validation}\eric{do we need a proper research method? Above, in the abstract, I suggested to use focus groups as a term, but not sure we could defend it. WS seems to be more general. Either way, a reviewer could wish for a bit more method... Only, where to put it? Same with the viewpoints -- here we only argue about the scenarios. Should we introduce a dedicated question with research questions that motivate scenarios and the three viewpoints?}. 
+In order to define the stakeholders concerns, we identified a set of challenging scenarios through a number of workshops for elicitation and validation\ins{, which we then continued for defining the architecture framework and its viewpoints.} 
+%\eric{do we need a proper research method? Above, in the abstract, I suggested to use focus groups as a term, but not sure we could defend it. WS seems to be more general. Either way, a reviewer could wish for a bit more method... Only, where to put it? Same with the viewpoints -- here we only argue about the scenarios. Should we introduce a dedicated question with research questions that motivate scenarios and the three viewpoints?}. 
 Figure~\ref{fig:challenging-scenarios} gives an overview of the scenarios that are strongly connected to the viewpoints we will detail in this paper. These scenarios are described in the following items.
 %ogardt and I made a draft picture with the use cases from WP3 added.
 %Color, exact naming, bubble placement etc., TDB.
@@ -378,7 +379,7 @@ It is important to note that the concepts involved in almost each viewpoint are 
 Most of the viewpoints summarized in Section~\ref{sec:AAF} are indeed interesting also for Volvo Cars. In addition to these viewpoints we foresee a set of viewpoints that are emerging from the new challenges of the automotive domain, as explained in Section~\ref{sec:lessonsLearned} and illustrated by the scenarios described above. The new viewpoints are listed in the following; then for space constraints in the reminder of the paper we will focus on three of the most challenging ones:
 	\begin{itemize}
 	\item \emph{Continuous integration and deployment} (detailed in Section~\ref{sec:CID_VP}) - OEMs are increasingly interested to reduce the development time, to increase flexibility, to have early feedback on decisions made, and to add new functionalities incrementally even after production. %However, another trend is the rapid development of more advanced active safety systems that require \del{a} special handling.\eric{does the last point here not relate more to connected cars and safety?}
-		\item \emph{Ecosystem and transparency} (detailed in Section~\ref{sec:ET_VP}) - \ugh{related to the value net viewpoint} of AAF~\cite{TUM-I0915,Broy}. \eric{Should we check if our description is sufficiently different?}%activities of, and the dependencies between the stakeholders of the end-toend value creation process which happens within a specific value net. 
+		\item \emph{Ecosystem and transparency} (detailed in Section~\ref{sec:ET_VP}) - \ugh{related to the value net viewpoint} of AAF~\cite{TUM-I0915,Broy}. \eric{Who could check if our description is sufficiently different? A reviewer might be concerned about this.}%activities of, and the dependencies between the stakeholders of the end-toend value creation process which happens within a specific value net. 
 		The ecosystem around the OEM can be seen as a virtual %A value net is defined as a virtual
 	organization consisting of the OEM, its suppliers and other partners %and other constituents 
 	involved in the process of creating customer value.
