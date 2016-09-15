@@ -1,20 +1,22 @@
 graph UseCases {
   layout=neato;
   overlap=false;
+  splines=true;
 
   {
     node [style=filled];
+    node [label="Challenging\nScenarios"] root;
     node [label="1. Decision\nManagement"] s1;
     node [label="2. Define/\nEvolve\nArchitecture"] s2;
     node [label="3. Flexibility of\nArchitecture"] s3;
     node [label="4. Continuous\nDeployment and\nTransparency"] s4;
     node [label="5. System\nof Systems"] sos;
 
-  s2 -- s1;
-  s2 -- s3;
-  s2 -- s4;
-  s4 -- s1;
-  s2 -- sos;
+    root -- s1;
+    root -- s2;
+    root -- s3;
+    root -- s4;
+    root -- sos;
   }
 
   { // 1.*
@@ -73,10 +75,5 @@ graph UseCases {
     sos -- sos3;
     sos -- sos4;
     sos -- sos5;
-  }
-
-  {
-    edge [style=dashed];
-    s14 -- s35;
   }
 }
