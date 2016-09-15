@@ -252,12 +252,15 @@ that type.  See: \std{4.2.5, 5.5 and 5.6}.
 Repeat the next section for each model kind listed here the viewpoint
 being specified.}
 
+\rogardt{If this really a question about model kinds? Cannot any notation be used, for example UML? It is more a question about how much upfront work is done whatever model kind is used. If the model is too detailed it against agility, but at the same time it can support teams to work more independent, increased agility. My point is that it is not so much about model kinds, but more about abstraction. As you say below it is more about find a qualitative assessment method that allows to identify disruptors and bottlenecks for continuous integration and deployment "using whatever model kind (architecture)"}
+
 Various notations have been proposed to model continuous integration and deployment pipelines \cite{SB2014}\eric{Could have more citations here based on CID SLR}.
 Among those, several could be applicable to this viewpoint.
 In addition, one would need to relate those to architectural approaches as well as to the concerns defined above. 
 We are currently working on a qualitative assessment method that allows to identify disruptors and bottlenecks for continuous integration and deployment\eric{I am thinking about the KACI model here (not published yet). What else?}.
 
 \rogardt{What about models to capture dependencies \eric{which? UML Package diagrams? Use Case diagrams? Feature diagrams?}}
+\rogardt{Good question, maybe component diagram, they can be used to show dependencies between components using interfaces}
 \rogardt{Will a service oriented architecture improve CI\&D, however we might leave out this discussion \eric{agreed, I am not aware of any evidence on this.}}
 % \eric{Several subsections commented out in accordance to Section 8 (I believe).}
 %%%%%%%%%%
@@ -403,6 +406,7 @@ We are currently working on a qualitative assessment method that allows to ident
 
 \ins{Finally, operations should be also provided to evaluate architecture descriptions and decisions. For instance, analysis methods might be defined to evaluate the efficiency of the feedback cycle in continuous integration and deployment as well as its ability to help resolving assumptions.}
 
+\ins{Identify and remove as many dependencies between components as possible. For the structural dependencies that cannot be removed, organise the work so that one avoid as far as possible that teams need to wait for each other}
 
 \todo[inline, size=\footnotesize]{
 
@@ -451,6 +455,8 @@ which provide the developer with guidance on what to do and when.
 \subsection{Correspondence rules}\label{CID-CRs}
 %%%%%%%%%%
 \magnus{Can we get away without this section? How strictly should we fullfil the template?}
+\rogardt{On the other hand, will this not be a perfect place to talk about the correct balance of an architecture, this should be the correct place}
+\ins{We have catch 22 challenge here. On the one hand, if we make the architecture light wait, we can start coding very soon making the whole process very agile. On the other hand, with this approach we might not catch important dependencies, causing groups to wait for each other at a later stage, that again can hamper agility in big way}
 
 %\must{Document any correspondence rules defined by this viewpoint or
 %  its model kinds.}
