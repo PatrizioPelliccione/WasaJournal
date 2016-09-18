@@ -10,7 +10,7 @@ graph UseCases {
     node [label="2. Define/\nEvolve\nArchitecture"] s2;
     node [label="3. Flexibility of\nArchitecture"] s3;
     node [label="4. Continuous\nDeployment and\nTransparency"] s4;
-    node [label="5. System\nof Systems"] sos;
+    node [label="5. Car as a constituent of\na System of Systems"] sos;
 
     root -- s1;
     root -- s2;

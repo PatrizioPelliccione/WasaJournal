@@ -44,6 +44,7 @@ the question is related to the compatibility of the software version of specific
 %that are compatible.
 (iii)  testing -  %This then carries over to the testing effort,
 compatible combinations need to be validated. 
+
 Second, support for continuous deployment has to face safety concerns.
 %relates to the connectivity of ECUs. 
 %the extent of this, in turn, raises not least security concerns.
@@ -56,7 +57,7 @@ the software running on an ECU responsible for a safety critical function.
 This might be desirable, e.g. when better algorithms for autonomous driving become available.
 
 Dependencies between ECUs are a property of the architecture.
-As mentioned, the emergent architecture may differ from the intended architecture,
+As mentioned in Section~\ref{sec:gap}, the as-realized architecture may differ from the as-intended architecture,
 and continuous integration and deployment of software may entail architectural changes.
 This highlights both the need for collaboration % touches on the concern of the need for collaboration
 between parts of the organization working on different architectural levels, and the need of a proper support
@@ -96,16 +97,16 @@ We express the concerns in the form of questions as suggested by the ISO/IEC/IEE
 \item \emph{How can we avoid building the wrong architecture?}
 %\chg{It is no use in making a good architecture if it is for the wrong purpose.}
 {Even a technically sound architecture is worthless if it does not fit the desired purpose.
-Naturally, an electrical architecture needs to exist long before the product under consideration is developed and can reach the market, since it is required to guide organization of development activities. 
+Naturally, a system architecture needs to exist long before the product under consideration is developed and can reach the market, since it is required to guide organization of development activities. 
 Even though a lot of information is needed early in the product lifecycle, a crucial amount of information will only become available during its development and early market phase.}
-\item \emph{How can we reduce the number of architectural assumptions?} The more of the architecture 
+\item \emph{How can we reduce the number of architectural assumptions?} The more the architecture 
 %\chg{one make}
-{is defined} up-front,  the more 
+is defined up-front,  the more 
 %\ins
-{it is based on}
+it is based on 
 assumptions 
 %\chg{are needed to be added}
-{instead of facts}. 
+instead of facts. 
 %\del{It is hard to guarantee that these assumptions are true, moreover, if there are too many assumption one might loose the overviews as well. }\ins
 {This can lead to late changes, duplicate work, or in the worst case to problems that only surface once the product is on the market.}
 \item \emph{How can %\chg{we}
@@ -113,16 +114,25 @@ assumptions
 %\ins
 {Many of the assumptions will concern the market situation once the product has been released. 
 Markets are however prone to constant change and such change might invalidate architectural decisions during the development of software. }
-\item \emph{How can we deal with changing interfaces?} {Reacting to change in the market will lead to late changes of the architecture, which in turn will affect continuous integration and deployment: It is not possible to integrate a component into the system after its interface changes, unless the platform and other dependent components have already been adjusted to the new interface.
+\item \emph{How can we deal with changing interfaces?} {Reacting to change in the market will lead to late changes of the architecture, which in turn will affect continuous integration and deployment: it is not possible to integrate a component into the system after its interface changes, unless the platform and other dependent components have already been adjusted to the new interface.
 Deployment after an interface change might therefore involve a large number of updated components, which will not be possible in a continuous fashion. 
 In other words, after an interface change it will be hard to guarantee that the main branch of all components is in a deployable state.}
 \item \emph{How can we deal with dependencies?}
-There are two types of dependencies, \chg{real}{structural} \rogardt{Don't know if real is the right word here}\eric{have not seen it used and cannot google. Reminds me about the discussion on the difference between complicated and complex, where complexity lies in the problem and complicatedness in imperfect implementation. Previously, we have discussed planned vs. unplanned, but that is very different. what could work instead of real could be \ins{domain and problem inherent dependencies} or \ins{structural dependencies}, i.e. those that you cannot remove with good architecture} and accidental dependencies.
-An example for \chg{real}{structural} dependencies is the increasing degree to that cars become dependent on different sensors, which themselves are rapidly evolving.
-%\del{As cars get more and more dependent on different sensors that also increases the dependencies in the overall system.} 
-This type of dependencies needs to be {planned for during defining an architecture in order to allow } handling {them later}.  
-In contrast, the risk of accidental dependencies\eric{should we give an example or definition?} should be systematically reduced and avoided.  
-\ins{This is important, since} unresolved dependencies \ins{(both structural and accidental)} require additional coordination effort between teams, which effectively slows down or even hinders continuous integration and deployment.
+
+There are two types of dependencies, explicit and implicit dependencies. Explicit dependencies need to be properly managed, monitored, and updated during the system evolution. Implicit dependencies should be properly identified and reduced as much as possible as follows. Those implicit dependencies that are undesirable (e.g., those that violate important architecture constraints) should be removed. The remaining ones should be promoted as explicit dependencies.  
+%structural} \rogardt{Don't know if real is the right word here}\eric{have not seen it used and cannot google. Reminds me about the discussion on the difference between complicated and complex, where complexity lies in the problem and complicatedness in imperfect implementation. Previously, we have discussed planned vs. unplanned, but that is very different. what could work instead of real could be \ins{domain and problem inherent dependencies} or \ins{structural dependencies}, i.e. those that you cannot remove with good architecture} and accidental dependencies.
+%An example for \chg{real}{structural} dependencies is the increasing degree to that cars become dependent on different sensors, which themselves are rapidly evolving.
+%%\del{As cars get more and more dependent on different sensors that also increases the dependencies in the overall system.} 
+%This type of dependencies needs to be {planned for during defining an architecture in order to allow } handling {them later}.  
+In fact, implicit dependencies might require additional coordination effort between teams, which effectively slows down or even hinders continuous integration and deployment.
+
+%There are two types of dependencies, \chg{real}{structural} \rogardt{Don't know if real is the right word here}\eric{have not seen it used and cannot google. Reminds me about the discussion on the difference between complicated and complex, where complexity lies in the problem and complicatedness in imperfect implementation. Previously, we have discussed planned vs. unplanned, but that is very different. what could work instead of real could be \ins{domain and problem inherent dependencies} or \ins{structural dependencies}, i.e. those that you cannot remove with good architecture} and accidental dependencies.
+%An example for \chg{real}{structural} dependencies is the increasing degree to that cars become dependent on different sensors, which themselves are rapidly evolving.
+%%\del{As cars get more and more dependent on different sensors that also increases the dependencies in the overall system.} 
+%This type of dependencies needs to be {planned for during defining an architecture in order to allow } handling {them later}.  
+%In contrast, the risk of accidental dependencies\eric{should we give an example or definition?} should be systematically reduced and avoided.  
+%\ins{This is important, since} unresolved dependencies \ins{(both structural and accidental)} require additional coordination effort between teams, which effectively slows down or even hinders continuous integration and deployment.
+
 %\chg{team to work in isolation}{separation of work between teams}.} 
 
 %\rogardt{Dependencies seem to be one of the largest show stopper for agile development}
@@ -131,8 +141,8 @@ In contrast, the risk of accidental dependencies\eric{should we give an example 
 %\eric{Agreed with Rogardt, same feeling as Magnus (but we just don't know yet?). Paragraph needed a bit more work, running it back by you. Is this text correct?}
 %\rogardt{A team is working away, then it suddenly depend on another group to do some work, they will go to this group to ask them kindly to complete the job they depend on. However, this group has their own backlog and ask them even more kindly to come back in a few weeks after they have empty their own backlog:-}
 
-\rogardt{Will we leave our issue on continuous deployment to a virtual car in this paper. I think this is quite an interesting issue, but I don't know completely how it fit in. One can view the virtual car as some short of executable architecture.A new type of architecture that permit continuous deployment of part of the architecture, controlled by the high level architecture (that is more agile). Maybe this is too hard to understand}
-\eric{Let's keep that one for the next paper, okay? I agree it would fit, but it will be hard and perhaps it is even worth a paper of its own.}
+%\rogardt{Will we leave our issue on continuous deployment to a virtual car in this paper. I think this is quite an interesting issue, but I don't know completely how it fit in. One can view the virtual car as some short of executable architecture.A new type of architecture that permit continuous deployment of part of the architecture, controlled by the high level architecture (that is more agile). Maybe this is too hard to understand}
+%\eric{Let's keep that one for the next paper, okay? I agree it would fit, but it will be hard and perhaps it is even worth a paper of its own.}
 \end{itemize}
 
 
@@ -252,16 +262,17 @@ that type.  See: \std{4.2.5, 5.5 and 5.6}.
 Repeat the next section for each model kind listed here the viewpoint
 being specified.}
 
-\rogardt{If this really a question about model kinds? Cannot any notation be used, for example UML? It is more a question about how much upfront work is done whatever model kind is used. If the model is too detailed it against agility, but at the same time it can support teams to work more independent, increased agility. My point is that it is not so much about model kinds, but more about abstraction. As you say below it is more about find a qualitative assessment method that allows to identify disruptors and bottlenecks for continuous integration and deployment "using whatever model kind (architecture)"}
+%\rogardt{If this really a question about model kinds? Cannot any notation be used, for example UML? It is more a question about how much upfront work is done whatever model kind is used. If the model is too detailed it against agility, but at the same time it can support teams to work more independent, increased agility. My point is that it is not so much about model kinds, but more about abstraction. As you say below it is more about find a qualitative assessment method that allows to identify disruptors and bottlenecks for continuous integration and deployment "using whatever model kind (architecture)"}
 
-Various notations have been proposed to model continuous integration and deployment pipelines \cite{SB2014}\eric{Could have more citations here based on CID SLR}.
+
+Various notations have been proposed to model continuous integration and deployment pipelines~\cite{SB2014}. %\eric{Could have more citations here based on CID SLR}.
 Among those, several could be applicable to this viewpoint.
 In addition, one would need to relate those to architectural approaches as well as to the concerns defined above. 
-We are currently working on a qualitative assessment method that allows to identify disruptors and bottlenecks for continuous integration and deployment\eric{I am thinking about the KACI model here (not published yet). What else?}.
-
-\rogardt{What about models to capture dependencies \eric{which? UML Package diagrams? Use Case diagrams? Feature diagrams?}}
-\rogardt{Good question, maybe component diagram, they can be used to show dependencies between components using interfaces}
-\rogardt{Will a service oriented architecture improve CI\&D, however we might leave out this discussion \eric{agreed, I am not aware of any evidence on this.}}
+We are currently working on a qualitative assessment method that will allow us to identify disruptors and bottlenecks for continuous integration and deployment. %\eric{I am thinking about the KACI model here (not published yet). What else?}.
+Moreover, it would be desirable a modeling notation that is able to capture and visualize dependencies.  Further investigation is needed to understand the most suitable model kinds for this viewpoint.
+%\rogardt{What about models to capture dependencies \eric{which? UML Package diagrams? Use Case diagrams? Feature diagrams?}}
+%\rogardt{Good question, maybe component diagram, they can be used to show dependencies between components using interfaces}
+%\rogardt{Will a service oriented architecture improve CI\&D, however we might leave out this discussion \eric{agreed, I am not aware of any evidence on this.}}
 % \eric{Several subsections commented out in accordance to Section 8 (I believe).}
 %%%%%%%%%%
 % \subsection{\Fillin{Model Kind Name}}\label{vp:mk}
@@ -402,11 +413,15 @@ We are currently working on a qualitative assessment method that allows to ident
 \subsection{Operations on views}\label{Opns}
 %%%%%%%%%%
 
-\eric{Cannot see how we could write something completely different from what is in Section 8.5. Made a suggestion for addition there. Perhaps copy that text here and reference it in Section 7.5 and 8.5?}
+%\eric{Cannot see how we could write something completely different from what is in Section 8.5. Made a suggestion for addition there. Perhaps copy that text here and reference it in Section 7.5 and 8.5?}
 
-\ins{Finally, operations should be also provided to evaluate architecture descriptions and decisions. For instance, analysis methods might be defined to evaluate the efficiency of the feedback cycle in continuous integration and deployment as well as its ability to help resolving assumptions.}
+Among the operations on views we mention methods to identify and remove undesired implicit dependencies. Moreover, suitable operations are needed to maintain, monitor, and update explicit dependencies according to the system evolution. 
 
-\ins{Identify and remove as many dependencies between components as possible. For the structural dependencies that cannot be removed, organise the work so that one avoid as far as possible that teams need to wait for each other}
+Other operations should identify and show the exact evolutions of the system that have an impact on the system architecture. Specifically these operations should support developers by highlighting the effects of changes on the overall architecture, as well as potential violations of architecture constraints before performing a deployment. This can be particularly complex when the changes impact on non-functional properties, such as performance~\cite{ISSTA2016}. 
+
+{Finally, operations should be also provided to evaluate architecture descriptions and decisions. For instance, analysis methods might be defined to evaluate the efficiency of the feedback cycle in continuous integration and deployment as well as its ability to help resolving assumptions.}
+
+%\ins{Identify and remove as many dependencies between components as possible. For the structural dependencies that cannot be removed, organise the work so that one avoid as far as possible that teams need to wait for each other}
 
 \todo[inline, size=\footnotesize]{
 
@@ -458,9 +473,9 @@ which provide the developer with guidance on what to do and when.
 %\magnus{Can we get away without this section? How strictly should we fullfil the template?}
 %\rogardt{On the other hand, will this not be a perfect place to talk about the correct balance of an architecture, this should be the correct place}
 %\ins{We have catch 22 challenge here. On the one hand, if we make the architecture light wait, we can start coding very soon making the whole process very agile. On the other hand, with this approach we might not catch important dependencies, causing groups to wait for each other at a later stage, that again can hamper agility in big way}
-\magnus{Going with Eric's addition as conflict resolution}
-\ins{This viewpoint has correspondences with various other viewpoints, including functional safety, security, privacy, and the new viewpoint Ecosystem and Transparency proposed in this paper. 
-The latter needs to be considered when continuous integration and deployment involves contributions from other actors in the ecosystem.}
+%\magnus{Going with Eric's addition as conflict resolution}
+{This viewpoint has correspondences with various other viewpoints, including functional safety, security, privacy, and the new viewpoint Ecosystem and Transparency proposed in this paper. 
+The latter needs to be considered when continuous integration and deployment involves contributions from other actors in the ecosystem.} 
 %\must{Document any correspondence rules defined by this viewpoint or
 %  its model kinds.}
 

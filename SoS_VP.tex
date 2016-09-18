@@ -79,7 +79,7 @@ one of the main issue with safety guarantees in connected cars is that a full an
 \subsubsection{Concerns}\label{vp:concerns}
 %%%%%%%%%%
 
-In this section we focus on the concerns that are essential to enable functions in the systems of systems for cars. We express the concerns in the form of questions as suggested by the ISO/IEC/IEEE 42010 standard.
+In this section we focus on the concerns that are essential to enable functions in the systems of systems for cars. %We express the concerns in the form of questions as suggested by the ISO/IEC/IEEE 42010 standard.
 
 \begin{itemize}
 \item Once the car is part of a SoS, how to guarantee functional safety requirements?
@@ -153,7 +153,7 @@ In this section we focus on the concerns that are essential to enable functions 
 \subsubsection{Typical stakeholders} 
 %%%%%%%%%%
 
-Since in this viewpoint we take the vehicle point of view, potentially every stakeholder described in Section~\ref{sec:VCGAF} and summarized in Table~\ref{tab:stakeholders} will be part of the audience of this viewpoint. Moreover, additional stakeholders external to the company should be considered as stakeholders. Examples of them are standard authorities for communication means used by the SoS, stakeholders of other OEMs, suppliers, road authorities, etc.
+Since in this viewpoint we take the vehicle point of view, potentially every stakeholder described in Section~\ref{sec:VCGAF} and summarized in Table~\ref{tab:stakeholders} will be part of the audience of this viewpoint. Moreover, additional stakeholders external to the company should be considered as stakeholders. Examples of them are standard authorities for safety and communication means used by the SoS, stakeholders of other OEMs, suppliers, road authorities, etc.
 
 %\must{Provide a listing of the typical stakeholders of a system who
 %  are in the potential audience for views of this kind, per \std{7b}.}
@@ -190,9 +190,9 @@ Since in this viewpoint we take the vehicle point of view, potentially every sta
 
 
 %%%%%%%%%%
-\subsection{Model kinds+}\label{mk:list}
+\subsection{Model kinds for car as constituent of a SoS}\label{mk:list}
 %%%%%%%%%%
-\eric{Suggest to change heading of this section}
+%\eric{Suggest to change heading of this section}
 
 There are not obvious model kinds that can be used for this viewpoint. UML and general purpose architecture description languages seem to be not appropriate to architecting SoSs. There are some attempts in the literature to define architectural languages (Als) for SoS, such as~\cite{SoSADL} or the effort made within the Atesst project\footnote{\url{http://www.atesst.org/home/liblocal/docs/ows/I5_ATESST2_OWS_CooperativeSystems.pdf}}, however, a deep analysis of these languages need to be performed in order to precisely understand whether the ADL can exactly satisfy the needs of this viewpoint and of Volvo cars. Results of an initial analysis suggest that this language is might be too formal and heavy. As it is stated in~\cite{whatindustrywants,IEEESoftwarePatrizio} often ALs are not adopted by practitioners since they are (i) too complex and require specialized competencies, (ii) the return on investment is insufficient perceived, (iii) they require over-specification and at the same time practitioners are not able to model design decisions explicitly in the AL, and (iv) there is a lack of integration in the software and system life cycle, lack of
 mature tools, and usability issues. 
@@ -428,7 +428,8 @@ Finally, the view should be connected to the software and system life-cycle thro
 %
 %See: \std{4.2.6 and 5.7}
 
-This viewpoint has correspondences with various other viewpoints, including functional safety, security, privacy, and the other SoS viewpoint that focuses on the engineering of the overall SoS. Moreover, this viewpoint has also correspondences with the topology, cost, variability, \eric{something's odd here.}
+This viewpoint has correspondences with various other viewpoints, including functional safety, security, privacy, and the other SoS viewpoint that focuses on the engineering of the overall SoS. Moreover, this viewpoint has also correspondences with the topology, cost, variability, continuous integration and deployment and ecosystem and transparency.
+%\eric{something's odd here.}
 %
 %\begin{itemize}
 %\item security, privacy, the other SoS viewpoint

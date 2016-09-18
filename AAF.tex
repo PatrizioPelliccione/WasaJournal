@@ -95,7 +95,7 @@ In this paper we use the template called \textit{Architecture Viewpoint Template
 The template is licensed under a
 Creative Commons Attribution 3.0 Unported License. The terms of use
 are here: 
-\url{http://creativecommons.org/licenses/by/3.0/}.}   
+\url{http://creativecommons.org/licenses/by/3.0/}.}.   
 
 
 %\input{42010-template-kit/viewpoint-template.tex}
@@ -119,12 +119,12 @@ viewpoint is intended.
 %viewpoint will be useful to apply to a given system of interest, and to
 %communicate with its stakeholders.
 \begin{itemize}
-\item {\bf Concerns}: Describe each concern.
+\item {\bf Concerns}: %Describe each concern.
 Concerns name ``areas of interest'' in a system.
 Concerns may be very general (e.g., \textit{Reliability}) or quite
 specific (\textit{e.g., How does the system handle network latency?}).
 Concerns identified in this section are critical information for an
-architect because they help her decide when this viewpoint will be
+architect because they help her deciding when this viewpoint will be
 useful.
 When used in an architecture description, the viewpoint becomes a
 ``contract'' between the architect and stakeholders that these
@@ -186,24 +186,24 @@ be documented.  The conventions could be defined:
 \item {\em Operations on views}: Operations define the methods to be applied to views and their models.
 Types of operations include:
 \begin{description}
-\item[construction methods] are the means by which views are
+\item[Construction methods] are the means by which views are
   constructed under this viewpoint. These operations could be in the
   form of process guidance (how to start, what to do next); or work
   product guidance (templates for views of this type). Construction
   techniques may also be heuristic: identifying styles, patterns, or
   other idioms to apply in the synthesis of the view.
-\item[interpretation methods] which guide readers to understanding
+\item[Interpretation methods] which guide readers to understanding
   and interpreting architecture views and their models.
-\item[analysis methods] are used to check, reason about, transform,
+\item[Analysis methods] are used to check, reason about, transform,
   predict, and evaluate architectural results from this view,
   including operations which refer to model correspondence rules.
-\item[implementation methods] are the means by which to design and
+\item[Implementation methods] are the means by which to design and
   build systems using this view.
 \end{description}
 \item {\em Correspondence rules}: 
 Document any correspondence rules defined by this viewpoint or
   its model kinds.
-Usually, these rules will be across models or across views since,
+Usually, these rules will be across models or across views since
 constraints within a model kind will have been specified as part of
 the conventions of that model kind.
 %The viewpoint may specify model correspondence rules. Each one may be
@@ -235,7 +235,7 @@ In this paper, we apply the viewpoint template above to describe three new viewp
 At the current state of our work, many details still need to be evaluated,
 thus we for example share model kind candidates
 as well as our experience on what kind of information these model kinds would need to provide,
-\ins{rather} than presenting a clear definitions of models to be used.
+rather than presenting a clear definitions of the modelling notations to be used.
 
 \section{State of the art in Automotive Architecture Frameworks}\label{sec:automotiveAF}
 Architecture frameworks have not been standardized in the automotive domain and automotive industry. 
@@ -247,7 +247,7 @@ Architecture Framework (AAF) proposed in~\cite{Broy}.
 The purpose of AAF is to describe the entire vehicle system
 across all functional and engineering domains and drive the thought process within the
 automotive industry.
-The AAF conforms to the ISO 42010 international standard~\cite{42010}, and therefore it is defined in terms of a set of viewpoints and views. 
+ AAF conforms to the ISO 42010 international standard~\cite{42010}, and therefore it is defined in terms of a set of viewpoints and views. 
 %
 %Figure~\ref{fig:aaf} shown the levels of architectures and architecture frameworks, spanning from the Meta Architecture Framework, which is the most generic layer that is fully independent of any type of system to develop, to the Product Architecture, which defines the architecture for a concrete product. 
 %
@@ -307,7 +307,7 @@ The AAF conforms to the ISO 42010 international standard~\cite{42010}, and there
 
 
 %Focusing on the Domain-specific Architecture Framework for the Automotive Domain, t
-The AAF distinguishes between two sets of architecture viewpoints and views: (i) mandatory and general viewpoints and (ii) optional viewpoints. The following viewpoints are presented according to the viewpoint catalog in~\cite{Rozanski2005}.
+ AAF distinguishes between two sets of architecture viewpoints and views: (i) mandatory and general viewpoints and (ii) optional viewpoints. The following viewpoints are presented according to the viewpoint catalog in~\cite{Rozanski2005}.
 The mandatory viewpoints and their respective views include: (i)
 %
 %\begin{itemize} 
@@ -335,7 +335,7 @@ The Architectural Design Framework (ADF)~\cite{AFRenault} is developed by Renaul
 %the construction of an architecture framework for the automotive industry. The ADF
 and 
 includes operational, functional, constructional, and requirements viewpoints. Although
-the AAF and ADF are related they have some differences. 
+ AAF and ADF are related they have some differences. 
 
 \begin{itemize}
 \item {\em Operational Viewpoint} - this is the more abstract viewpoint. %The actors, the system scope, the system environment and

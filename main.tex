@@ -159,7 +159,7 @@
 \begin{frontmatter}
 
 \title{Automotive Architecture Framework: the experience of Volvo Cars\tnoteref{label0}}
-\tnotetext[label0]{This work was partially supported by the NGEA and NGEA step 2 Vinnova projects and by the Wallenberg Autonomous Systems Program (WASP)}
+\tnotetext[label0]{This work was partially supported by the NGEA and NGEA step 2 Vinnova projects led by Volvo Cars and by the Wallenberg Autonomous Systems Program (WASP)}
 
 
 
@@ -208,9 +208,9 @@ connected to each other through several networks within the car, and the car is 
 %architecture development and maintenance.}{
 %This need for addressing ever increasing complexity as well as for offering flexibility, support of continuous evolution, and very late changes in user visible features introduces new challenges for developing and maintaining a suitable electronic architecture. %} 
 These novelties ask for a change on how the software is engineered and produced and for a disruptive renovation of the electrical and software architecture of the car.   
-In this paper we describe the current investigation of \del{the} Volvo Cars to create an 
+In this paper we describe the current investigation of Volvo Cars to create an 
 architecture framework able to cope with the complexity and needs of present and future vehicles.  
-Specifically, we present scenarios that describe demands for the architectural framework and introduce three new viewpoints that need to be taken into account for future architectural decisions: Continuous Integration and Deployment, Ecosystem and Transparency, and System of Systems.
+Specifically, we present scenarios that describe demands for the architectural framework and introduce three new viewpoints that need to be taken into account for future architectural decisions: Continuous Integration and Deployment, Ecosystem and Transparency, and car as a constituent of a System of Systems.
 Our results are based on a series of focus groups with experts in automotive engineering and architecture from different companies and universities.
 \end{abstract}
 
@@ -261,19 +261,20 @@ air plane development and the invention of auto pilots and ``fly by wire", with
 some striking differences. The higher complexity of the environment where the
 vehicle moves has slowed down the development of automated vehicle control. The
 most advanced cars have more or at least comparable amounts of software than fighter
-airplanes\footnote{As said by Alfred Katzenbach, the director of information technology management at Daimler: \url{http://spectrum.ieee.org/transportation/systems/this-car-runs-on-code}}
+airplanes\footnote{As said by Alfred Katzenbach, the director of information technology management at Daimler: \url{http://spectrum.ieee.org/transportation/systems/this-car-runs-on-code}}. 
 Vehicles are also produced in higher volumes than airplanes, which put harder requirements on the technology cost.
 
 This evolution of the automotive industry %, illustrated by the exponential
 %increase of embedded software, 
 creates new challenges regarding the electrical and software
 architecture development and maintenance. 
-The architecture of a modern car has to \chg{consider}{cope with} a large amount of concerns, including safety, security, variability management, networking, costs, weight, etc.
+The architecture of a modern car has to cope with a large amount of concerns, including safety, security, variability management, networking, costs, weight, etc.
 Also, the increasing amount of people
 involved in the software development projects imposes additional challenges to the
 architecture teams, as the development and design literally cannot be
 controlled, or even understood, in detail by a single group any more. The
-development is inevitably parallelized\eric{BE or AE?}; this obviously also holds for the large
+development is inevitably parallelized; % \eric{BE or AE?}; 
+this obviously also holds for the large
 amounts of externally developed software, which is integrated as black box
 functionality. The important integration work is done in an iterative manner by
 developers and test teams, focusing on vital systems first and then gradually
@@ -285,7 +286,7 @@ electrical architecture.
 The work is part of a Vinnova FFI Swedish project, called Next Generation Electrical Architecture
  (NGEA)\footnote{http://www.vinnova.se/sv/Resultat/Projekt/Effekta/2009-02186/Next-generation-electrical-architecture},
 which mainly focuses on the following areas: (i) continuous integration and deployment; (ii)
-cars as constituents of a system of systems; (iii) reducing the number of ECUs through an architecture that allows the identification of key functions to be implemented in domain nodes; and (iv) strategies to improve the automotive ecosystem so to enable rapid communication with suppliers and flexible development. \ins{The reason for the NGEA project to choose these topics were that they are strategically important for automotive industry and it is important to find a way of handling them.} In this paper we extend beyond preliminary results presented in a short paper~\cite{WasaPaper}.
+cars as constituents of a system of systems; (iii) reducing the number of ECUs through an architecture that allows the identification of key functions to be implemented in domain nodes; and (iv) strategies to improve the automotive ecosystem so to enable rapid communication with suppliers and flexible development. The reason for the NGEA project to choose these topics were that they are strategically important for automotive industry and it is important to find a way of handling them. In this paper we extend beyond preliminary results presented in a short paper~\cite{WasaPaper}.
  
 %\begin{itemize}
 %\item Continuous Integration and Deployment ;
@@ -300,7 +301,7 @@ We believe that an architecture framework~\cite{42010}, together with its multip
 It aims at ensuring that descriptions of vehicle architectures can be compared and related across different vehicle programs,
 development units, and organizations, thus increasing flexibility and innovation, while reducing development time and risks.
 
-We build on existing architecture frameworks in the automotive domain, i.e.~\cite{Broy,Yania} and we base our work on the conceptual foundations provided by the ISO/IEC/IEEE~42010:2011 standard~\cite{42010}.   
+We build on existing architecture frameworks in the automotive domain, i.e.,~\cite{Broy,Yania} and we base our work on the conceptual foundations provided by the ISO/IEC/IEEE~42010:2011 standard~\cite{42010}.   
 %, \textit{Systems and software engineering ---
 %  Architecture description}~\cite{42010} to investigate the essential
 %elements of architecture description and support the architect's
@@ -321,7 +322,7 @@ documented, analysed, and realized.
 
 The paper is organized as follows. Section~\ref{sec:AAF} introduces the concept of architecture framework and explain a template to document architecture frameworks. Section~\ref{sec:automotiveAF} gives an overview of 
  the state of the art on architecture framework in the automotive domain. Section~\ref{sec:lessonsLearned} analyses the state of practice in the context of Volvo Cars and reports some of the lessons learned. 
- Section~\ref{sec:VCGAF} introduces the architecture framework we are defining within Volvo Cars in the context of the NGEA project\ins{, including an overview of stakeholders as well as critical scenarios that define demands and expectations towards the architecture framework}. %\eric{should we mention scenarios?}
+ Section~\ref{sec:VCGAF} introduces the architecture framework we are defining within Volvo Cars in the context of the NGEA project, including an overview of stakeholders as well as critical scenarios that define demands and expectations towards the architecture framework. %\eric{should we mention scenarios?}
  Sections~\ref{sec:CID_VP}, \ref{sec:ET_VP}, and~\ref{sec:SoSVP} detail three new and challenging viewpoints of the framework, namely the {\em Continuous Integration and Deployment} viewpoint (Section~\ref{sec:CID_VP}), the {\em Ecosystem and Transparency} viewpoint (Section~\ref{sec:ET_VP}), and the {\em System of Systems: vehicle point of view} viewpoint (Section~\ref{sec:SoSVP}).
  %
 Finally the paper concludes in Section~\ref{sec:conclusion} with final remarks and a discussion about future work. 

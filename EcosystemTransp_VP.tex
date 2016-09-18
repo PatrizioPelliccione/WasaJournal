@@ -11,7 +11,9 @@
 If there are any synonyms or other common names by which this viewpoint is
 known or used, record them here.}
 
-The viewpoint ``\Fillin{Viewpoint Name}'' focuses on the value-chain of \ugh{logical components of the  architecture}\eric{is this a good way of describing what is delivered by the ecosystem? It should be some abstraction of hw, software, logical components, no?} \rogardt{I am not an expert in ecosystem, but I would just have left out the text in red} and aims at answering the following questions:
+The viewpoint ``\Fillin{Viewpoint Name}'' focuses on the value-chain of hardware and software, as well as logical components of the architecture 
+%\ugh{logical components of the  architecture}\eric{is this a good way of describing what is delivered by the ecosystem? It should be some abstraction of hw, software, logical components, no?} \rogardt{I am not an expert in ecosystem, but I would just have left out the text in red} 
+and aims at answering the following questions:
 \begin{enumerate}
 \item How can an electrical architecture enable a network of organizations (including OEM, Tier-1 supplier, Tier-2 supplier) to work together to (continuously) provide value?
 \item How are architectural decisions affected by the need for transparent and continuous collaboration within the value-chain?
@@ -26,10 +28,10 @@ The viewpoint ``\Fillin{Viewpoint Name}'' focuses on the value-chain of \ugh{log
 
 Describe the viewpoint's key features.}
 
-The \Fillin{Viewpoint Name} viewpoint takes into account that architectural assets in automotive engineering are provided based on a complex network of cooperating organizations. 
-A logical component in the architecture will be implemented by a variaty of physical components, including hardware (ECUs) and software on different levels of abstraction. 
+The \Fillin{Viewpoint Name} viewpoint takes into account architectural assets in automotive engineering that are provided based on a complex network of cooperating organizations. 
+A logical component in the architecture will be implemented by a variety of physical components, including hardware and software on different levels of abstraction. 
 
-In a concrete scenario, a logical component could be based on several AUTOSAR ECUs.
+In a concrete scenario, a logical component could be deployed on several AUTOSAR ECUs.
 The hardware in this scenario would be provided by different Tier-1 suppliers, while the AUTOSAR layer would be provided by one or more certified AUTOSAR suppliers.
 These AUTOSAR suppliers could be characterised as Tier-2 suppliers, since they are contracted by the Tier-1 suppliers who are supposed to deliver an ECU with basic software, but different setups are possible. 
 On top of these ECUs, application software would be developed either by the OEM or by separate software suppliers in order to provide the services defined by a logical component. 
@@ -53,22 +55,23 @@ viewpoint is intended.}
 \subsubsection{Concerns}\label{vp:concerns}
 %%%%%%%%%%
 In this section we focus on the concerns that are essential to enable efficient work in the ecosystem of automotive electrical systems. 
-We express the concerns in the form of questions as suggested by the ISO/IEC/IEEE 42010 standard.
-\eric{Wonder if it is good or bad that all three viewpoints have very similar text here...}
+%We express the concerns in the form of questions as suggested by the ISO/IEC/IEEE 42010 standard.
+%\eric{Wonder if it is good or bad that all three viewpoints have very similar text here...}
 
 \begin{itemize}
-\item \emph{Which types of value-chains are implied by a given electrical architecture and what is their purpose?} A given electrical architecture will define the interplay of different types of logical components with the goal to support user visible features. 
+\item \emph{Which types of value-chains are implied by a given system architecture and what is their purpose?} A given system architecture will define the interplay of different types of logical components with the goal to support user visible features. 
 While some of these features will be well-understood and stable, others will be highly innovative and their development will be subject to volatile requirements. 
-Value-chains for implementing those logical components will differ based on the type of feature that they support. 
+Value-chains for implementing those logical components will differ each other based on the type of feature that they support. 
 
-\item \emph{How to map supplier development capabilities to demands created by a specific electrical architecture?} Different capabilities are demanded for development across the value-chain, depending of the type of feature. 
-An electrical architecture might be able to minimize or limit interaction on critical innovative features in the ecosystem to only actors that can support a highly iterative development. 
+\item \emph{How to map supplier development capabilities to demands created by a specific system architecture?} Different capabilities are demanded for development across the value-chain, depending of the type of feature. 
+A system architecture might be able to minimize or limit interaction on critical innovative features in the ecosystem to only actors that can support a highly iterative development. 
 
-\item \emph{What is the suitability of the architecture for managing different kinds of value-chains?}
+%\item \emph{What is the suitability of the architecture for managing different kinds of value-chains?}
 
 \item \emph{How can we establish the required level of transparency in a value-chain?} The more volatile the requirements of a feature are, the more information exchange is needed between ecosystem actors. 
-If we were to implement continuous delivery throughout the value-chain, all involved partners should have access to critical information so that they can take responsibility. 
-In a less volatile environment the (legal and organizational) effort of creating high transparency will not pay off. 
+%If we were to implement 
+To enable continuous delivery throughout the value-chain, all involved partners should have access to critical information so that they can take responsibility. 
+In a less volatile environment the (legal and organizational) effort of creating high-transparency will not pay off. 
 
 \item \emph{How can we manage transparency (e.g. of architectural decisions) in the face of changing suppliers?} In order to maintain a powerful automotive engineering ecosystem we need to be able to change actor relationships. This will also affect the level of transparency (including what information to share and at what frequency).
 \end{itemize}
@@ -136,8 +139,8 @@ For the ecosystem and transparency viewpoint, we need to consider stakeholders w
 With respect to the OEM (the keystone actor in the automotive engineering ecosystem), potentially every stakeholder described in Section~\ref{sec:VCGAF} and summarized in Table~\ref{tab:stakeholders} will be part of the audience of this viewpoint. 
 
 Other actors (such as Tier-1 and Tier-2 suppliers) will have very similar stakeholders that need to be considered. 
-Those need to be taken into account, even when constructing this viewpoint strictly from the perspective of the OEM. 
-For example for the concerns above, it is crucial to consider both managers and technical experts at suppliers.
+%Those need to be taken into account, even when constructing this viewpoint strictly from the perspective of the OEM. 
+%For example for the concerns above, it is crucial to consider both managers and technical experts at suppliers.
 
 \todo[inline, size=\footnotesize]{
 \must{Provide a listing of the typical stakeholders of a system who
@@ -183,7 +186,7 @@ Stakeholders to consider include:
 
 
 %%%%%%%%%%
-\subsection{Model kinds for Ecosystem and Transparency}\label{mk:list}
+\subsection{Model kinds for Ecosystem and Transparency}\label{mk:listET}
 %%%%%%%%%%
 \todo[inline, size=\footnotesize]{
 
@@ -269,16 +272,17 @@ being specified.
 Since the we are proposing a new viewpoint for Ecosystem and Transparency concerns in this paper, there is no established way of modelling it so far. 
 Models would need to provide the following information:
 \begin{description}
-\item[Analysis of Value-Chain:] In order to document the different value-chains, on could either create a map of a (part of an) ecosystem as proposed by Janssen et al. \cite{Jansen2012b} or single out a specific value chain as we for example did in our previous work on the AUTOSAR ecosystem \cite{Soltani2015a} based on Boucharas et al.'s notation \cite{BJB2009}.
+\item[Analysis of Value-Chain:] In order to document the different value-chains, on could either create a map of a (part of an) ecosystem as proposed by Janssen et al. \cite{Jansen2012b} or single out a specific value chain as we for example did in our previous work on the AUTOSAR ecosystem \cite{Soltani2015a} based on Boucharas et al.'s notation~\cite{BJB2009}.
 \item[Analysis of Actors and Goals:] In addition to the critical value chains, one should maintain information about the actors involved in those chains and their goals.
-Yu and Franch have proposed to use goal models for this purpose, which is a promising approach to align goals of different actors based on architectural decisions and to achieve win-win situations  \cite{FSY2015}\eric{might need to find a better reference, I think Eric has some.}. These are important when targeting strong collaborations and partnerships.
+Yu and Franch have proposed to use goal models for this purpose, which is a promising approach to align goals of different actors based on architectural decisions and to achieve win-win situations~\cite{FSY2015}. %\eric{might need to find a better reference, I think Eric has some.}. 
+These are important when targeting strong collaborations and partnerships.
 \item[Reasoning about anonymous actors:] To some extend, the concrete partners and suppliers are not known when creating the electrical architecture. 
-In such situations, we propose a persona based approach, i.e. defining archetypical actors with important characteristics as well as their expectation towards the ecosystem \cite{Knauss2014c,Hammouda2015}.
-\item[Defining Transparency Requirements:] Hosseini et al. have proposed a framework for defining transparency requirements which could be a good starting point for these aspects \cite{Hosseini2016}.
-\eric{I believe they have a full paper at ASE or so, but cannot google here in China}
-\magnus{\cite{Hosseini2016} published at AISE builds on \cite{HSP+2016}}
+In such situations, we propose a persona based approach, i.e. defining archetypical actors with important characteristics as well as their expectation towards the ecosystem~\cite{Knauss2014c,Hammouda2015}.
+\item[Defining Transparency Requirements:] Hosseini et al. have proposed a framework for defining transparency requirements which could be a good starting point for these aspects~\cite{Hosseini2016,HSP+2016}. 
+%\eric{I believe they have a full paper at ASE or so, but cannot google here in China}
+%\magnus{\cite{Hosseini2016} published at AISE builds on \cite{HSP+2016}}
 For practical use in this viewpoint, this framework would need to be extended with dynamic aspects, e.g. for withdrawing information when a partnership ends. 
-This includes also ownership and digital rights management issues, for which we hope to borrow concepts from other works (e.g. from \cite{Averbakh2014}).
+This includes also ownership and digital rights management issues, for which we hope to borrow concepts from other works (e.g. from~\cite{Averbakh2014}).
 \end{description}
 
 %%%%%%%%%%
@@ -378,12 +382,14 @@ This includes also ownership and digital rights management issues, for which we 
 %%%%%%%%%%
 \subsection{Operations on views}\label{Opns}
 %%%%%%%%%%
-\eric{Cannot see how we could write something completely different from what is in Section 8.5. Made a suggestion for addition there. Perhaps copy that text here and reference it in Section 7.5 and 8.5?}
+%\eric{Cannot see how we could write something completely different from what is in Section 8.5. Made a suggestion for addition there. Perhaps copy that text here and reference it in Section 7.5 and 8.5?}
 
 
-\eric{Suggestions: ``identify win-win situations'', identify ``development lifecycle compatibility'', Define transparency needs and collaboration patterns}
+%\eric{Suggestions: ``identify win-win situations'', identify ``development lifecycle compatibility'', Define transparency needs and collaboration patterns}
 
-\ins{Finally, operations should be also provided to evaluate architecture descriptions and decisions. For instance, analysis methods could be defined to analys win-win situations in the ecosystem and to identify suitable partners for critical value-chains as well as for analysing and managing required transparency levels with development partners.}
+Please refer to the previous section, i.e. Section~\ref{mk:listET}, for a list of operations on views. 
+
+{Moreover, operations should be also provided to evaluate architecture descriptions and decisions. For instance, analysis methods could be defined to analysis win-win situations in the ecosystem and to identify suitable partners for critical value-chains as well as for analysing and managing required transparency levels with development partners.}
 
 \todo[inline, size=\footnotesize]{
 
@@ -445,7 +451,7 @@ See: \std{4.2.6 and 5.7}
 }
 %\eric{What ever could that be? Obviously, Continuous Integration and Deployment, since if we want to do that, the syncing of development cycles becomes important. Also Systems of Systems. But in what way? Perhaps that is rather something for discussion!}
 
-\ins{This viewpoint has correspondences with various other viewpoints, including security, privacy, and value-net, but also to Continuous Integration and Deployment in the sense that development cycles of different ecosystem actors need to be synced in order to guarantee for quick feedback cycles. 
+{This viewpoint has correspondences with various other viewpoints, including security, privacy, and value-net, but also to Continuous Integration and Deployment in the sense that development cycles of different ecosystem actors need to be synced in order to guarantee for quick feedback cycles. 
 In addition, it corresponds with the System of Systems viewpoint, e.g. if several constituents of the SoS need to be aligned to provide a certain functionality.}
 %%\tbd{examples or specs}
 

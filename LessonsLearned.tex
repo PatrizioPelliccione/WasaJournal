@@ -1,7 +1,7 @@
 % !TEX root = main.tex
 \section{Software Development Challenges within Volvo Cars}\label{sec:lessonsLearned}
 
-In a previous paper we \chg{made a study}{studied} within Volvo Cars \del{to identify},
+In a previous paper we studied within Volvo Cars,
 from the architecture point of view,
 the challenges that OEMs are facing in the last years~\cite{WICSA2015}. 
 To better understand some of the
@@ -44,7 +44,7 @@ We identified that there is not always an obvious connection between
 architecture (or top-level design) and  design; it seems also that this connection vanishes during time, once development requires changes on the system design. % and once time passes and , especially during later development. 
 The architecture is communicated as large documents,
 %, or models, 
-which are supposed to be read by stakeholders. However, this not always corresponds to the reality. The companies work also in cross functional teams and other type of communications are also used to communicate the architecture. More analysis is needed to understand the root of the problem. 
+which are supposed to be read by stakeholders. However, this not always corresponds to the reality. Volvo Cars works also in cross functional teams and other type of communications are also used to communicate the architecture. More analysis is needed to understand the root of the problem. 
 Moreover, maintenance of the
 architecture, while the design evolves, is demanding and not
 always performed in all parts. 
@@ -69,10 +69,10 @@ When looking at the causes of architecture degradation, we can summarize the var
 \end{enumerate}
 
 
-\subsection{Organization and Process Challenges}
+\subsection{Organization and Process Challenges}\label{sec:organizationAndProcessChallenges}
 The first item of the causes of architecture degradation discussed in the section above (Section~\ref{sec:gap}) might be solved by improving communication as mentioned before or by finding ways to guarantee the preservation of the  important directives of the as-intended architecture that should not be violated for any reason.
 
-On the organizational side, we found a need to improve the communication between
+On the organizational side, we found the need of improving the communication between
 different groups, for instance by making teams more cross-functional. Today
 there are several levels between architects and designers/developers and at some of
 these levels the connection is not very tight. 
@@ -87,7 +87,9 @@ any connection to the reality. Architects might also feel
 a frustration because they are not aware of everything that is happening; as a
 consequence, a big part of their work is to just keep up with what is happening
 in the construction groups. Espousing the terminology
-in~\cite{IEEESoftwarePatrizio,whatindustrywants}, architects should be first of all
+in~\cite{IEEESoftwarePatrizio,whatindustrywants}, architects should be both ``Introvert" architects (conceptually related to the internal focus
+of~\cite{Kruchten2008}), i.e., focused on more constructive work and definition of the architecture,
+and 
 ``Extrovert'' architects (conceptually related to the external focus
 of~\cite{Kruchten2008}), i.e. devoted to communicating the architectural
 decisions and knowledge to the other stakeholders. 
@@ -107,14 +109,19 @@ the organization.
 It emerges the need to explore both organizational and technical
 possibilities for tighter cooperation between architecture levels, and to
 measure effects such improvements would have. On the technical side, one partial solution might be % idea is
-to define a framework able to automatically generate high-level views from the
-design. The challenge here is to support multiple views, each
-devoted to showing only what is relevant for respective stakeholders. Moreover,
+to define specific viewpoints and to automatically generate corresponding architecture views from the design. 
+%a framework able to automatically generate high-level views from the
+%design. 
+%The challenge here is to support multiple views, e
+Each of the  views should focus on 
+%devoted to 
+showing only what is relevant for respective stakeholders. Moreover,
 both architects and designers/developers need ways to perform early validation
 of their solution and to sketch and try different visions of how the future
-systems should look like, to understand the effect of design decisions affect
-the architecture. 
-However, this solution cannot solve the architecting problem since this solution only focus to create a ``different view" for something that already exist. Other solutions are needed to solve the support just-in-time %agile 
+systems should look like; this will permit to understand the effect of design decisions on
+the architecture. As mentioned before this can be only a partial solution since it cannot 
+%However, this solution cannot 
+solve the architecting problem since this solution only focus to visualize through specific viewpoints and views something that already exist. Other solutions are needed to solve the support just-in-time %agile 
 architecting as mentioned above, as well as to enable stakeholders different from the architects, such as developers, to improve the architecture when actually needed.
 
 
@@ -310,7 +317,7 @@ architecting as mentioned above, as well as to enable stakeholders different fro
 \subsection{Towards ``Just-in-Time Architecture"}
 
 The second and third items of the causes of architecture degradation discussed in Section~\ref{sec:gap} 
-call for a ``{\em just-in-time architecture}" or agile architecting~\cite{shahrokni2016organic}  as well as to enable stakeholders different from the architects, such as developers, to improve the architecture, such as fixing wrong assumptions or making decision deliberately postponed.
+call for a ``{\em just-in-time architecture}" or agile architecting~\cite{shahrokni2016organic}  as well as to enable stakeholders different from the architects, such as developers, to improve the architecture, e.g. by fixing wrong assumptions or making decision deliberately postponed.
 
 %
 %Our analysis till now shows a discrepancy between the planned architecture defined according to a V-Model process,
@@ -325,17 +332,17 @@ call for a ``{\em just-in-time architecture}" or agile architecting~\cite{shahro
 %What emerges here has been observed also in other domains. Specifically, this recalls the tension between waterfall
 %and agile approaches. On one side waterfall approaches consider architecting as a phase of development that is
 %somehow instructing the other phases. On the other side, agile development processes consider that ``The best architectures, requirements, and designs emerge from self-organizing teams.'', as stated in the \#11 in the agile manifesto\footnote{Agile Alliance, Manifesto for Agile Software Development, June 2001 \url{http://agilemanifesto.org/}}.
-One hypothesis made from some practitioners is that when developing large and complex systems ``a clear and well defined architecture facilitates and enables
+One hypothesis made from some practitioners is that when developing large and complex systems ``a clear and well-defined architecture facilitates and enables
 agility". This hypothesis implies that some upfront specification is needed when building complex products like cars.
 However this hypothesis is not completely true when the product to be realized is not clearly defined and companies
 want to go fast to the market. In these situations, modifiability, support for evolution, etc. are not really main aspects
-to be considered. The hypothesis seems to be true when the product is well defined. Another aspect to be considered
+to be considered. The hypothesis seems to be true when the product is well-defined. Another aspect to be considered
 is that agile calls for refactoring, however refactoring often is not performed since the priority is given to what should
 be realized.
-Further investigation is needed, however the conclusion we can draw at this point is that there is the need of a
-``just-in-time architecture" that enables even stakeholders that are different from the architects, such as developers, to
-improve the architecture, such as fixing wrong assumptions or making decisions deliberately postponed by the
-architects.
+%Further investigation is needed, however the conclusion we can draw at this point is that there is the need of a
+%``just-in-time architecture" that enables even stakeholders that are different from the architects, such as developers, to
+%improve the architecture, such as fixing wrong assumptions or making decisions deliberately postponed by the
+%architects.
 
 
 
@@ -362,7 +369,7 @@ Another interesting finding is that the architecture is not clearly considering 
 %Through seven semi-structured interviews, we found that a clear, 
 In a previous study~\cite{Soltani2015,Soltani2015a} 
 we found that a holistic strategy for aligning work across the value-chain is currently missing. 
-Specifically, mixing commodity and differentiating components lead to sub-optimal situations, resulting in duplicated work \ins{(an observation in line with \cite{OB2015})}.  
+Specifically, mixing commodity and differentiating components lead to sub-optimal situations, resulting in duplicated work (an observation in line with \cite{OB2015}).  
 We argue that automotive architecture needs to assume a holistic perspective with respect to the whole value-chain and optimize the architecture for facilitating beneficial subcontractor interaction. %\eric{perhaps we need to cite Helena and Jan here, no?}
 \begin{itemize}
 \item \textit{Commodity Components} require clearly defined technical and organizational interfaces. 
