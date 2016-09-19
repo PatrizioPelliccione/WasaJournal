@@ -1,8 +1,8 @@
 graph UseCases {
-  layout=neato;
+  layout=twopi;
   overlap=false;
   splines=true;
-  edge [len=0.5];
+  ranksep="1.9 0.5";
 
   {
     node [style=filled];
@@ -11,7 +11,7 @@ graph UseCases {
     node [label="2. Define/\nEvolve\nArchitecture"] s2;
     node [label="3. Flexibility of\nArchitecture"] s3;
     node [label="4. Continuous\nDeployment and\nTransparency"] s4;
-    node [label="5. Car as a Constituent of\na System of Systems"] sos;
+    node [label="5. Car as a\nConstituent of a\nSystem of Systems"] sos;
 
     root -- s1;
     root -- s2;
