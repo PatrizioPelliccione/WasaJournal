@@ -10,6 +10,13 @@ For these modeling languages, it is important to find the right tradeoff between
 (i) ability to support the level of formality and precision required by disciplined development processes, or
 (ii) simplicity and it being intuitive enough to communicate the right message to stakeholders and to promote collaboration~\cite{whatindustrywants,IEEESoftwarePatrizio}.
 
+In a continuous architecting context we expect that viewpoints, stakeholders, concerns, etc. will change over time. If for instance stakeholders and concerns are changing, we should investigate whether the architecture is changing.
+If it is, we should document the new architecture and this would mean another architecture description, since the rules of the 42010 standard~\cite{42010} are written for expressing one architecture with one architecture description.
+It would be profitable also to link, or provide some traceability between old and new, as-is and to-be, and other kinds of transitions as an architecture evolves. 
+%There are various ways of doing this, one would be to provide a collection of ADs linked together with correspondence rules to show what changes, what is constant, etc. Another way to do this is to use multiple models within a view to capture ``time slices" of the architecture evolving. There are probably other approaches as well, but these two are common. We thought about the general issue of architecture elements evolving over time, during the development of the Standard and determined there is no one solution that could be prescribed, too many variations with organizations, projects, etc.
+The same thinking would apply to evolving viewpoints: as the stakeholders and concerns change, the viewpoints used may evolve and correspondence rules should be used to document what changes, what is constant, etc.
+
+
 For what concerns the realization of the architecture framework we will investigate MEGAF~\cite{MEGAF2010,MEGAF2012}, 
 %
 %MEGAF has been conceived with the aim of overcoming limitations of existing architecture frameworks. Most of the architecture framework in use are

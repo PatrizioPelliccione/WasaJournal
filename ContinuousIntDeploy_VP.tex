@@ -119,13 +119,13 @@ Markets are however prone to constant change and such change might invalidate ar
 Deployment after an interface change might therefore involve a large number of updated components, which will not be possible in a continuous fashion. 
 In other words, after an interface change it will be hard to guarantee that the main branch of all components is in a deployable state.}
 \item \emph{How can we deal with dependencies?}
-
-There are two types of dependencies, explicit and implicit dependencies. Explicit dependencies need to be properly managed, monitored, and updated during the system evolution. Implicit dependencies should be properly identified and reduced as much as possible as follows. Those implicit dependencies that are undesirable (e.g., those that violate important architecture constraints) should be removed. The remaining ones should be promoted as explicit dependencies.  
+Dependencies might require additional coordination effort between teams, which effectively slows down or even hinders continuous integration and deployment.
+There are two types of dependencies, explicit and implicit dependencies. Explicit dependencies are covered by the as-intended architecture and can be  properly managed, monitored, and updated during the continuous system evolution. Implicit dependencies should be properly identified and reduced as much as possible as follows. Those implicit dependencies that are undesirable (e.g., those that violate important architecture constraints) should be removed. The remaining ones should be made explicit.   
 %structural} \rogardt{Don't know if real is the right word here}\eric{have not seen it used and cannot google. Reminds me about the discussion on the difference between complicated and complex, where complexity lies in the problem and complicatedness in imperfect implementation. Previously, we have discussed planned vs. unplanned, but that is very different. what could work instead of real could be \ins{domain and problem inherent dependencies} or \ins{structural dependencies}, i.e. those that you cannot remove with good architecture} and accidental dependencies.
 %An example for \chg{real}{structural} dependencies is the increasing degree to that cars become dependent on different sensors, which themselves are rapidly evolving.
 %%\del{As cars get more and more dependent on different sensors that also increases the dependencies in the overall system.} 
 %This type of dependencies needs to be {planned for during defining an architecture in order to allow } handling {them later}.  
-In fact, implicit dependencies might require additional coordination effort between teams, which effectively slows down or even hinders continuous integration and deployment.
+
 
 %There are two types of dependencies, \chg{real}{structural} \rogardt{Don't know if real is the right word here}\eric{have not seen it used and cannot google. Reminds me about the discussion on the difference between complicated and complex, where complexity lies in the problem and complicatedness in imperfect implementation. Previously, we have discussed planned vs. unplanned, but that is very different. what could work instead of real could be \ins{domain and problem inherent dependencies} or \ins{structural dependencies}, i.e. those that you cannot remove with good architecture} and accidental dependencies.
 %An example for \chg{real}{structural} dependencies is the increasing degree to that cars become dependent on different sensors, which themselves are rapidly evolving.
@@ -416,9 +416,10 @@ Moreover, it would be desirable a modeling notation that is able to capture and 
 
 %\eric{Cannot see how we could write something completely different from what is in Section 8.5. Made a suggestion for addition there. Perhaps copy that text here and reference it in Section 7.5 and 8.5?}
 
-Among the operations on views we mention methods to identify and remove undesired implicit dependencies. Moreover, suitable operations are needed to maintain, monitor, and update explicit dependencies according to the system evolution. 
+Operations on views should address two main concerns of this viewpoint: (i) enabling continuous integration and deployment through architecture, and (ii) supporting continuous integration and deployment on the architecture level.
+As examples for the first group of operation we mention methods to identify and remove undesired implicit dependencies. Moreover, suitable operations are needed to maintain, monitor, and update explicit dependencies according to the system evolution. 
 
-Other operations should identify and show the exact evolutions of the system that have an impact on the system architecture. Specifically these operations should support developers by highlighting the effects of changes on the overall architecture, as well as potential violations of architecture constraints before performing a deployment. This can be particularly complex when the changes impact on non-functional properties, such as performance~\cite{ISSTA2016}. 
+As examples for the second group we mention operations to identify and show the exact evolutions of the system that have an impact on the system architecture. Specifically these operations should support developers by highlighting the effects of changes on the overall architecture, as well as potential violations of architecture constraints before performing a deployment. This can be particularly complex when the changes impact on non-functional properties, such as performance~\cite{ISSTA2016}. 
 
 {Finally, operations should be also provided to evaluate architecture descriptions and decisions. For instance, analysis methods might be defined to evaluate the efficiency of the feedback cycle in continuous integration and deployment as well as its ability to help resolving assumptions.}
 
