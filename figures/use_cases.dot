@@ -1,8 +1,7 @@
 graph UseCases {
-  layout=twopi;
+  layout=neato;
   overlap=false;
   splines=true;
-  ranksep="1.9 0.5";
 
   {
     node [style=filled];
@@ -19,6 +18,8 @@ graph UseCases {
     root -- s4;
     root -- sos;
   }
+
+  edge [len=1.9, weight=3];
 
   { // 1.*
     node [label="1.1. ... on\nRequirements"] s11;
