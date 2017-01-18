@@ -83,43 +83,44 @@ relationships, and in the principles of its design and evolution}". Therefore, w
 
 \textbf{R3.2} ``\textit{- The authors state that the results of Chapter 4 are derived from interviews. I expect a bit more details about the study design. How many people did you interview? Why only architects? How did you evaluate/analyze the data? How did you make sure that the challenges you elicited are actually correct? Moreover, it is not clear how the study results are related to the interviews (the underlying data). I would have expected to, at least, see some quotes or anything that helps me understanding how you came up with the results. Did you validate your results with the interviewees to make sure that you got everything right? Don't get me wrong, your results sound very convincing and match my personal experience but from scientific point of view I can only believe you that the reported results are actually the challenges that the interviewees tried to express.}''
 \begin{quote}
-\textbf{Our answer: }
+\textbf{Our answer: Further details about the research method might be found in~\cite{WICSA2015}. We added a sentence in Section 4 to explain that. We believe that adding these details, which are however published in a previous paper and then are available, is not really valuable for the paper readability.}
 \end{quote}
 
 \textbf{R3.3} ``\textit{- For the stated challenges, I would like to read more about whether these are automotive specific and why the specifics of the automotive domain lead to these challenges. Deviating architecture descriptions (Challenge 4.1) are pretty obvious in situations where architecture descriptions are created prior to development and not updated afterwards. What are the reasons that the automotive industry uses this (obviously problematic) process paradigm? }''
 \begin{quote}
-\textbf{Our answer: }
+\textbf{Our answer: some upfront description of the architecture it is needed, however it is not easy to understand how much upfront is actually valuable. Moreover, these companies, as described in the introduction, are now living a profound transformation towards companies that produce software. This is one of the reason of this investigation. Please refer also to our answer to comment R1.1; we added a sentence in the introduction to clarify these concepts.}
 \end{quote}
 
 \textbf{R3.4} ``\textit{- In my opinion, one of the major reasons for Challenge 4.2 is a shift in the purpose of the architecture during the transition from early to development phases. In the early phases, the major architectural driver is division of labor (How to break down the system into parts that I can handover to suppliers). That is why the major elements of architectures in this phase are systems, functions, and components with the corresponding responsible persons for system, function, and components. This architectural breakdown does not necessarily need to match the architecture in the development phase, where the focus is on delivering the necessary parts of an implementation. The "responsibility architecture" is still the same but the solutions may blur these boundaries. Did you find any of these reasons or explanations in your interview data?}''
 \begin{quote}
-\textbf{Our answer: }
+\textbf{Our answer: we understand the point and the observation is really valuable. However, we didn't found data supporting such a discussion. This is why it is not part of Section 4.2.}
 \end{quote}
 
 \textbf{R3.5} ``\textit{- In some occurrences, the paper explains that architecture work usually starts from uncertain conditions (p.17: "In the beginning of a project, not much data is available and decisions are very uncertain"). I'm not sure whether this is true or at least important in the automotive domain. Most automotive systems start with an already existing system (usually the architecture of the previous series) that the developers try to enhance without changing too much (to avoid surprises). The need for transparency is still valid but it's more about validating assumptions (Do we still need this? Can we remove or update it without breaking something?) A major consequence of this is that any refactoring operation is perceived as extremely costly by developers (see also [1]). The developers are afraid to change anything because they have no idea what the impact is, they need to reassess and re-certify everything. Did your interviewees comment on that? 
 [1] Vogelsang, A., Femmer, H. and Junker, M. (2016). Characterizing Implicit Communal Components as Technical Debt in Automotive Software Systems. 13th Working IEEE/IFIP Conference on Software Architecture (WICSA)}''
 \begin{quote}
-\textbf{Our answer: }
+\textbf{Our answer: Thanks for this comment. We added the following sentence to clarify better.} ``This is also true in the automotive domain where the architecture work starts with an already existing system - usually the architecture of the previous series - that the developers try to enhance without changing too much in order to reduce risks."\\
+\textbf{For what concerns assumptions we can mention that in an ongoing study involving around 100 architects and developers, it emerges clearly that a mature way of managing assumptions is really a need. We can't add more content in this another and still ongoing work. Soon new findings will be published in coming papers.}
 \end{quote}
 
 \textbf{R3.6} ``\textit{- I like the idea of describing the challenging scenarios by User Stories. It makes the descriptions concrete and comprehensible. For some User Stories, the benefit is missing in the description (Why do you want that?). Adding this benefit would improve the User Stories even more, e.g., "As an architect, I want to balance capacity of ECUs and Busses against costs" -> Why? What is the benefit? }''
 \begin{quote}
-\textbf{Our answer: }
+\textbf{Our answer: We are very happy that you appreciated that we describe challenging scenarios by user stories. We improved the description of the user stories.} \nb{To all}{Do we have to really do something here? I wrote we improved even though no action has been taken.}
 \end{quote}
 
 \textbf{R3.7} ``\textit{- I miss some information on how you plan to evaluate your architecture framework. Although this is not the focus of this paper, I would like to see some information on how this framework could be evaluated. When is an architectural framework good? What does it need to supply/provide to be helpful? Without this information, it's hard to judge whether the proposed framework/viewpoints are good or reasonable.}''
 \begin{quote}
-\textbf{Our answer: }
+\textbf{Our answer: We added a sentence in the discussion and conclusion section:} ``We plan to evaluate the architecture framework by putting it in practice within Volvo Cars and by using ATAM (Architecture Tradeoff Analysis Method)~\cite{ATAM} as a method for evaluating our architecture with respect to identified quality attribute goals."
 \end{quote}
 
 \textbf{R3.8} ``\textit{- I was a bit disappointed with the description of the model kinds in the new viewpoints. I was expecting to see at least some schematic descriptions of possible model kinds to get a better idea about the viewpoints. I would also like to see the connection (correspondence rules), at least, to the most prominent architectural models in automotive (i.e., architecture view of ECUs connected by bus systems).}''
 \begin{quote}
-\textbf{Our answer: }
+\textbf{Our answer: there are still ongoing discussions about the model kinds. Unfortunately, we cannot disclose further information.}
 \end{quote}
 
 \textbf{R3.9} ``\textit{- There are some typos and orthography mistakes in the paper (for some, see below) and the references should be checked for consistent presentation and typos (e.g., D. Sthl)}''
 \begin{quote}
-\textbf{Our answer: }
+\textbf{Our answer: We used Grammarly to further identify typos.}
 \end{quote}
 
 \textbf{R3.10} ``\textit{Minor remarks: [...]}''
