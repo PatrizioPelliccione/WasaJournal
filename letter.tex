@@ -15,7 +15,6 @@
 \newcommand{\del}[1]{\textcolor{red}{\sout{#1}}} % please delete
 \newcommand{\chg}[2]{\textcolor{red}{\sout{#1}}{\ra}\textcolor{blue}{\uline{#2}}} % please change
 
-\newcommand\nameMC{{\sc MC-IoT}}
 
 
 % Put edit comments in a really ugly standout display
@@ -57,12 +56,13 @@ In the current version of the work we have seriously taken into account each com
 
 \textbf{R1.1} ``\textit{1. In Introduction (Section 1) you mention that well-described architectures increase flexibility and innovation, and at the same time reduce development time and risks. What about the cost (human resources and financial resources)? What is your viewpoint on that? Is it as in "traditional' developments that investing effort (=money) and well describing the architecture will result in saving money later in the development? This is quite a big concern, especially when going more towards agile within the safety-critical domain ("just in time" development and decisions, limited planning, creating business value, etc.). }''
 \begin{quote}
-\textbf{Our answer: }
+\textbf{Our answer: This is a valuable point. We added the following sentences in the introduction:}
+``However, the definition and description of an architecture require a cost in terms of human and financial resources. Moreover, sometimes it is not evident that investing effort and money on properly defining and describing the architecture will result in saving money later in the development. For instance, as described later in the paper, we identified discrepancies between the as-intended and the as-implemented architecture. This motivates the shift towards ``just-in-time" architecting and on continuous integration and deployment."
 \end{quote}
 
 \textbf{R1.2} ``\textit{2. Looking forward to seeing the model kinds for Continuous Integration and Deployment viewpoint (Section 6.4). It feels missing, especially in comparison to two other extensions. Perhaps your work has progressed so that this can be included in the paper to have a complete description of this aspect.}''
 \begin{quote}
-\textbf{Our answer: }
+\textbf{Our answer: } \nb{To Eric}{might you please help here?}
 \end{quote}
 
 \textbf{R1.3} ``\textit{Minor issues and suggestions for improvement:
@@ -76,7 +76,9 @@ In the current version of the work we have seriously taken into account each com
 \textbf{R3.1} ``\textit{- I was missing a definition of what the term "architecture" actually stands for in the automotive domain or, at least, in the project setup. Architecture is a widely used term and, especially in automotive systems, it I s often not clear what is actually meant by the "architecture" of an automotive system. In Chapter 4, the authors refer to this term frequently without saying to which view the results actually refer. In my experience, the most prominent view in today's automotive industry is an architecture containing the ECUs and their connection via Bus systems. Sometimes, this architecture view also contains the SW components that are deployed to each ECU. Is this the kind of architecture that the authors refer to in Chapter 4? I think it is important for the paper to introduce what the authors exactly mean when they refer to "architectures" as done in Chapter 4. Moreover, terms like "design" are also used but not introduced. What is the difference here? Of course,
 later, it becomes clear that there is not the one architecture (that's why views and viewpoints are introduced) but, especially for Chapter 4, it is important to understand to which view the results refer.}''
 \begin{quote}
-\textbf{Our answer: }
+\textbf{Our answer: we added a definition of architecture at the beginning of Section 2:}
+``Within this paper we refer to the definition of architecture suggested by the ISO/IEC/IEEE 42010:2011 standard~\cite{42010}, which defines the architecture as: ``{\em $<$system$>$fundamental concepts or properties of a system in its environment embodied in its elements,
+relationships, and in the principles of its design and evolution}". Therefore, with the term architecture we are not referring to a specific view of the system and since we are focusing on the automotive domain, the architecture will refer also to physical components and their behavior in an abstract way. An architecture description is a ``{\em work product used to express an architecture}"~\cite{42010}."
 \end{quote}
 
 \textbf{R3.2} ``\textit{- The authors state that the results of Chapter 4 are derived from interviews. I expect a bit more details about the study design. How many people did you interview? Why only architects? How did you evaluate/analyze the data? How did you make sure that the challenges you elicited are actually correct? Moreover, it is not clear how the study results are related to the interviews (the underlying data). I would have expected to, at least, see some quotes or anything that helps me understanding how you came up with the results. Did you validate your results with the interviewees to make sure that you got everything right? Don't get me wrong, your results sound very convincing and match my personal experience but from scientific point of view I can only believe you that the reported results are actually the challenges that the interviewees tried to express.}''
@@ -131,8 +133,8 @@ later, it becomes clear that there is not the one architecture (that's why views
 
 \closing{Best regards,}
 
-%\bibliographystyle{plain}
-%\bibliography{letter}
+\bibliographystyle{plain}
+\bibliography{biblio}
 
 \end{letter}
 
