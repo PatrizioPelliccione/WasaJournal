@@ -15,39 +15,58 @@ organizations or classes (of individuals, teams or organizations), while concern
 
 \begin{table}[htb]
 \scriptsize
-\caption{Overview of Stakeholders}
+\caption{Overview of Stakeholders\patrizio{From Rev3: add comments to roles? Synonyms only for functional developers.}}
 \label{tab:stakeholders}
 \begin{tabular}{rv{0.14\textwidth}v{0.2\textwidth}v{0.26\textwidth}v{0.2\textwidth}}
 \toprule
 & \textbf{Stakeholder} &	\textbf{Group} & \textbf{Comment} & \textbf{Synonyms} \tabularnewline
 \midrule
-$\bullet$& Passengers & end-user	\tabularnewline
-$\bullet$& Drivers & end-user		\tabularnewline
-$\bullet$& Customers & customer & Purchaser of a car or related service & \tabularnewline
-$\bullet$& Product planner & customer & Acquirer of electrical system		\tabularnewline
-$\bullet$& Purchaser & customer & Purchasers of electrical system		\tabularnewline
-$\bullet$& Line managers & management & Has scheduling responsibility, long term quality responsibility, includes group, department	\tabularnewline
-$\bullet$& Project managers & management & Owns budget for development	\tabularnewline
-$\bullet$& System architects & developers of electrical system & 	\tabularnewline
-$\bullet$& Functional developers & developers of electrical system & Owns functional and non-functional aspects & function owner; function realizer; function developer, function realizer, system developer\tabularnewline
-$\bullet$& Component developers & developers of electrical system		\tabularnewline
-$\bullet$& SW supplier (internal/external) & developers of electrical system	& Can be internal or external from the perspective of the OEM.	\tabularnewline
-$\bullet$& HW supplier (internal/external) & developers of electrical system	& Can be internal or external from the perspective of the OEM.	\tabularnewline
+& Passengers & end-user	\tabularnewline
+\hline
+& Drivers & end-user		\tabularnewline
+\hline
+& Customers & customer & Purchaser of a car or related service & \tabularnewline
+\hline
+& Product planner & customer & Acquirer of electrical system		\tabularnewline
+\hline
+& Purchaser & customer & Purchasers of electrical system		\tabularnewline
+\hline
+& Line managers & management & Has scheduling responsibility, long term quality responsibility, includes group, department	\tabularnewline
+\hline
+& Project managers & management & Owns budget for development	\tabularnewline
+\hline
+& System architects & developers of electrical system & 	\tabularnewline
+\hline
+& Functional developers & developers of electrical system & Owns functional and non-functional aspects & function owner; function realizer; function developer, function realizer, system developer\tabularnewline
+\hline
+& Component developers & developers of electrical system		\tabularnewline
+\hline
+& SW supplier (internal/external) & developers of electrical system	& Can be internal or external from the perspective of the OEM.	\tabularnewline
+\hline
+& HW supplier (internal/external) & developers of electrical system	& Can be internal or external from the perspective of the OEM.	\tabularnewline
+\hline
 %SW supplier (external & developers of electrical system		\tabularnewline
 %HW supplier (external) & developers of electrical system		\tabularnewline
-$\bullet$& Testers & developers of electrical system		\tabularnewline
-$\bullet$& Attribute Owners & developers of electrical system & Owns non-functional attributes like performance	\tabularnewline
-$\bullet$& Tool Engineers & developers of electrical system & Specifically testing tools, including design tools (e.g. for requirements)	\tabularnewline
-$\bullet$& Calibrators & developers of electrical system & \tabularnewline
-$\bullet$& Diagnostic method engineers & maintainers of electrical system		\tabularnewline
-$\bullet$& Workshop Personnel & maintainers of electrical system		\tabularnewline
-$\bullet$& Fault Tracing Specialists & maintainers of electrical system		\tabularnewline
-$\bullet$& Technical Specialist &  specialists &	Support developers and maintainers on specific topics \tabularnewline
+& Testers & developers of electrical system		\tabularnewline
+\hline
+& Attribute Owners & developers of electrical system & Owns non-functional attributes like performance	\tabularnewline
+\hline
+& Tool Engineers & developers of electrical system & Specifically testing tools, including design tools (e.g. for requirements)	\tabularnewline
+\hline
+& Calibrators & developers of electrical system & \tabularnewline
+\hline
+& Diagnostic method engineers & maintainers of electrical system		\tabularnewline
+\hline
+& Workshop Personnel & maintainers of electrical system		\tabularnewline
+\hline
+& Fault Tracing Specialists & maintainers of electrical system		\tabularnewline
+\hline
+& Technical Specialist &  specialists &	Support developers and maintainers on specific topics \tabularnewline
 \bottomrule
 \end{tabular}
 \end{table}
 
-Table~\ref{tab:stakeholders} describes the main stakeholders we have identified; they fall into five major groups: 
+Table~\ref{tab:stakeholders} describes the main stakeholders we have identified through dedicated meetings with software architects of Volvo Cars; they fall into five major groups: 
 
 \begin{itemize}
 \item \emph{End-users} of the electrical system, like drivers and passengers.
@@ -108,7 +127,7 @@ Interesting sub-scenarios include decisions about:
 {User Story:} 
 \emph{``As a component responsible, I need to write a requirement. 
 Currently, I am forced to write the requirement in a certain document or certain structure. 
-This determines whether the requirement refers to a hw or sw component, whether it will be implemented in-house or by an external supplier. 
+This determines whether the requirement refers to a HW or SW component, whether it will be implemented in-house or by an external supplier. 
 Often, it is too early to make such decisions and changes are necessary later, when more information becomes available. 
 I do not feel comfortable to make this decision so early.''}
 \end{quote}
@@ -271,7 +290,7 @@ As a tester, I want quick updates on all levels of tests and continuous improvem
 perform the actions required by the SoS. The right tradeoff between independence of the vehicle (from the SoS) and service offered to the SoS needs to be found.''}
 \end{quote}
 
-\item {\em Dealing with uncertainty and functional safety (5.4)}: Vehicles are starting receiving a huge amount of information from the environment as communication coming from other vehicles, pedestrians, road signals, city in general. This information might be precious for supporting new safety behaviours\footnote{Example: \url{https://goo.gl/mIWWS3}.}.  %\url{https://www.media.volvocars.com/global/en-gb/media/pressreleases/159478/volvo-cars-connected-car-program-delivers-pioneering-vision-of-safety-and-convenience}}. 
+\item {\em Dealing with uncertainty and functional safety (5.4)}: Vehicles are starting receiving a huge amount of information from the environment as communication coming from other vehicles, pedestrians, road signals, city in general. This information might be precious for supporting new safety behaviours~\cite{VCC}. %\footnote{Example: \url{https://goo.gl/mIWWS3}.}.  %\url{https://www.media.volvocars.com/global/en-gb/media/pressreleases/159478/volvo-cars-connected-car-program-delivers-pioneering-vision-of-safety-and-convenience}}. 
 However, this information is often unreliable and subject to different dimensions of uncertainty, like presence of other constituent systems, communication means, etc.
 
 \begin{quote}
@@ -424,8 +443,7 @@ descriptions is the need to express correspondences and consistency rules betwee
 The mechanism introduced in~\cite{42010} is called model correspondences and it allows the definition of relations between
 two or more architecture models. Since architecture views are composed of architecture models~\cite{42010}, model correspondences can be used to
 relate views to express consistency, traceability, refinement or other dependencies~\cite{Emery-Hilliard:2009}.
-These mechanisms allow an architect to impose constraints between types of models and then demonstrate that them
-are satisfied by the architecture. 
+These mechanisms allow an architect to impose constraints between types of models and check whether these constraints are satisfied by the architecture. 
 
 
 
