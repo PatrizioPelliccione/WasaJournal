@@ -8,22 +8,37 @@
 An architecture framework is a
 coordinated set of viewpoints, conventions, principles, and practices
 for architecture description within a specific domain of application
-or community of stakeholders~\cite{42010}.  More specifically, it is determined by: (i) a set of architecture-related concerns,
-(i) a set of stakeholders holding those concerns, (ii) a set of architecture viewpoints which frame (i.e.,
-cover) those concerns, and (iv) a set of model correspondence rules to impose constraints between
-types of models and then demonstrate that constraints
-are satisfied by the architecture. 
-Then, an architecture framework establishes a common practice for creating, interpreting, analyzing and using architecture descriptions within a particular domain of application or stakeholder community, developing
-architecture modelling tools and architecting methods, and establishing processes to facilitate communication, commitments and interoperation across multiple projects and/or organizations~\cite{42010}. 
-Uses of architecture frameworks include, but are not limited to~\cite{42010}: 
-%\eric{should we be specific about how this is useful for VCC? E.g. systematically creating and evolving architecture?}: 
+or community of stakeholders~\cite{42010}.  More specifically, it is determined by: 
 
 \begin{itemize}
-\item creating architecture descriptions; 
-\item developing
-architecture modelling tools and architecting methods; 
-\item establishing processes to facilitate communication, commitments and interoperation across multiple projects and/or organizations.
+\item a set of architecture-related concerns;
+\item a set of stakeholders holding those concerns;
+\item a set of architecture viewpoints which frame (i.e.,
+cover) those concerns;
+\item a set of model correspondence rules to impose constraints between
+types of models and then demonstrate that constraints
+are satisfied by the architecture.
 \end{itemize}
+
+Then, an architecture framework establishes a common practice for creating, interpreting, analyzing and using architecture descriptions within a particular domain of application or stakeholder community, developing
+architecture modelling tools and architecting methods, and establishing processes to facilitate communication, commitments and interoperation across multiple projects and/or organizations~\cite{42010}. 
+%Uses of architecture frameworks include, but are not limited to~\cite{42010}: 
+%\eric{should we be specific about how this is useful for VCC? E.g. systematically creating and evolving architecture?}: 
+
+%\begin{itemize}
+%\item creating architecture descriptions; 
+%\item developing
+%architecture modelling tools and architecting methods; 
+%\item establishing processes to facilitate communication, commitments and interoperation across multiple projects and/or organizations.
+%\end{itemize}
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=\textwidth]{figures/42010}
+\caption{Terms and concepts beyond the standard (figure taken from~\cite{42010})}
+\label{fig:42010}
+\end{center}
+\end{figure}
 
 An architecture framework is a prefabricated knowledge structure, identified by {\em architecture viewpoints}, that
 architects use to organize an architecture description into {\em architecture views}.  The terms architecture view and architecture viewpoint are central to the standard~\cite{42010}:
@@ -46,7 +61,7 @@ Viewpoints, like patterns and styles, are a form of reusable
 architectural knowledge for solving certain kinds of architecture
 description problems derived from best practices.  
 Viewpoints
-originated in the 1970s (in Ross' Structured Analysis) and refined in~\cite{Finkelstein+92}. Architecting methods often define one or
+have been originally proposed in the 1970s (in Ross' Structured Analysis) and then they have been refined in~\cite{Finkelstein+92}. Architecting methods often define one or
 more viewpoints, e.g.~\cite{4+1,RozWooBook,ClementsBachmannEtAl03, Eeles-Cripps:2010}.
 
 
@@ -151,9 +166,7 @@ be a good antidote for certain overly used models and notations.
 \item {\em Model Kind name\footnote{In the Standard, each architecture view consists of multiple
 architecture models. Each model is governed by a \textit{model kind}
 which establishes the notations, conventions and rules for models of
-that type.  
-Repeat the next section for each model kind listed here the viewpoint
-being specified.}}:  Identify the model kind
+that type.}}:  Identify the model kind
 %For each type of model used, describe the language or modeling techniques to
 %be used. Each model language is a key modeling resource that the viewpoint
 %makes available. Model languages provide the vocabularies for constructing the
