@@ -40,7 +40,7 @@ architecture modelling tools and architecting methods, and establishing processe
 \end{center}
 \end{figure}
 
-An architecture framework is a prefabricated knowledge structure, identified by {\em architecture viewpoints}, that
+As shown in Figure~\ref{fig:42010}, an architecture framework is a prefabricated knowledge structure, identified by {\em architecture viewpoints}, that
 architects use to organize an architecture description into {\em architecture views}.  The terms architecture view and architecture viewpoint are central to the standard~\cite{42010}:
 {\em ``A viewpoint is a way of looking at systems; a view is the result of applying a viewpoint to a particular
 system-of-interest''}. 
@@ -139,7 +139,7 @@ Concerns name ``areas of interest'' in a system.
 Concerns may be very general (e.g., \textit{Reliability}) or quite
 specific (\textit{e.g., How does the system handle network latency?}).
 Concerns identified in this section are critical information for an
-architect because they help her deciding when this viewpoint will be
+architect because they help one deciding when this viewpoint will be
 useful.
 When used in an architecture description, the viewpoint becomes a
 ``contract'' between the architect and stakeholders that these
@@ -185,8 +185,8 @@ The Standard does not prescribe \emph{how} modeling conventions are to
 be documented.  The conventions could be defined:
 \begin{description}
 \item[I)] by reference to an existing notation or language (such as
-  SADT, UML or an architecture description language such as ArchiMate
-  or SysML) or to an existing technique (such as $M/M/4$ queues);
+  SADT~\cite{SADT} or UML~\cite{UML} or an architecture description language such as EAST-ADL~\cite{EAST-ADL}
+  or SysML~\cite{SysML}) or to an existing technique;
 \item[II)] by presenting a metamodel defining its core constructs;
 \item[III)] via a template for users to fill in;
 \item[IV)] by some combination of these methods or in some other
@@ -254,6 +254,9 @@ rather than presenting a clear definitions of the modelling notations to be used
 Architecture frameworks have not been standardized in the automotive domain and automotive industry. 
 However, some attempts exist and different types of architecture viewpoints and views have been introduced recently as part
 of automotive architecture frameworks. 
+
+\subsection{Automotive Architecture Framework (AAF)}
+
 A first attempt towards a standardized architectural foundation and automotive-specific
 architecture framework is the Automotive
 Architecture Framework (AAF) proposed in~\cite{Broy}. 
@@ -320,7 +323,7 @@ automotive industry.
 
 
 %Focusing on the Domain-specific Architecture Framework for the Automotive Domain, t
- AAF distinguishes between two sets of architecture viewpoints and views: (i) mandatory and general viewpoints and (ii) optional viewpoints. The following viewpoints are presented according to the viewpoint catalog in~\cite{Rozanski2005}.
+ AAF distinguishes between two sets of architecture viewpoints and views: (i) mandatory and general viewpoints and (ii) optional viewpoints. The following viewpoints are presented according to the viewpoint catalog in~\cite{RozWooBook}.
 The mandatory viewpoints and their respective views include: (i)
 %
 %\begin{itemize} 
@@ -368,7 +371,7 @@ after the whole set of Operational Views is available.
 \end{itemize}
 
 \subsection{Architecture Framework For Automotive Systems}
-The Architecture Framework for Automotive Systems (AFAS) is proposed in~\cite{Yania} through an analysis of AAF, ADF, and of Architecture Description Languages~\cite{ADL_Neno00,whatindustrywants} tailored to automotive domain, like EAST-ADL~\cite{EAST-ADL} %, TADL\footnote{TADL: Timing Augmented Description Language version
+The Architecture Framework for Automotive Systems (AFAS) is proposed in~\cite{Yania} through an analysis of AAF, ADF, and of Architecture Description Languages~\cite{whatindustrywants,ADL_Neno00} tailored to automotive domain, like EAST-ADL~\cite{EAST-ADL} %, TADL\footnote{TADL: Timing Augmented Description Language version
 %2. \url{http://www.timmo-2-use.org/timmo/index.htm}.}, AADL~\cite{aadl}, 
 and AML~\cite{AML}. 
 It contains an elaboration and unification of the viewpoints proposed in AAF and ADF and then proposes additional viewpoints, e.g.:
@@ -376,7 +379,7 @@ It contains an elaboration and unification of the viewpoints proposed in AAF and
 \begin{itemize}
 \item {\em Feature viewpoint} - to be used to support the product line engineering. %; it is inspired to~\cite{EAST-ADL}, the only automotive ADL supporting product lines in the architecture description.
 \item {\em Implementation viewpoint} - 
-it describes the software architecture of the Electrical/Electronic (E/E) system in the vehicle~\cite{EAST-ADL}. %, supported by the system architecture
+it describes the software architecture of the Electrical/ Electronic (E/E) system in the vehicle~\cite{EAST-ADL}. %, supported by the system architecture
 %and software architecture of AUTOSAR. 
 \end{itemize}
 
