@@ -112,7 +112,7 @@ Figure~\ref{fig:challenging-scenarios} gives an overview of the scenarios that a
 \item Scenario 1 {\bf Decision Management } aims at exploring how to make, communicate, and manage decisions. 
 
 \begin{quote}
-{User Story:} \emph{``As a member of the development ecosystem I would like to have a clear understanding on how to take decisions and how to communicate them.''}
+{User Story:} \emph{``As a member of the development ecosystem I would like to have a clear understanding of how to take decisions and how to communicate them.''}
 \end{quote}
 
 
@@ -128,7 +128,8 @@ Interesting sub-scenarios include decisions about:
 \emph{``As a component responsible, I need to write a requirement. 
 Currently, I am forced to write the requirement in a certain document or certain structure. 
 This determines whether the requirement refers to a HW or SW component, whether it will be implemented in-house or by an external supplier. 
-Often, it is too early to make such decisions and changes are necessary later, when more information becomes available. 
+Often, it is too early to make such decisions and changes are necessary later, % the why
+when more information becomes available. 
 I do not feel comfortable to make this decision so early.''}
 \end{quote}
 
@@ -140,17 +141,20 @@ I do not feel comfortable to make this decision so early.''}
 {User Story:} 
 \emph{``As an architect} (one of \{system architect; functional developer; low level architect\})\emph{, I need to make the right decision at the right moment (i.e. when it is useful to make the decision and when the necessary information is available).  
 I need to make this decision on the right level. 
-I need to be introvert to make the best possible decision on the available data and extrovert to communicate it.''}
+I need to be introvert to make the best possible decision % the why, also next line
+on the available data and extrovert to communicate it.''}
 \end{quote}
 
-\item {\em Customer functions (1.3)}:  Electrical architecture is guiding realization of customer functions, but it is not obvious how the architecture support customer functions (with respect to tracing and methodology).
+\item {\em Customer functions (1.3)}:  Electrical architecture is guiding realization of customer functions, but it is not obvious how the architecture supports customer functions (with respect to tracing and methodology).
 
 %\textbf{Trigger:}  Decision about customer function required. 
 
 \begin{quote}
 {User Story:} 
 \emph{``As a product manager, I want to be supported by the electrical architecture in making decisions about customer functions. Based on a wishlist from the Market Analysis Department, I engage in a dialog with the departments that design the system. 
-For this task, I wish for support from an electrical architecture that not only takes into account non-functional aspects, but also the nature of customer functions (which changes over time).''}
+For this task, I wish for support from an electrical architecture % the why, also next line
+that not only takes into account non-functional aspects, but also the nature of customer functions
+(which changes over time).''}
 \end{quote}
 
 \item {\em Change management (1.4)}: Good flexibility of the architecture allows us to continuously remove assumptions and do changes even late in the process. 
@@ -158,7 +162,8 @@ However, in a weak electrical architecture, such changes will impact the stabili
 
 \begin{quote}
 {User Story:} 
-\emph{``As a product planner I want to have a flexible Change Management process, allowing me to change or add functions late in the process, often with the goal of removing assumptions. 
+\emph{``As a product planner I want to have a flexible Change Management process, allowing me to
+change or add functions late in the process, often with the goal of removing assumptions. % the why
 This includes for example defining and changing the allocation of Functions to ECU late in the process.''}
 \end{quote}
 \end{itemize}
@@ -168,10 +173,11 @@ This includes for example defining and changing the allocation of Functions to E
 This includes:
 
 \begin{itemize} 
-\item {\em The impact of long-term sourcing decision on the logical architecture (2.1)}: Long term sourcing contracts allow to optimize production cost, but constraint evolution of the architecture. 
+\item {\em The impact of long-term sourcing decisions on the logical architecture (2.1)}: Long term sourcing contracts allow optimizing the production cost, but constrain evolution of the architecture. 
 \begin{quote}
 {User Story:} 
-\emph{``As a Function Developer I want to optimise the evolution of functions without considering sourcing agreements. 
+\emph{``As a Function Developer I want to optimize % the why, problem below
+the evolution of functions without considering sourcing agreements. 
 Today I have to discuss with the product planner about the plan for a function two years or more in advance to reflect on existing contracts, e.g. when related nodes are sourced for different time intervals. Problem: Sourcing needs make physical layout dominate logical decisions.''}
 \end{quote}
 
@@ -182,7 +188,8 @@ The architecture is then perceived as outdated and not useful, thus it looses it
 
 \begin{quote}
 {User Story:} 
-\emph{``As a system architect or function developer I want a stringent correlation between architecture and design. Otherwise, one or the other is wrong.''}
+\emph{``As a system architect or function developer I want a stringent correlation between architecture and design.
+Otherwise, one or the other is wrong.''} % the why
 \end{quote}
 \end{itemize}
 
@@ -195,7 +202,8 @@ This includes:
 \begin{quote}
 {User Story:} 
 \emph{``As a functional developer, I want to be flexible when it comes to application workload. 
-Suppliers should be able to acquire and return resources dynamically throughout the lifecycle.''}
+Suppliers should be able to acquire and return resources dynamically throughout the lifecycle.
+\ins{This would allow moving faster from assumptions to decisions, and allow decisions to be changed as needed.}''} % \magnus{does this clarify the why?}
 \end{quote}
 
 \item {\em Application workload management from a technical perspective (3.2)}: Higher capacity of ECUs and Buses will facilitate late or even very late updates (i.e. when the vehicle is on the street), because new functionality could use more resources.
@@ -203,20 +211,23 @@ This flexibility comes at a cost and it is not trivial to understand where the b
 
 \begin{quote}
 {User Story:} 
-\emph{``As a system architect I want to balance capacity of ECUs and Buses against cost.''}
+\emph{``As a system architect I want to balance capacity of ECUs and Buses against
+cost\ins{, to ensure future-proofing is done in an economically feasible way}.''} % \magnus{does this clarify the why?}
 \end{quote}
 
-\item {\em Easy and secure add-ons (3.3)}: Being able to add new functions in a secure and easy way would allow us to detach software development to some extend from the development cycle. 
+\item {\em Easy and secure add-ons (3.3)}: Being able to add new functions in a secure and easy way would allow us to detach software development to some extent from the development cycle. 
 During the development of a car, an OEM could focus on the critical basic functionality. 
 Convenience features as well as more advanced connected features could be added independent from the start of production.
 This would allow us to develop more continuously and should decrease the peak of trouble reports before critical deadlines observed earlier~\cite{modelsward13}.
 
 \begin{quote}
 {User Story:} 
-\emph{``As a  functional developer I want to be able to add new functions (very) late. Such add-ons could originate from third parties and should be added even after the vehicle has been put into use.''}
+\emph{``As a functional developer I want to be able to add new functions (very) late.
+Such add-ons could originate from third parties and should be added even after the vehicle has been put into use.
+\ins{In that way I could avoid big-bang integration just before the start of production.}''}  % \magnus{does this clarify the why?}
 \end{quote}
 
-\item {\em Separation of concerns (3.4)}: 
+\item {\em Separation of concerns (3.4)}: % \magnus{Good practice, is the why clear enough?}
 \begin{quote}
 {User Story:} 
 \emph{``As a system architect, I want to balance separation of concerns on two levels: between domains (e.g. safety vs. infotainment) and levels of abstractions (e.g. architecture vision vs. architecture implementation).''}
@@ -226,38 +237,41 @@ This would allow us to develop more continuously and should decrease the peak of
 \begin{quote}
 {User Story:} 
 \emph{``As a functional developer, I want to be flexible about the functions that are running in the car and allow for very late deployment.''}
+%\magnus{Vs. 3.3 this covers updates, rather than additions, but what's the fundamental difference? In light of the above four, this one seems a bit redundant.}
 \end{quote}
 \end{itemize}
  
 \item Scenario 4 {\bf Continuous Deployment and Transparency} includes:
 
 \begin{itemize}
-\item {\em The need for openness and transparent information through out the different value chains in the automotive ecosystem (4.1)}: Good transparency in the value chain supports flexibility, since all partners can take appropriate action to reach a (changing) goal quickly. 
+\item {\em The need for openness and transparent information throughout the different value chains in the automotive ecosystem (4.1)}: Good transparency in the value chain supports flexibility, since all partners can take appropriate action to reach a (changing) goal quickly. 
 The \emph{cone of uncertainty} is a good example for this~\cite{cone-of-uncertainty,cone-of-uncertainty2}: In the beginning of a project, not much data is available and decisions are very uncertain. \ins{This is also true in the automotive domain where the architecture work starts with an already existing system - usually the architecture of the previous series - that the developers try to enhance without changing too much in order to reduce risks.} 
 As the project proceeds, assumptions are removed and uncertainty is reduced, but as  a consequence, it becomes harder to make decisions that change a lot. 
 Good transparency can help to reduce the uncertainty quicker and can allow us to decide and learn fast.
 \begin{quote}
 {User Story:} 
-\emph{``As any developer of the electrical system (internal or external), I want to have access to relevant decision, to the status of relevant assumptions, and knowledge generated during the development. 
-This allows me to participate in the fast learning throughout the value chain and enables me to be effective and flexible in my work.''}
+\emph{``As any developer of the electrical system (internal or external), I want to have access to
+the relevant decisions, to the status of relevant assumptions, and knowledge generated during the development. 
+This allows me to participate in the fast learning throughout the value chain and enables me to be effective and flexible in my work.''} % the why
 \end{quote}
 
 \item {\em The need for using this information to continuously improve a continuous integration, delivery, and deployment flow (4.2)}: 
 Cross-organizational continuous integration, delivery, and deployment facilitate fast feedback and rich learning.
 This learning should also help to improve the interaction of organizations and the integration flow between them.
-It emerges also the need of creating and maintaining a culture of continuous improvement between the OEM and partners, e.g. by applying continuous deployment to the (shared) CD tool chain.
-%\ugh{It is important to create and maintain a culture of continuous improvement between the OEM and partners, e.g. by applying continuous deployment to the (shared) CD tool chain.}\eric{This is a bit solution specific and does not flow nicely (especially it is to a large extend already in the user story). Was about to delete it, but it is kind of a nice statement. What do you think?}
+It is also necessary to create and maintain a culture of continuous improvement between the OEM and partners, e.g. by applying continuous deployment to the (shared) CD tool chain.
 
 \begin{quote}
 {User Story:} 
-\emph{``As a Project Manager, I want to have a culture of continuous improvement within the OEM and with partners in the value-chain. As any developer of the electrical system (internal and external) I want to benefit from and take responsibility in improving the continuous delivery flow.''}
+\emph{``As a Project Manager, I want to have a culture of continuous improvement within the OEM and with partners in the value-chain.
+As any developer of the electrical system (internal and external) I want to benefit % the why
+from and take responsibility in improving the continuous delivery flow.''}
 \end{quote}
 
 \item {\em The need for establishing short feedback cycles (4.3)}: While developing new functionality, basic software, and hardware, one should plan on how to receive feedback, which data to collect, and how to use it in the development.
 
 \begin{quote}
 {User Story:} 
-\emph{``As any developer of the electrical system (internal or external) I want to have quick feedback on how my contribution will work on the various levels of integration. 
+\emph{``As any developer of the electrical system (internal or external) I want to have quick feedback on how my contribution will work on the various levels of integration. % the why
 As a Functional Developer, I want to have fast and defined feedback cycles. 
 As a tester, I want quick updates on all levels of tests and continuous improvement of functionality.''}
 \end{quote}
@@ -272,30 +286,33 @@ As a tester, I want quick updates on all levels of tests and continuous improvem
 
 \begin{quote}
 {User Story:} 
-\emph{``As an architect I need to engineer the car so that it will support heterogeneous communication means with various quality of service (QoS). The QoS of the different communication means should be clearly identified so that it will be possible to develop end-to-end functionalities that go beyond the boundaries of the car.''}
+\emph{``As an architect I need to engineer the car so that it will support heterogeneous communication means with various quality of service (QoS).The QoS of the different communication means should be clearly identified
+so that it will be possible to develop end-to-end functionalities that go beyond the boundaries of the car.''} % the why
 \end{quote}
 
 \item {\em Guaranteeing that communication from and to the car is properly understood (5.2)}: It is not enough to have proper communication means; the exchanged information should be properly understood by all involved parts.
 
 \begin{quote}
 {User Story:} 
-\emph{``As an architect I need to ensure a high degree of interoperability between the car and other constituent systems of the SoS. End-to-end functionalities that go beyond the boundaries of the car might require to build under the assumption that exchanged information is properly understood and required actions are taken by the receiving system.''}
+\emph{``As an architect I need to ensure a high degree of interoperability between the car and other constituent systems of the SoS. End-to-end functionalities that go beyond the boundaries of the car might need to be built under the assumption that exchanged information is properly understood and required actions are taken by the receiving system.''} % the why
 \end{quote}
 
 \item {\em Degree of autonomy and readiness to be at the service of the SoS (5.3)}: Often SoS scenarios require a degree of autonomy of the vehicle. Moreover, often a constituent system has to temporarily sacrifice its own goal in order to take actions needed to fulfil the goal of the SoS.
 
 \begin{quote}
 {User Story:} 
-\emph{``As an architect I need to manage the transition towards autonomous behaviours of the car that are needed to achieve the goal of the SoS. The car should be engineered so to, often immediately, temporarily stop what is currently doing and %\ugh{switch to another mode}\eric{we do not speak much about modes. Should we try to omit this rather difficult term here?} and 
+\emph{``As an architect I need to manage the transition towards autonomous behaviours of the car that are needed to achieve the goal of the SoS. % the why
+The car should be engineered so to, often immediately, temporarily stop what is currently doing and 
 perform the actions required by the SoS. The right tradeoff between independence of the vehicle (from the SoS) and service offered to the SoS needs to be found.''}
 \end{quote}
 
-\item {\em Dealing with uncertainty and functional safety (5.4)}: Vehicles are starting receiving a huge amount of information from the environment as communication coming from other vehicles, pedestrians, road signals, city in general. This information might be precious for supporting new safety behaviours~\cite{VCC}. %\footnote{Example: \url{https://goo.gl/mIWWS3}.}.  %\url{https://www.media.volvocars.com/global/en-gb/media/pressreleases/159478/volvo-cars-connected-car-program-delivers-pioneering-vision-of-safety-and-convenience}}. 
+\item {\em Dealing with uncertainty and functional safety (5.4)}: Vehicles are starting receiving a huge amount of information from the environment as communication coming from other vehicles, pedestrians, road signals, and the city in general. This information might be precious for supporting new safety behaviours~\cite{VCC}. %\footnote{Example: \url{https://goo.gl/mIWWS3}.}.  %\url{https://www.media.volvocars.com/global/en-gb/media/pressreleases/159478/volvo-cars-connected-car-program-delivers-pioneering-vision-of-safety-and-convenience}}. 
 However, this information is often unreliable and subject to different dimensions of uncertainty, like presence of other constituent systems, communication means, etc.
 
 \begin{quote}
 {User Story:} 
-\emph{``As an architect I would like to support innovative and very promising safety scenarios that can involve cyclists, pedestrians, etc. However, this would imply that the way functional safety is ensured should change since the SoS is open (constituent systems might join or leave the SoS at any moment) and we cannot relay 100\% on information sent by uncontrollable and independent constituent systems.''}
+\emph{``As an architect I would like to support innovative and very promising safety scenarios % the why
+that can involve cyclists, pedestrians, etc. However, this would imply that the way functional safety is ensured should change since the SoS is open (constituent systems might join or leave the SoS at any moment) and we cannot rely 100\% on information sent by uncontrollable and independent constituent systems.''}
 \end{quote}
 
 
@@ -303,7 +320,7 @@ However, this information is often unreliable and subject to different dimension
 
 \begin{quote}
 {User Story:} 
-\emph{``As an architect I need to protect the car from attacks to avoid dangerous or catastrophic scenarios and to guarantee the privacy of user data.''}
+\emph{``As an architect I need to protect the car from attacks to avoid dangerous or catastrophic scenarios and to guarantee the privacy of user data.''} % the why
 \end{quote}
 
 
