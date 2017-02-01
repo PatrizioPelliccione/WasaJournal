@@ -269,8 +269,15 @@ being specified.}
 Various notations have been proposed to model continuous integration and deployment pipelines~\cite{SB2014}. %\eric{Could have more citations here based on CID SLR}.
 Among those, several could be applicable to this viewpoint.
 In addition, one would need to relate those to architectural approaches as well as to the concerns defined above. 
-We are currently working on a qualitative assessment method that will allow us to identify disruptors and bottlenecks for continuous integration and deployment. %\eric{I am thinking about the KACI model here (not published yet). What else?}.
+We are currently working on a qualitative assessment method that will allow us to identify disruptors and bottlenecks for continuous integration and deployment.
+\ins{A CI view would then elaborate on how disruption or unnecessary slow-downs is avoided.}
+%\eric{I am thinking about the KACI model here (not published yet). What else?}.
 Moreover, it would be desirable a modeling notation that is able to capture and visualize dependencies.  Further investigation is needed to understand the most suitable model kinds for this viewpoint.
+
+\ins{Grubb and Chechik have modeled system evolution with extended goal models \cite{Grubb2016}.
+Their approach allows to reason to what extend stakeholder goals are fulfilled during the evolution of a system.
+We plan to investigate whether this technique can provide a suitable model kind, that for example allows reasoning at what point of time continuous integration becomes possible and which implications the architecture has on continuous architecture over the development time. 
+By this we expect that the dependencies between system architecture, processes, and organizations become more explicit and can be better optimized with respect to supporting business goals. \eric{Cite BAPO here?}}
 %\rogardt{What about models to capture dependencies \eric{which? UML Package diagrams? Use Case diagrams? Feature diagrams?}}
 %\rogardt{Good question, maybe component diagram, they can be used to show dependencies between components using interfaces}
 %\rogardt{Will a service oriented architecture improve CI\&D, however we might leave out this discussion \eric{agreed, I am not aware of any evidence on this.}}
